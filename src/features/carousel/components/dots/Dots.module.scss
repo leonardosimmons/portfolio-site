@@ -1,0 +1,18 @@
+.dots {
+  position: absolute;
+  bottom: 10px;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (min-width: 64em) { bottom: 25px; }
+
+  & * {
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+}
