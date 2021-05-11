@@ -5,3 +5,8 @@ export enum direction {
   UP = 'up',
   DOWN = 'down'
 };
+
+
+export enum page {
+  HOME = 'home',
+};
