@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/leonardosimmons/portfolio-site#readme",
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "axios": "^0.21.1",
     "dotenv": "^9.0.2",
     "next": "^10.2.0",
