@@ -1,0 +1,26 @@
+html 
+{
+  box-sizing: border-box;
+  max-width: 216rem;
+  margin: 0 auto;
+}
+
+body 
+{
+  margin: 0 auto;
+}
+
+*,
+*::before,
+*::after 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a 
+{
+  text-decoration: none;
+  list-style: none;
+}
