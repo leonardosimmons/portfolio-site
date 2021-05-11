@@ -1,5 +1,5 @@
 
-type temp {
+type temp = {
 
 };
 
