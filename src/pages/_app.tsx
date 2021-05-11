@@ -1,6 +1,6 @@
-
+import '../styles';
 import { Provider } from 'react-redux';
-import { useStore } from '../redux-store/store';
+import { useStore } from '../store';
 import type { AppProps } from 'next/app';
 
 

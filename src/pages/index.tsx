@@ -3,7 +3,7 @@ import React from "react";
 
 function Index() {
   return (
-    <div>Test</div>
+    <h1 id="test">Test</h1>
   );
 }
 
