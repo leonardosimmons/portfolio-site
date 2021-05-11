@@ -15,7 +15,7 @@ const ContentBox: React.FunctionComponent<Props> = (
   }
 ): JSX.Element => {
   return (
-    <div className={`${ classes || '' } ${ styles && styles.contentBox } ${ parent ? parent + '--box' : '' } ${ parent ? index ? `${ parent }--box-${ index }` : '' : ''}`}
+    <div className={`${ classes && classes } ${ styles && styles.contentBox }`}
     style={{ backgroundImage: `${ bgImage ? 'url(' + bgImage + ')' : '' }`}}
     >
       { video && <Video src={ video } /> }

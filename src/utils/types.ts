@@ -1,4 +1,6 @@
 
+import { ImageLoader } from 'next/image';
+
 //** -----------------------  CAROUSEL  ------------------------ **//
 export type CarouselContext = {
   width: number;
@@ -68,4 +70,116 @@ export type Direction = {
 export type Dot = {
   active: boolean;
   index: number;
+};
+
+export type Grid = {
+  grid: any;
+  even?: boolean;
+  oneXtwo?: boolean;
+  twoXone?: boolean;
+  blockOne?: JSX.Element | HTMLElement;
+  blockTwo?: JSX.Element | HTMLElement;
+  blockThree?: JSX.Element | HTMLElement;
+  styles?: any;
+};
+
+export type Heading = Text & {
+  btn?: Button;
+  textAbove?: string;
+  textBelow?: string;
+};
+
+export type Header = Heading & {
+  id?: string;
+  video?: string;
+  bgImage?: string;
+  priority?: string;
+};
+
+export type Icon = Image & Direction & PageLink;
+
+export type Image = {
+  src: string;
+  alt: string;
+  width: string | number;
+  height: string | number;
+  sizes?: string;
+  quality?: number;
+  priority?: boolean;
+  loading?: 'lazy' | 'eager';
+  layout?: 'fixed' | 'intrinsic' | 'responsive' | undefined;
+  objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
+  loader?: ImageLoader;
+};
+
+export type Input = {
+  value: any;
+  col?: boolean;
+  toggle?: boolean;
+  placeholder?: string;
+  autoComplete?: boolean;
+  label?: string | JSX.Element | HTMLElement;
+  labelFront?: string | JSX.Element | HTMLElement;
+  labelBack?: string | JSX.Element | HTMLElement;
+  clicked?: () => void;
+  changed?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: "button" | "checkbox" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week";
+};
+
+export type Logo = Omit<Image, "src"|"alt"|"width"|"height"> & {
+  src?: string;
+  alt?: string;
+  width?: string;
+  height?: string;
+  index?: number;
+} 
+
+export type PageLink = {
+  link: string;
+  text?: string;
+  name?: string;
+  type?: string;
+};
+
+export type NamedLink = {
+  name: string;
+  link: string;
+};
+
+export type Text = {
+  name?: string;
+  title?: string;
+  text?: string;
+  heading?: string | JSX.Element | HTMLElement;
+  mainHeading?: string | JSX.Element | HTMLElement;
+  headingOne?: string | JSX.Element | HTMLElement;
+  headingTwo?: string | JSX.Element | HTMLElement;
+  subHeadOne?:string | JSX.Element | HTMLElement;
+  subHeadTwo?: string | JSX.Element | HTMLElement;
+  textOne?: string | JSX.Element | HTMLElement;
+  textTwo?: string | JSX.Element | HTMLElement;
+  textThree?: string | JSX.Element | HTMLElement;
+  textFour?: string | JSX.Element | HTMLElement;
+  textFive?: string | JSX.Element | HTMLElement;
+  spanOne?: string | JSX.Element | HTMLElement;
+  spanTwo?: string | JSX.Element | HTMLElement;
+  spanThree?: string | JSX.Element | HTMLElement;
+  spanFour?: string | JSX.Element | HTMLElement;
+  spanFive?: string | JSX.Element | HTMLElement;
+  mainHeadingClasses?: string;
+  headingOneClasses?: string;
+  headingTwoClasses?: string;
+  subHeadOneClasses?: string;
+  subHeadTwoClasses?: string;
+  textClasses?: string;
+  textOneClasses?: string;
+  textTwoClasses?: string;
+  textThreeClasses?: string;
+  textFourClasses?: string;
+  textFiveClasses?: string;
+  spanOneClasses?: string;
+  spanTwoClasses?: string;
+  spanThreeClasses?: string;
+  spanFourClasses?: string;
+  spanFiveClasses?: string;
 };

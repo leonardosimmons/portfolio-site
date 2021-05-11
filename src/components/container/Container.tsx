@@ -19,7 +19,7 @@ const Container: React.FunctionComponent<Props> = (
   }
 ) => {
   return (
-    <div className={`${ main ? styles && styles.mainContainer || '' : wrapper ? styles.wrapper : styles && styles.container || '' } ${ parent ? main ? parent + '__main-container' : parent + '--container' : '' } ${ classes || '' }`} 
+    <div className={`${ main ? styles && styles.mainContainer : wrapper ? styles.wrapper : styles && styles.container } ${ classes || '' }`} 
     style={{ backgroundImage: `${ bgImage ? 'url(' + bgImage + ')' : '' }`}}
     >
       { video && <Video src={ video as string } /> }

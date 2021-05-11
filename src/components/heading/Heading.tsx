@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Heading } from '../../utils/types/types';
+import { Heading } from '../../utils/types';
 
 import ContentBox from '../box/ContentBox';
 import TextBox from '../text';
