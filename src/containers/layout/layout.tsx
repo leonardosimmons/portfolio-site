@@ -2,12 +2,14 @@ import Head from 'next/head';
 import React from 'react';
 import { page } from '../../utils/keys';
 
+import DesktopNavbar from '../navbar/desktop';
+
 
 type Props = {
   parent: string;
   title: string;
-  desktop: any;
-  mobile: any;
+  desktop?: any;
+  mobile?: any;
   styles: any;
   solid?: boolean;
   classes?: string;
@@ -44,7 +46,7 @@ const Layout: React.FunctionComponent<Props> = (
       <div id="modal-root" />
       <div id="app" className={`${ styles.page || '' } ${ classes }`}>
         <nav className={`${ styles.nav || '' } ${ parent ? parent + '__nav' : ''}`}>
-          {/* desktopNav || <DesktopNavBar solid=/*solid } config={ desktop } /> */}
+          { <DesktopNavbar /> }
           {/* mobileNav || <MobileNavbar config={ m/*obile }/> */}
         </nav>
         { header && <header className={`${ styles.header || '' } ${ parent ? parent + '__header' : ''}`}>{ header }</header> }

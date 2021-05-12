@@ -183,3 +183,11 @@ export type Text = {
   spanFourClasses?: string;
   spanFiveClasses?: string;
 };
+
+
+//** --------------------  NAVIGATION BAR  -------------------- **//
+export type NavbarMenuTab = Icon & {
+  name: string;
+  id?: string;
+  type?: string;
+};

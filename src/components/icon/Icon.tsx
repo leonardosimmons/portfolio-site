@@ -10,7 +10,6 @@ type Props = Icon & BaseOptions;
 
 const BaseIcon: React.FunctionComponent<Props> = (
   { 
-    parent, 
     src, 
     width,
     height, 
@@ -31,13 +30,13 @@ const BaseIcon: React.FunctionComponent<Props> = (
   }
 ): JSX.Element => {
   return (
-    <ContentBox styles={ styles && styles } parent={ parent ? parent + '--icon' : '' } index={ index as number } key={ index }>
+    <ContentBox styles={ styles && styles } index={ index as number } key={ index }>
     {
     left && 
     <Link href={ link as string }>
       <div className={`${ column ? styles && styles.column : styles && styles.row }`}>
         <Image 
-          className={`${ styles && styles.icon } ${ parent ? parent + '--icon' : '' }  ${ parent ? index && parent + '--icon-' + index : '' } ${ classes || '' }`} 
+          className={`${ styles && styles.icon } ${ classes || '' }`} 
           layout={ layout }
           quality={ quality }
           src={ src } 
@@ -54,9 +53,9 @@ const BaseIcon: React.FunctionComponent<Props> = (
     {
     !left && !right &&
     <Link href={ link as string }>
-      <div>
+      <div className={`${ styles && styles.iconBox || '' }`}>
         <Image 
-          className={`${ styles && styles.icon } ${ parent ? parent + '--icon' : '' }  ${ parent ? index && parent + '--icon-' + index : '' } ${ classes || '' }`} 
+          className={`${ styles && styles.icon || '' } ${ classes || '' }`} 
           layout={ layout }
           quality={ quality }
           src={ src } 
@@ -75,7 +74,7 @@ const BaseIcon: React.FunctionComponent<Props> = (
       <div className={`${ column ? styles && styles.column : styles && styles.row }`}>
         { children }
         <Image 
-          className={`${ styles && styles.icon } ${ parent ? parent + '--icon' : '' }  ${ parent ? index && parent + '--icon-' + index : '' } ${ classes || '' }`} 
+          className={`${ styles && styles.icon } ${ classes || '' }`} 
           layout={ layout }
           quality={ quality }
           src={ src } 
