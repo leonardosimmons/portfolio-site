@@ -1,18 +1,19 @@
 
-import { DesktopNavbarConfiguration, NamedLink } from '../../../utils/types';
+import { DesktopNavbarConfiguration, NavbarMenuTab } from '../../../utils/types';
 
-import styles from './styles/Navbar.module.scss';
+import styles from './Navbar.module.scss';
+import tabStyles from './MenuTabs.module.scss';
 
 import Container from '../../../components/container'
 import ContentBox from '../../../components/box';
 import Grid from '../../../components/grid';
 import Icon from '../../../components/icon';
-import NavbarMenuTabs from '../../../components/link/NamedLink';
 
 
 type Props = {
   config: DesktopNavbarConfiguration;
 };
+
 
 const DesktopNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element => {
   return (
@@ -31,13 +32,22 @@ const DesktopNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element 
           <ContentBox styles={styles}>
             <Container styles={styles}>
             {
-              config.tabs.map((tab: NamedLink, index: number) => (
-                <NavbarMenuTabs
-                  key={index} 
-                  name={tab.name}
-                  link={tab.link}
-                  styles={styles}
-                />
+              config.tabs.map((tab: NavbarMenuTab, index: number) => (
+                <div className={tabStyles.menuTab} key={index}>
+                  <Icon
+                    right
+                    column
+                    styles={tabStyles}
+                    link={tab.link}
+                    src={tab.src}
+                    alt={tab.alt}
+                    width={tab.width}
+                    height={tab.height}>
+                    <a className={ tabStyles.text }>
+                      { tab.name }
+                    </a>
+                  </Icon>
+                </div>
               ))
             }
             </Container>

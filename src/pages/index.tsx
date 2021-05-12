@@ -8,7 +8,6 @@ import Layout from '../containers/layout';
 
 
 function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
-  console.log(config)
   return (
     <Layout
       parent={'home'}

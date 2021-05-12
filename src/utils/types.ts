@@ -183,14 +183,10 @@ export type Text = {
 
 
 //** --------------------  NAVIGATION BAR  -------------------- **//
-export type NavbarMenuTab = Icon & {
-  name: string;
-  id?: string;
-  type?: string;
-};
+export type NavbarMenuTab = Image & NamedLink;
 
 
 export type DesktopNavbarConfiguration = {
   logo: Icon;
-  tabs: NamedLink[];
+  tabs: NavbarMenuTab[];
 };

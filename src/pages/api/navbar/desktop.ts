@@ -10,14 +10,14 @@ export default function desktopData(_: NextApiRequest, res: NextApiResponse<Desk
         link: '/',
         src: '/images/png/logo.png',
         alt: 'logo',
-        width: 60,
-        height: 60
+        width: 75,
+        height: 75
       },
       tabs: [
-        { name: 'Services', link: '/under-construction' },
-        { name: 'About', link: '/under-construction' },
-        { name: 'Portfolio', link: '/under-construction' },
-        { name: 'Contact Me', link: '/under-construction' }
+        { name: 'Services', link: '/under-construction', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 },
+        { name: 'About', link: '/under-construction', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 },
+        { name: 'Portfolio', link: '/under-construction', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 },
+        { name: 'Contact Me', link: '/under-construction', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 }
       ]
     }
   )

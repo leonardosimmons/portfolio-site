@@ -34,7 +34,7 @@ const BaseIcon: React.FunctionComponent<Props> = (
     {
     left && 
     <Link href={ link as string }>
-      <div className={`${ column ? styles && styles.column : styles && styles.row }`}>
+      <div className={`${ column ? 'flex-col' : 'flex-row' } ${ styles && styles.iconBox || ''}`}>
         <Image 
           className={`${ styles && styles.icon } ${ classes || '' }`} 
           layout={ layout }
@@ -71,7 +71,7 @@ const BaseIcon: React.FunctionComponent<Props> = (
     {
     right && 
     <Link href={ link as string }>
-      <div className={`${ column ? styles && styles.column : styles && styles.row }`}>
+      <div className={`${ column ? 'flex-col' : 'flex-row' } ${ styles && styles.iconBox || ''}`}>
         { children }
         <Image 
           className={`${ styles && styles.icon } ${ classes || '' }`} 
