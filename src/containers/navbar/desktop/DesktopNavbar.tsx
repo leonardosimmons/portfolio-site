@@ -6,12 +6,12 @@ import styles from './styles/Navbar.module.scss';
 import Container from '../../../components/container'
 import ContentBox from '../../../components/box';
 import Grid from '../../../components/grid';
-import Icon from '../../../components/icon/Icon';
-import NavbarNamedLink from '../../../components/link/NamedLink';
+import Icon from '../../../components/icon';
+import NavbarMenuTabs from '../../../components/link/NamedLink';
 
 
 type Props = {
-  config: DesktopNavbarConfiguration
+  config: DesktopNavbarConfiguration;
 };
 
 const DesktopNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element => {
@@ -30,16 +30,16 @@ const DesktopNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element 
           </ContentBox>
           <ContentBox styles={styles}>
             <Container styles={styles}>
-              {
-                config.tabs.map((tab: NamedLink, index: number) => (
-                  <NavbarNamedLink
-                    key={index} 
-                    name={tab.name}
-                    link={tab.link}
-                    styles={styles}
-                  />
-                ))
-              }
+            {
+              config.tabs.map((tab: NamedLink, index: number) => (
+                <NavbarMenuTabs
+                  key={index} 
+                  name={tab.name}
+                  link={tab.link}
+                  styles={styles}
+                />
+              ))
+            }
             </Container>
           </ContentBox>
         </Grid>
