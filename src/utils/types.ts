@@ -126,14 +126,6 @@ export type Input = {
   type?: "button" | "checkbox" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week";
 };
 
-export type Logo = Omit<Image, "src"|"alt"|"width"|"height"> & {
-  src?: string;
-  alt?: string;
-  width?: string;
-  height?: string;
-  index?: number;
-} 
-
 export type PageLink = {
   link: string;
   text?: string;
@@ -144,6 +136,11 @@ export type PageLink = {
 export type NamedLink = {
   name: string;
   link: string;
+};
+
+export type Styles = {
+  styles: any;
+  classes?: string;
 };
 
 export type Text = {
@@ -190,4 +187,10 @@ export type NavbarMenuTab = Icon & {
   name: string;
   id?: string;
   type?: string;
+};
+
+
+export type DesktopNavbarConfiguration = {
+  logo: Icon;
+  tabs: NamedLink[];
 };

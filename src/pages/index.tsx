@@ -15,6 +15,7 @@ function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.
       title={'Leonardo Simmons | Home'}
       classes={'relative'}
       styles={styles}
+      desktop={ config.nav.desktop }
     >
 
     </Layout>

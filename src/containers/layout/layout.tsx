@@ -8,7 +8,7 @@ import DesktopNavbar from '../navbar/desktop';
 type Props = {
   parent: string;
   title: string;
-  desktop?: any;
+  desktop: any;
   mobile?: any;
   styles: any;
   solid?: boolean;
@@ -46,7 +46,7 @@ const Layout: React.FunctionComponent<Props> = (
       <div id="modal-root" />
       <div id="app" className={`${ styles.page || '' } ${ classes }`}>
         <nav className={`${ styles.nav || '' } ${ parent ? parent + '__nav' : ''}`}>
-          { <DesktopNavbar /> }
+          { <DesktopNavbar config={ desktop }/> }
           {/* mobileNav || <MobileNavbar config={ m/*obile }/> */}
         </nav>
         { header && <header className={`${ styles.header || '' } ${ parent ? parent + '__header' : ''}`}>{ header }</header> }
