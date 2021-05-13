@@ -1,3 +1,4 @@
+
 import React from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -6,17 +7,16 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import styles from '../containers/pages/index/Index.module.scss';
 
 import Layout from '../containers/layout';
-import Container from '../components/container/Container';
+import Container from '../components/container';
 import FallbackPage from '../containers/pages/fallback';
 
 
 function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+  // -----------------------  FALLBACK  ------------------------ //
   const { isFallback } = useRouter();
 
   if(isFallback) {
-    return (
-      <FallbackPage />
-    );
+    return <FallbackPage />
   }
 
   return (
@@ -24,7 +24,7 @@ function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.
       title={'Leonardo Simmons | Home'}
       classes={'relative'}
       styles={styles}
-      desktop={ config.nav.desktop }
+      desktop={config.nav.desktop}
     >
       <Container main>
 
