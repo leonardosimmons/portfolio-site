@@ -8,6 +8,7 @@ import Container from '../../../components/container'
 import ContentBox from '../../../components/box';
 import Grid from '../../../components/grid';
 import Icon from '../../../components/icon';
+import Logo from '../../../components/logo/Logo';
 
 
 type Props = {
@@ -17,18 +18,18 @@ type Props = {
 
 const DesktopNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element => {
   return (
-    <Container wrapper styles={styles}>
+    <div className={styles.wrapper}>
       <Container main styles={styles}>
         <Grid even grid={styles.grid}>
-          <ContentBox styles={styles}>
-            <Icon 
+          <div id={'desktop-logo'} className={styles.box}>
+            <Logo 
               link={config.logo.link}
               src={config.logo.src}
               alt={config.logo.alt}
-              width={config.logo.width}
-              height={config.logo.height}
+              width={config.logo.width as string}
+              height={config.logo.height as string}
               styles={styles}/>
-          </ContentBox>
+          </div>
           <ContentBox styles={styles}>
             <Container styles={styles}>
             {
@@ -54,7 +55,7 @@ const DesktopNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element 
           </ContentBox>
         </Grid>
       </Container> 
-    </Container>
+    </div>
   );
 };
 

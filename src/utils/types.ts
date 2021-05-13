@@ -126,16 +126,24 @@ export type Input = {
   type?: "button" | "checkbox" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week";
 };
 
+export type Logo = Omit<Image, "src"|"alt"|"width"|"height"> & {
+  src?: string;
+  alt?: string;
+  width?: string;
+  height?: string;
+  index?: number;
+} & Omit<Text, "text"> & { text?: string };
+
+export type NamedLink = {
+  name: string;
+  link: string;
+};
+
 export type PageLink = {
   link: string;
   text?: string;
   name?: string;
   type?: string;
-};
-
-export type NamedLink = {
-  name: string;
-  link: string;
 };
 
 export type Styles = {
