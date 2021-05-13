@@ -11,7 +11,6 @@ function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.
   console.log(config);
   return (
     <Layout
-      parent={'home'}
       title={'Leonardo Simmons | Home'}
       classes={'relative'}
       styles={styles}

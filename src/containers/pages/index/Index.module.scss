@@ -1,10 +1,15 @@
 
-.page
-{
+.page {
   position: relative;
   margin: 0 auto;
 
   transition: all .5s;
+}
+
+.nav {
+  height: 90px;
+  width: 100%;
+  max-width: 216rem;
 }
 
 .navNotAtTop {

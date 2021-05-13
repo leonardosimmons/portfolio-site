@@ -3,15 +3,14 @@ import React from 'react';
 import { page } from '../../utils/keys';
 
 import DesktopNavbar from '../navbar/desktop';
+import MobileNavbar from '../navbar/mobile';
 
 
 type Props = {
-  parent: string;
   title: string;
   desktop: any;
   mobile?: any;
   styles: any;
-  solid?: boolean;
   classes?: string;
   desktopNav?: JSX.Element | HTMLElement;
   mobileNav?: JSX.Element | HTMLElement;
@@ -21,7 +20,6 @@ type Props = {
 
 const Layout: React.FunctionComponent<Props> = (
   { 
-    parent,
     title,
     desktopNav,
     desktop, 
@@ -31,7 +29,6 @@ const Layout: React.FunctionComponent<Props> = (
     footer,
     styles,
     classes,
-    solid,
     children 
   }
 ): JSX.Element => {
@@ -45,13 +42,13 @@ const Layout: React.FunctionComponent<Props> = (
       <div id="backdrop-root" />
       <div id="modal-root" />
       <div id="app" className={`${ styles.page || '' } ${ classes }`}>
-        <nav className={`${ styles.nav || '' } ${ parent ? parent + '__nav' : ''}`}>
-          { <DesktopNavbar config={ desktop }/> }
-          {/* mobileNav || <MobileNavbar config={ m/*obile }/> */}
+        <nav className={`${ styles.nav || '' }`}>
+          { desktopNav || <DesktopNavbar config={ desktop }/> }
+          { mobileNav || <MobileNavbar /> }
         </nav>
-        { header && <header className={`${ styles.header || '' } ${ parent ? parent + '__header' : ''}`}>{ header }</header> }
-        { children && <main className={`${ styles.main || '' } ${ parent ? parent + '__main' : ''}`}>{ children }</main> }
-        { footer && <footer className={`${ styles.footer || '' } ${ parent ? parent + '__footer' : ''}`}>{ footer }</footer> }
+        { header && <header className={`${ styles.header || '' }`}>{ header }</header> }
+        { children && <main className={`${ styles.main || '' }`}>{ children }</main> }
+        { footer && <footer className={`${ styles.footer || '' }`}>{ footer }</footer> }
         <div id="top-of-site-pixel-anchor" />
       </div>
     </React.Fragment>
