@@ -12,6 +12,11 @@
   max-width: 216rem;
 }
 
+.main {
+  height: 100%;
+  width: 100%;
+}
+
 .navNotAtTop {
   background-color: var(--black);
 }
@@ -19,4 +24,3 @@
 .hide {
   display: none;
 }
-

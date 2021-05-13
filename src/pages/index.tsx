@@ -1,14 +1,24 @@
 import React from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 import styles from '../containers/pages/index/Index.module.scss';
 
 import Layout from '../containers/layout';
+import Container from '../components/container/Container';
+import FallbackPage from '../containers/pages/fallback';
 
 
 function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
-  console.log(config);
+  const { isFallback } = useRouter();
+
+  if(isFallback) {
+    return (
+      <FallbackPage />
+    );
+  }
+
   return (
     <Layout
       title={'Leonardo Simmons | Home'}
@@ -16,7 +26,9 @@ function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.
       styles={styles}
       desktop={ config.nav.desktop }
     >
+      <Container main>
 
+      </Container>
     </Layout>
   );
 };
@@ -51,6 +63,7 @@ export const getStaticProps: GetStaticProps = async() => {
   return {
     props: {
       config: data
-    }
+    },
+    revalidate: 86400
   };
 };
