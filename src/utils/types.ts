@@ -190,6 +190,21 @@ export type Text = {
 };
 
 
+
+//** ----------------------  INDEX PAGE  ---------------------- **/
+export type IndexPageData = {
+
+};
+
+export type IndexPageStaticData = {
+  nav: {
+    desktop: DesktopNavbarConfiguration;
+    mobile: MobileNavbarConfiguration;
+  },
+  page: IndexPageData
+}
+
+
 //** --------------------  NAVIGATION BAR  -------------------- **//
 export type NavbarMenuTab = Image & NamedLink;
 

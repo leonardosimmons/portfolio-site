@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { IndexPageStaticData } from '../utils/types';
 
 import styles from '../containers/pages/index/Index.module.scss';
 
@@ -25,9 +26,9 @@ function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.
       classes={'relative'}
       styles={styles}
       desktop={config.nav.desktop}
-      mobile={config.nav.mobile}
+      mobile={config.nav.mobile} 
     >
-      <Container main>
+      <Container main styles={styles}>
 
       </Container>
     </Layout>
@@ -38,7 +39,7 @@ export default Index;
 
 
 export const getStaticProps: GetStaticProps = async() => {
-  const data = await axios.all([
+  const data: IndexPageStaticData | undefined = await axios.all([
     axios.get(process.env.NAVBAR_DESKTOP_API as string, {headers: {'Content-Type': 'application/json'}}),
     axios.get(process.env.NAVBAR_MOBILE_API as string, {headers: {'Content-Type': 'application/json'}}),
     axios.get(process.env.INDEX_PAGE_API as string, {headers: {'Content-Type': 'application/json'}}),
@@ -46,7 +47,7 @@ export const getStaticProps: GetStaticProps = async() => {
   .then(axios.spread((desktop, mobile, page) => {
     if (desktop.status === 200 && mobile.status === 200 && page.status === 200) 
     {
-      const dataToken = {
+      const dataToken: IndexPageStaticData = {
         nav: {
           desktop: desktop.data,
           mobile: mobile.data
@@ -63,7 +64,7 @@ export const getStaticProps: GetStaticProps = async() => {
 
   return {
     props: {
-      config: data
+      config: data as IndexPageStaticData
     },
     revalidate: 86400
   };
