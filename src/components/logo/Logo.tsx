@@ -3,6 +3,7 @@ import Link from 'next/link';
 import LogoImage from 'next/image';
 
 import { BaseOptions, Logo } from '../../utils/types';
+import React from 'react';
 
 
 type Props = Logo & BaseOptions;
@@ -35,17 +36,19 @@ const BaseLogo: React.FunctionComponent<Props> = (
           <a className={`${ styles && styles.logo } ${ parent ? parent + '--logo' : ''} ${ classes || '' }`}>{ text }</a>
           :
           src ?
-          <LogoImage
-            className={`${ styles && styles.logo } ${ parent ? parent + '--logo' : ''} ${ index && `${ parent ? parent + '--logo-' + index : '' }`} ${ classes }`} 
-            layout={ layout }
-            quality={ quality }
-            src={ src as string } 
-            alt={ alt as string } 
-            width={ width as string } 
-            height={ height as string }
-            priority={ priority }
-            loading={ loading }
-            loader={ loader } />
+          <React.Fragment>
+            <LogoImage
+              className={`${ styles && styles.logo } ${ parent ? parent + '--logo' : ''} ${ index && `${ parent ? parent + '--logo-' + index : '' }`} ${ classes }`} 
+              layout={ layout }
+              quality={ quality }
+              src={ src as string } 
+              alt={ alt as string } 
+              width={ width as string } 
+              height={ height as string }
+              priority={ priority }
+              loading={ loading }
+              loader={ loader } />
+          </React.Fragment>
           :
           children
         }

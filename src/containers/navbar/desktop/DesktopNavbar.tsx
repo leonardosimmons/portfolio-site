@@ -22,7 +22,7 @@ const DesktopNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element 
       <Container main styles={styles}>
         <Grid even grid={styles.grid}>
           <div id={'desktop-logo'} className={styles.box}>
-            <Logo 
+          <Logo 
               link={config.logo.link}
               src={config.logo.src}
               alt={config.logo.alt}
