@@ -25,6 +25,7 @@ function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.
       classes={'relative'}
       styles={styles}
       desktop={config.nav.desktop}
+      mobile={config.nav.mobile}
     >
       <Container main>
 

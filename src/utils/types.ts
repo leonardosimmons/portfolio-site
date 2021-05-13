@@ -147,7 +147,7 @@ export type PageLink = {
 };
 
 export type Styles = {
-  styles: any;
+  styles?: any;
   classes?: string;
 };
 
@@ -193,8 +193,12 @@ export type Text = {
 //** --------------------  NAVIGATION BAR  -------------------- **//
 export type NavbarMenuTab = Image & NamedLink;
 
-
 export type DesktopNavbarConfiguration = {
   logo: Icon;
   tabs: NavbarMenuTab[];
+};
+
+export type MobileNavbarConfiguration = {
+  logo: Icon;
+  tabs: NamedLink[];
 };

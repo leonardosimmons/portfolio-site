@@ -10,7 +10,7 @@ type Props = NamedLink & Styles;
 const namedLink: React.FunctionComponent<Props> = ({ name, link, styles, classes }): JSX.Element => {
   return (
     <Link href={link}>
-      <p className={`${ styles.namedLink } ${ classes ? classes : '' }`}>
+      <p className={`${ styles && styles.namedLink || ''} ${ classes ? classes : '' }`}>
         {name}
       </p> 
     </Link>

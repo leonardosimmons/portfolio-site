@@ -44,7 +44,7 @@ const Layout: React.FunctionComponent<Props> = (
       <div id="app" className={`${ styles.page || '' } ${ classes }`}>
         <nav className={`${ styles.nav || '' }`}>
           { desktopNav || <DesktopNavbar config={ desktop }/> }
-          { mobileNav || <MobileNavbar /> }
+          { mobileNav || <MobileNavbar config={ mobile }/> }
         </nav>
         { header && <header className={`${ styles.header || '' }`}>{ header }</header> }
         { children && <main className={`${ styles.main || '' }`}>{ children }</main> }

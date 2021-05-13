@@ -6,9 +6,11 @@
   display: flex;
   position: fixed;
 
+  z-index: 200;
+
 
   color: var(--white);
-  background-color: var(--black);
+  background-color: var(--dark-grey-900);
 }
 
 .grid {

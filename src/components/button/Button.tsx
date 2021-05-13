@@ -11,7 +11,6 @@ type Props = {
 
 const Button: React.FunctionComponent<Props> = (
   { 
-    parent, 
     link, 
     text,
     type, 
