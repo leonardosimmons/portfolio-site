@@ -1,0 +1,49 @@
+
+.wrapper {
+  height: 70px;
+  width: 100%;
+
+  display: flex;
+  position: fixed;
+
+
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.grid {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  & > *:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 1.25rem;
+  }
+
+  & > *:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    justify-content: flex-end;
+
+    padding: 1.25rem;
+  }
+}
+
+
+.contentBox {
+  height: 100%;
+  width: 100%;
+}
+
+
+@media only screen and (min-width: 64em) {
+  .wrapper {
+    display: none;
+  }
+}
