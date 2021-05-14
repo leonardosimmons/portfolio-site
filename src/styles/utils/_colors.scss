@@ -1,3 +1,34 @@
+//* PRIMARY
+.primary-light { color: var(--primary-light); }
+.primary-base { color: var(--primary-base); }
+.primary-dark { color: var(--primary-dark); }
+
+.bgColor-primary-light { background-color: var(--primary-light); }
+.bgColor-primary-base { background-color: var(--primary-base); }
+.bgColor-primary-dark { background-color: var(--primary-dark); }
+
+//* SECONDARY
+.secondary-light { color: var(--secondary-light); }
+.secondary-base { color: var(--secondary-base); }
+.secondary-dark { color: var(--secondary-dark); }
+
+.bgColor-secondary-light { background-color: var(--secondary-light); }
+.bgColor-secondary-base { background-color: var(--secondary-base); }
+.bgColor-secondary-dark { background-color: var(--secondary-dark); }
+
+//* TERTIARY
+.tertiary-light { color: var(--tertiary-light); }
+.tertiary-base { color: var(--tertiary-base); }
+.tertiary-dark { color: var(--tertiary-dark); }
+
+.bgColor-tertiary-light { background-color: var(--tertiary-light); }
+.bgColor-tertiary-base { background-color: var(--tertiary-base); }
+.bgColor-tertiary-dark { background-color: var(--tertiary-dark); }
+
+
+//* BLUE
+.blue-base { color: var(--blue-base); }
+
 //* GREY
 .grey-lightest { color: var(--grey-lightest); }
 .grey-lighter { color: var(--grey-lighter); }
