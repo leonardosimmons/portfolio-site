@@ -1,7 +1,6 @@
 
 import React from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/router';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { IndexPageStaticData } from '../utils/types';
 
@@ -9,27 +8,26 @@ import styles from '../containers/pages/index/Index.module.scss';
 
 import Layout from '../containers/layout';
 import Container from '../components/container';
-import FallbackPage from '../containers/pages/fallback';
+import IndexMainHeader from '../containers/pages/index/header/MainHeader';
 
 
 function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
-  // -----------------------  FALLBACK  ------------------------ //
-  const { isFallback } = useRouter();
-
-  if(isFallback) {
-    return <FallbackPage />
-  }
-
   return (
     <Layout
       title={'Leonardo Simmons | Home'}
       classes={'relative'}
       styles={styles}
       desktop={config.nav.desktop}
-      mobile={config.nav.mobile} 
+      mobile={config.nav.mobile}
+      header={
+        <IndexMainHeader 
+          classes={'relative'}
+          headers={config.page.mainHeader}
+        />
+      } 
     >
       <Container main styles={styles}>
-
+        
       </Container>
     </Layout>
   );
@@ -65,7 +63,6 @@ export const getStaticProps: GetStaticProps = async() => {
   return {
     props: {
       config: data as IndexPageStaticData
-    },
-    revalidate: 86400
+    }
   };
 };

@@ -85,8 +85,8 @@ export type Grid = {
 
 export type Heading = Text & {
   btn?: Button;
-  textAbove?: string;
-  textBelow?: string;
+  textAbove?: string | JSX.Element | HTMLElement;
+  textBelow?: string | JSX.Element | HTMLElement;
 };
 
 export type Header = Heading & {
@@ -193,16 +193,13 @@ export type Text = {
 
 //** ----------------------  INDEX PAGE  ---------------------- **/
 export type IndexPageData = {
-
+  mainHeader: Header[];
 };
 
 export type IndexPageStaticData = {
-  nav: {
-    desktop: DesktopNavbarConfiguration;
-    mobile: MobileNavbarConfiguration;
-  },
-  page: IndexPageData
-}
+  nav: NavbarConfiguration;
+  page: IndexPageData;
+};
 
 
 //** --------------------  NAVIGATION BAR  -------------------- **//
@@ -216,4 +213,9 @@ export type DesktopNavbarConfiguration = {
 export type MobileNavbarConfiguration = {
   logo: Icon;
   tabs: NamedLink[];
+};
+
+export type NavbarConfiguration = {
+  desktop: DesktopNavbarConfiguration;
+  mobile: MobileNavbarConfiguration;
 };

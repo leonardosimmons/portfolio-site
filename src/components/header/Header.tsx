@@ -16,7 +16,7 @@ type Props = {
 
 const BaseHeader: React.FunctionComponent<Props> = ({ config, styles, type }): JSX.Element => {
   return (
-    <div id={ config.id } className={`${ baseStyles.wrapper } ${ styles.wrapper && styles.wrapper }`} style={{ backgroundImage: `${ config.bgImage ? 'url(' + config.bgImage + ')' : '' }`}}>
+    <div id={ config.id ? config.id : ''} className={`${ baseStyles.wrapper } ${ styles.wrapper && styles.wrapper || '' }`} style={{ backgroundImage: `${ config.bgImage ? 'url(' + config.bgImage + ')' : '' }`}}>
       <Container main styles={ styles } video={ config.video && config.video } classes={ baseStyles.mainContainer }>
         <Heading
           main={ type === 'main' ? true : false  }

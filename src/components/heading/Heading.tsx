@@ -36,7 +36,7 @@ const BaseHeading: React.FunctionComponent<Props> = (
             textAbove &&
             <TextBox 
               styles={ styles }
-              textOne={ textAbove }
+              spanOne={ textAbove }
             />
           }
           {
@@ -61,7 +61,7 @@ const BaseHeading: React.FunctionComponent<Props> = (
             textBelow &&
             <TextBox 
               styles={ styles }
-              textTwo={ textBelow }
+              spanTwo={ textBelow }
             />
           }
         </React.Fragment>
