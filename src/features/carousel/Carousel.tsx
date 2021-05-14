@@ -16,6 +16,9 @@ type Props = {
   height?: number;
   arrows?: boolean;
   dots?: boolean;
+  arrowColor?: any;
+  arrowBgColor?: any;
+  dotColor?: any;
 };
 
 const initialState: CarouselContext = {
@@ -36,7 +39,10 @@ const Carousel: React.FunctionComponent<Props> = (
     classes,
     height,
     arrows,
-    dots, 
+    dots,
+    arrowColor,
+    arrowBgColor,
+    dotColor, 
     children 
   }
 ):JSX.Element => {
@@ -167,8 +173,18 @@ const Carousel: React.FunctionComponent<Props> = (
         {
           arrows &&
           <>
-            <Arrow direction={ direction.LEFT } index={ context.activeIndex } clicked={ prevSlide } bgColor={'red'}/>
-            <Arrow direction={ direction.RIGHT } index={ context.activeIndex } clicked={ nextSlide }/>
+            <Arrow 
+              direction={ direction.LEFT } 
+              index={ context.activeIndex } 
+              clicked={ prevSlide } 
+              color={arrowColor ? arrowColor : ''} 
+              bgColor={arrowBgColor ? arrowBgColor : ''}/>
+            <Arrow 
+              direction={ direction.RIGHT } 
+              index={ context.activeIndex } 
+              clicked={ nextSlide }
+              color={arrowColor ? arrowColor : ''}
+              bgColor={arrowBgColor ? arrowBgColor : ''}/>
           </>
         }
         {
