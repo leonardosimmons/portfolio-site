@@ -21,6 +21,7 @@ function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.
       mobile={config.nav.mobile}
       header={
         <IndexMainHeader 
+          autoplayLength={0}
           classes={'relative'}
           headers={config.page.mainHeader}
         />

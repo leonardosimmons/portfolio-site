@@ -9,6 +9,7 @@ type Props = {
   direction: string;
   clicked: () => void;
   index?: number;
+  color?: string;
   bgColor?: string;
 };
 
@@ -23,7 +24,7 @@ const initArrow: Arrow = {
 };
 
 
-const CarouselArrow: React.FunctionComponent<Props> = ({ direction, clicked, bgColor, index }): JSX.Element => {
+const CarouselArrow: React.FunctionComponent<Props> = ({ direction, clicked, color, bgColor, index }): JSX.Element => {
   const [ arrow, setArrow ] = React.useState<Arrow>(initArrow);
 
     
@@ -32,6 +33,7 @@ const CarouselArrow: React.FunctionComponent<Props> = ({ direction, clicked, bgC
   {
     const arrowStyles = {
       container: {
+        color: `${color || 'white'}`,
         backgroundColor: `${ bgColor || 'transparent' }`,
         right: `${ direction === key.RIGHT ? '25px' : '' }`,
         left: `${ direction === key.LEFT ? '25px' : '' }`

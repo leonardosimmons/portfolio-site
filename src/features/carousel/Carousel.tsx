@@ -167,7 +167,7 @@ const Carousel: React.FunctionComponent<Props> = (
         {
           arrows &&
           <>
-            <Arrow direction={ direction.LEFT } index={ context.activeIndex } clicked={ prevSlide }/>
+            <Arrow direction={ direction.LEFT } index={ context.activeIndex } clicked={ prevSlide } bgColor={'red'}/>
             <Arrow direction={ direction.RIGHT } index={ context.activeIndex } clicked={ nextSlide }/>
           </>
         }
