@@ -1,6 +1,6 @@
 
 .wrapper {
-  height: 650px;
+  height: 725px;
   width: 100%;
   max-width: 100%;
 
@@ -26,4 +26,22 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+@media only screen and (min-width: 23em) { // 368px
+  .wrapper {
+    height: 85vh;
+  }
+}
+
+@media only screen and (min-width: 48em) { // 768px
+  .wrapper {
+    height: 90vh;
+  }
 }
