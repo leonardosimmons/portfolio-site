@@ -1,22 +1,30 @@
 
 .wrapper {
-  background-position: right center;
-}
-
-.contentBox {
-
+  background-position: 50% 80%;
 }
 
 .box {
-
+  
+  background-color: orangered;
 }
 
 .heading {
+  display: flex;
+  flex-direction: column;
 
+  padding: 1rem;
+
+  & > *:nth-child(1) {
+    font-size: 1.8rem;
+  }
+
+  & > *:nth-child(2) {
+    font-size: 3rem;
+  }
 }
 
 .body {
-
+  font-size: 1.6rem;
 }
 
 .btn {

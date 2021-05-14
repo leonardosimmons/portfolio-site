@@ -70,6 +70,7 @@ export type Direction = {
 export type Dot = {
   active: boolean;
   index: number;
+  parent?: string;
 };
 
 export type Grid = {

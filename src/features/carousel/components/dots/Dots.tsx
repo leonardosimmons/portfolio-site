@@ -1,24 +1,29 @@
 
 import React from 'react';
 import { Dot } from '../../../../utils/types';
+import * as background from '../../config';
 
 import styles from './Dots.module.scss';
 
 type Props = {
   slides: any[];
   activeIndex: number;
+  parent: string;
 };
 
-const CarouselDot: React.FunctionComponent<Dot> = ({ active, index }): JSX.Element => {
+const CarouselDot: React.FunctionComponent<Dot> = ({ active, index, parent }): JSX.Element => {
   return (
     <span style={{
-      background: `${ active ? index === 1 ? 'var(--grey-900)' : 'var(--grey-900)'  : 'var(--black)' }`
-      }} 
+      background: `${
+        parent === 'home' ? background.index(active, index) 
+        : 
+        background.base(active, index)
+      }`}} 
     />
   );
 };
 
-const CarouselDots: React.FunctionComponent<Props> = ({ slides, activeIndex }): JSX.Element => {
+const CarouselDots: React.FunctionComponent<Props> = ({ slides, activeIndex, parent }): JSX.Element => {
   return(
     <div className={ styles.dots }>
       {
@@ -26,7 +31,8 @@ const CarouselDots: React.FunctionComponent<Props> = ({ slides, activeIndex }): 
           <CarouselDot 
             key={ slide }
             index={ activeIndex }
-            active={ activeIndex === index } 
+            active={ activeIndex === index }
+            parent={ parent ? parent : ''} 
           />
         ))
       }

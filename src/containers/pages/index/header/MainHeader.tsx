@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { page } from '../../../../utils/keys';
 import { Header } from '../../../../utils/types';
 
 import baseStyles from './Base.module.scss';
@@ -37,11 +38,11 @@ const IndexMainHeader: React.FunctionComponent<Props> = (
 ): JSX.Element => {
   return (
     <Carousel
+      parent={page.HOME}
       classes={classes}
       arrows={arrows}
       dots={dots}
-      autoPlay={autoplayLength}
-      arrowColor={'var(--grey-900)'}>
+      autoPlay={autoplayLength}>
     {
       headers.map((header: Header, index: number) => (
         <div className={`${baseStyles.wrapper} ${styles[index].wrapper || ''}`} style={{ backgroundImage: `${'url(' + header.bgImage + ')'}`}} key={index}>

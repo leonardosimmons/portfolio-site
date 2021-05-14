@@ -9,6 +9,7 @@ import Arrow from './components/arrows';
 import CarouselDots from './components/dots/Dots';
 
 type Props = {
+  parent?: string;
   autoPlay?: number;
   slides?: [];
   styles?: any;
@@ -18,7 +19,6 @@ type Props = {
   dots?: boolean;
   arrowColor?: any;
   arrowBgColor?: any;
-  dotColor?: any;
 };
 
 const initialState: CarouselContext = {
@@ -40,9 +40,9 @@ const Carousel: React.FunctionComponent<Props> = (
     height,
     arrows,
     dots,
-    arrowColor,
-    arrowBgColor,
-    dotColor, 
+    arrowColor = 'var(--grey-900)',
+    arrowBgColor = 'transparent',
+    parent = 'base',
     children 
   }
 ):JSX.Element => {
@@ -189,7 +189,8 @@ const Carousel: React.FunctionComponent<Props> = (
         }
         {
           dots &&
-          <CarouselDots 
+          <CarouselDots
+            parent={ parent && parent} 
             slides={ context.dotCount }
             activeIndex={ context.activeIndex }
           />
