@@ -54,7 +54,6 @@ const mobileNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element =
                   config.tabs.map((tab: NamedLink, index: number) => (
                     <MenuLink
                       key={index}
-                      styles={styles} 
                       name={tab.name} 
                       link={tab.link}
                     />
