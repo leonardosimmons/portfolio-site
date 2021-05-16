@@ -7,7 +7,7 @@ import { IndexPageStaticData } from '../utils/types';
 import styles from '../containers/pages/index/Index.module.scss';
 
 import Layout from '../containers/layout';
-import Container from '../components/container';
+import Container from '../components/base/container';
 import IndexMainHeader from '../containers/pages/index/header/MainHeader';
 import SectionOne from '../containers/pages/index/section/one';
 

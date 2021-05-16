@@ -3,8 +3,8 @@ import React from 'react';
 import { Heading } from '../../utils/types';
 
 import Box from '../base/box';
-import TextBox from '../text';
-import Button from '../button';
+import TextBox from '../base/text';
+import Button from '../base/button';
 
 
 type Props = Heading & {

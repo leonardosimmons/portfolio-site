@@ -4,11 +4,11 @@ import { DesktopNavbarConfiguration, NavbarMenuTab } from '../../../utils/types'
 import styles from './Navbar.module.scss';
 import tabStyles from './MenuTabs.module.scss';
 
-import Container from '../../../components/container'
+import Container from '../../../components/base/container'
 import Box from '../../../components/base/box';
-import Grid from '../../../components/grid';
+import Grid from '../../../components/base/grid';
 import Icon from '../../../components/icon';
-import Logo from '../../../components/logo/Logo';
+import Logo from '../../../components/logo';
 
 
 type Props = {

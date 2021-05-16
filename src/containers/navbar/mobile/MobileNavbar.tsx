@@ -8,11 +8,11 @@ import tabStyles from './Tabs.module.scss';
 import menuStyles from './Menu.module.scss';
 
 import Box from '../../../components/base/box';
-import Container from '../../../components/container';
-import Grid from '../../../components/grid';
-import Input from '../../../components/input';
+import Container from '../../../components/base/container';
+import Grid from '../../../components/base/grid';
+import Input from '../../../components/base/input';
 import Logo from '../../../components/logo';
-import Button from '../../../components/button';
+import Button from '../../../components/base/button';
 import MenuLink from '../../../components/link/NamedLink';
 
 

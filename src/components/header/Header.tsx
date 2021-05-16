@@ -4,7 +4,7 @@ import React from 'react';
 import baseStyles from './BaseHeader.module.scss';
 
 import Heading from '../../components/heading';
-import Container from '../../components/container';
+import Container from '../base/container';
 import { Header } from '../../utils/types';
 
 
