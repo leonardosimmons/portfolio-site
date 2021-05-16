@@ -45,7 +45,9 @@ const IndexMainHeader: React.FunctionComponent<Props> = (
       autoPlay={autoplayLength}>
     {
       headers.map((header: Header, index: number) => (
-        <div className={`${baseStyles.wrapper} ${styles[index].wrapper || ''}`} style={{ backgroundImage: `${'url(' + header.bgImage + ')'}`}} key={index}>
+        <div key={index}
+          className={`${baseStyles.wrapper} ${styles[index].wrapper || ''}`} 
+          style={{ backgroundImage: `${'url(' + header.bgImage + ')'}`}}>
           <BaseHeading
             styles={baseStyles}
             classes={styles[index].box}
@@ -56,6 +58,7 @@ const IndexMainHeader: React.FunctionComponent<Props> = (
             </h1>
             <p className={styles[index].body}>{header.textBelow}</p>
           </BaseHeading>
+          <div className={styles[index].spacerBox} />
         </div>
       ))
     }

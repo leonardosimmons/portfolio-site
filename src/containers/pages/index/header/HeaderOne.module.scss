@@ -1,4 +1,5 @@
 
+//* 280px
 .wrapper {
   background-position: 50% 80%;
 
@@ -47,7 +48,12 @@
   font-size: 1.6rem;
 }
 
-@media only screen and (min-width: 33em) { // 528px
+.spacerBox {
+  display: none;
+}
+
+//* 528px
+@media only screen and (min-width: 33em) {
   .wrapper {
     background-position: 50% 100%;
   }
@@ -70,7 +76,8 @@
   }
 }
 
-@media only screen and (min-width: 48em) { // 768px
+//* 768px
+@media only screen and (min-width: 48em) {
   .box {
     & > button {
       font-size: 2rem;
@@ -93,3 +100,96 @@
     font-size: 2.25rem;
   }
 }
+
+//* 1024px
+@media only screen and (min-width: 64em) {
+  .wrapper {
+    height: 650px;
+    width: 100%;
+    
+    justify-content: flex-start;
+
+    background-position: 145% 50%;
+
+  }
+
+  .box {
+    flex: 0 1 62.5%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-left: 10rem;
+  
+    & > button {
+      margin-left: 1.5rem;
+      font-weight: 400;
+    }
+  }
+
+  .heading {
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+
+    & > *:nth-child(1) {
+      font-size: 2.5rem;
+    }
+    & > *:nth-child(2) {
+      font-size: 6rem;
+    }
+  }
+
+  .body {
+    width: 70%;
+    text-align: left;
+    padding: 1rem 1.5rem;
+
+    font-size: 1.8rem;
+  }
+
+  .spacerBox {
+    flex: 1 1;
+  }
+}
+
+//* 1280px
+@media only screen and (min-width: 80em) {
+  .wrapper {
+    background-position: right center;
+  }
+
+  .box {
+    flex: 0 1 60%;
+  }
+}
+
+//* 1392px
+@media only screen and (min-width: 87em) {
+  .box {
+    flex: 0 1 55%;
+    margin-left: 11rem;
+  }
+}
+
+//* 1536px
+@media only screen and (min-width: 96em) {
+  .box {
+    flex: 0 1 45%;
+    margin-left: 16rem;
+  }
+}
+
+//* 1760px
+@media only screen and (min-width: 110em) {
+  .box {
+    margin-left: 20rem;
+  }
+
+  .body {
+    width: 57.5%;
+  }
+}
+
