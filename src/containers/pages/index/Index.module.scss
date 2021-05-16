@@ -9,7 +9,6 @@
 .nav {
   height: 70px;
   width: 100%;
-  max-width: 216rem;
 }
 
 .main {
@@ -17,8 +16,9 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 64em) { // 1024px
+@media only screen and (max-width: 64em) { // 1024px
   .nav {
-    height: 90px;
+    height: 100%;
+    max-width: 216rem;
   }
 }

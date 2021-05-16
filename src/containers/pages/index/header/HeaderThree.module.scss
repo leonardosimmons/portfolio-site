@@ -107,7 +107,7 @@
     
     justify-content: flex-start;
 
-    background-position: 80% 50%;
+    background-position: 85% 50%;
     background-size: 35%;
   }
 
@@ -155,10 +155,6 @@
 
 //* 1280px
 @media only screen and (min-width: 80em) {
-  .wrapper {
-    background-position: 85% 50%;
-  }
-
   .box {
     flex: 0 1 60%;
   }
