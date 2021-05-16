@@ -9,7 +9,7 @@
   align-items: flex-start;
 }
 
-.box {
+.headingBox {
   & > button {
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -57,7 +57,7 @@
     background-position: 50% 100%;
   }
   
-  .box {
+  .headingBox {
     width: 90%;
   }
 
@@ -112,7 +112,7 @@
     background-size: 35%;
   }
 
-  .box {
+  .headingBox {
     flex: 0 1 65%;
     height: 90%;
     display: flex;
@@ -156,14 +156,14 @@
 
 //* 1280px
 @media only screen and (min-width: 80em) {
-  .box {
+  .headingBox {
     flex: 0 1 60%;
   }
 }
 
 //* 1392px
 @media only screen and (min-width: 87em) {
-  .box {
+  .headingBox {
     flex: 0 1 55%;
     margin-left: 11rem;
   }
@@ -171,7 +171,7 @@
 
 //* 1536px
 @media only screen and (min-width: 96em) {
-  .box {
+  .headingBox {
     flex: 0 1 45%;
     margin-left: 16rem;
   }
@@ -179,7 +179,7 @@
 
 //* 1760px
 @media only screen and (min-width: 110em) {
-  .box {
+  .headingBox {
     margin-left: 20rem;
   }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import ContentBox from '../box';
+import Box from '../base/box';
 import Image from 'next/image';
 
 import { Icon, BaseOptions } from '../../utils/types';
@@ -30,7 +30,7 @@ const BaseIcon: React.FunctionComponent<Props> = (
   }
 ): JSX.Element => {
   return (
-    <ContentBox styles={ styles && styles } index={ index as number } key={ index }>
+    <Box styles={ styles && styles } index={ index as number } key={ index }>
     {
     left && 
     <Link href={ link as string }>
@@ -87,7 +87,7 @@ const BaseIcon: React.FunctionComponent<Props> = (
       </div>
     </Link>
     }
-    </ContentBox>
+    </Box>
   );
 };
 

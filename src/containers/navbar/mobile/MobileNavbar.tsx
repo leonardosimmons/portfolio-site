@@ -7,7 +7,7 @@ import styles from './Mobile.module.scss';
 import tabStyles from './Tabs.module.scss';
 import menuStyles from './Menu.module.scss';
 
-import ContentBox from '../../../components/box';
+import Box from '../../../components/base/box';
 import Container from '../../../components/container';
 import Grid from '../../../components/grid';
 import Input from '../../../components/input';
@@ -25,8 +25,8 @@ const mobileNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element =
   return (
     <div className={`${styles.wrapper} noselect`}>
       <Grid even grid={styles.grid}>
-        <ContentBox styles={styles} />
-        <ContentBox styles={styles}>
+        <Box styles={styles} />
+        <Box styles={styles}>
           <Logo 
             link={config.logo.link}
             src={config.logo.src}
@@ -34,8 +34,8 @@ const mobileNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element =
             width={config.logo.width as string}
             height={config.logo.height as string}
           />
-        </ContentBox>
-        <ContentBox styles={styles}>
+        </Box>
+        <Box styles={styles}>
           <Input 
             toggle
             styles={tabStyles}
@@ -63,7 +63,7 @@ const mobileNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element =
               </Container>
             </Container>
           </div>
-        </ContentBox>
+        </Box>
       </Grid>
     </div>
   );

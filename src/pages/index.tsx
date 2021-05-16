@@ -9,26 +9,27 @@ import styles from '../containers/pages/index/Index.module.scss';
 import Layout from '../containers/layout';
 import Container from '../components/container';
 import IndexMainHeader from '../containers/pages/index/header/MainHeader';
+import SectionOne from '../containers/pages/index/section/one';
 
 
-function Index({ config }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   return (
     <Layout
-      title={'Leonardo Simmons | Home'}
+      title={data.page.title}
       classes={'relative'}
       styles={styles}
-      desktop={config.nav.desktop}
-      mobile={config.nav.mobile}
+      desktop={data.nav.desktop}
+      mobile={data.nav.mobile}
       header={
         <IndexMainHeader 
-          autoplayLength={0}
+          autoplayLength={10}
           classes={'relative'}
-          headers={config.page.mainHeader}
+          headers={data.page.mainHeader}
         />
       } 
     >
       <Container main styles={styles}>
-        
+        <SectionOne />
       </Container>
     </Layout>
   );
@@ -63,7 +64,7 @@ export const getStaticProps: GetStaticProps = async() => {
 
   return {
     props: {
-      config: data as IndexPageStaticData
+      data: data as IndexPageStaticData
     }
   };
 };

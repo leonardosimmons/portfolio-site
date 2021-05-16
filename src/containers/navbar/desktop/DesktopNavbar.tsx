@@ -5,7 +5,7 @@ import styles from './Navbar.module.scss';
 import tabStyles from './MenuTabs.module.scss';
 
 import Container from '../../../components/container'
-import ContentBox from '../../../components/box';
+import Box from '../../../components/base/box';
 import Grid from '../../../components/grid';
 import Icon from '../../../components/icon';
 import Logo from '../../../components/logo/Logo';
@@ -31,7 +31,7 @@ const DesktopNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element 
               styles={styles}
             />
           </div>
-          <ContentBox styles={styles}>
+          <Box styles={styles}>
             <Container styles={styles}>
             {
               config.tabs.map((tab: NavbarMenuTab, index: number) => (
@@ -53,7 +53,7 @@ const DesktopNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element 
               ))
             }
             </Container>
-          </ContentBox>
+          </Box>
         </Grid>
       </Container> 
     </div>

@@ -6,6 +6,7 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
 {
   res.status(200).json(
     {
+      title: 'Leonardo Simmons | Home',
       mainHeader: 
       [
         {

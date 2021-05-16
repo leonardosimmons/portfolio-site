@@ -194,6 +194,7 @@ export type Text = {
 
 //** ----------------------  INDEX PAGE  ---------------------- **/
 export type IndexPageData = {
+  title: string;
   mainHeader: Header[];
 };
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Heading } from '../../utils/types';
 
-import ContentBox from '../box/ContentBox';
+import Box from '../base/box';
 import TextBox from '../text';
 import Button from '../button';
 
@@ -29,7 +29,7 @@ const BaseHeading: React.FunctionComponent<Props> = (
   }
 ): JSX.Element => {
   return (
-    <ContentBox styles={ styles && styles } classes={ classes && classes }>
+    <Box styles={ styles && styles } classes={ classes && classes }>
       { children ||
         <React.Fragment>
           {
@@ -75,7 +75,7 @@ const BaseHeading: React.FunctionComponent<Props> = (
           classes={`relative ${ btn.classes ? btn.classes : 'btn-hoverConfig btn-activeFocus'}`}
         />
       }
-    </ContentBox>
+    </Box>
   );
 };
 

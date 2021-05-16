@@ -50,7 +50,7 @@ const IndexMainHeader: React.FunctionComponent<Props> = (
           style={{ backgroundImage: `${'url(' + header.bgImage + ')'}`}}>
           <BaseHeading
             styles={baseStyles}
-            classes={styles[index].box}
+            classes={styles[index].headingBox}
             btn={header.btn}>
             <h1 className={styles[index].heading}>
               <span>{header.textAbove}</span>
