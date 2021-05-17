@@ -22,7 +22,7 @@ function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.El
       mobile={data.nav.mobile}
       header={
         <IndexMainHeader 
-          autoplayLength={10}
+          autoplayLength={5}
           classes={'relative'}
           headers={data.page.mainHeader}
         />

@@ -29,7 +29,7 @@ const BaseHeading: React.FunctionComponent<Props> = (
   }
 ): JSX.Element => {
   return (
-    <Box styles={ styles && styles } classes={ classes && classes }>
+    <Box styles={ styles && styles || '' } classes={ classes && classes || '' }>
       { children ||
         <React.Fragment>
           {
