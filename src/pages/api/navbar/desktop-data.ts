@@ -14,7 +14,7 @@ export default function desktopData(_: NextApiRequest, res: NextApiResponse<Desk
         height: 75
       },
       tabs: [
-        { name: 'Services', link: '/under-construction', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 },
+        // { name: 'Services', link: '/under-construction', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 },
         { name: 'About', link: '/under-construction', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 },
         { name: 'Portfolio', link: '/under-construction', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 },
         { name: 'Contact Me', link: '/under-construction', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 }
