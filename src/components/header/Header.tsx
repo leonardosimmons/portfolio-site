@@ -1,11 +1,11 @@
 
 import React from 'react';
+import { Header } from '../../utils/types';
 
 import baseStyles from './BaseHeader.module.scss';
 
-import Heading from '../../components/heading';
+import Heading from '../heading';
 import Container from '../base/container';
-import { Header } from '../../utils/types';
 
 
 type Props = {

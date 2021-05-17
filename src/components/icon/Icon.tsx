@@ -1,7 +1,8 @@
+
 import React from 'react';
 import Link from 'next/link';
-import Box from '../base/box';
 import Image from 'next/image';
+import Box from '../base/box';
 
 import { Icon, BaseOptions } from '../../utils/types';
 

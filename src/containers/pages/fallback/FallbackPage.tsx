@@ -3,7 +3,7 @@ import React from 'react';
 
 import styles from './Fallback.module.scss';
 
-import LoadSpinner from '../../../components/loader/spinner/LoadSpinner';
+import LoadSpinner from '../../../components/custom/loader/spinner';
 
 const fallbackPage: React.FunctionComponent = (): JSX.Element => {
   return (

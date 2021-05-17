@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import LogoImage from 'next/image';
 
-import { BaseOptions, Logo } from '../../utils/types';
+import { BaseOptions, Logo } from '../../../utils/types';
 import React from 'react';
 
 

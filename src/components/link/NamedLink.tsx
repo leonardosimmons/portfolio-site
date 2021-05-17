@@ -1,7 +1,7 @@
 
-import Link from 'next/link';
 import React from 'react';
-import { NamedLink, Styles } from '../../utils/types';
+import Link from 'next/link';
+import { NamedLink, Styles } from '../../../utils/types';
 
 
 type Props = NamedLink & Styles;
