@@ -2,11 +2,11 @@
 import React from 'react';
 import Image from 'next/image';
 
+import styles from './SectionOne.module.scss';
+
 import Container from '../../../../../components/base/container';
 import BaseGrid from '../../../../../components/base/grid';
-
-import styles from './SectionOne.module.scss';
-import BaseHeading from '../../../../../components/heading/Heading';
+import BaseHeading from '../../../../../components/heading';
 
 
 type Props = {
