@@ -40,7 +40,7 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
           bgImage: '/images/svg/undraw_two_factor_authentication_namyy.svg'
         },
       ],
-      sectionOne: {
+      about: {
         images: 
         [
           { src: '/images/svg/undraw_server_cluster_jwwq.svg', alt: 'photo' },
@@ -54,7 +54,7 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
         },
         body: 'Hello there! My name is Leonardo Simmons and I am a Full Stack Web Developer and Software Engineer. I specialize in building completely custom websites and applications.'
       },
-      missionStatement: {
+      mission: {
         heading: 'Mission Statement',
         text: {
           blockOne: 'Meet goals through not only concise and scalable code but productive communication to ensure the end product is exactly as envisioned.',

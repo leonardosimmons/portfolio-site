@@ -192,7 +192,7 @@ export type Text = {
 
 
 //** ----------------------  INDEX PAGE  ---------------------- **/
-export type IndexPageSectionOne = {
+export type IndexPageAboutSection = {
   images: Image[];
   heading: {
     lineOne: string;
@@ -214,8 +214,8 @@ export type IndexPageMissionStatement = {
 export type IndexPageData = {
   title: string;
   mainHeader: Header[];
-  sectionOne: IndexPageSectionOne;
-  missionStatement: IndexPageMissionStatement;
+  about: IndexPageAboutSection;
+  mission: IndexPageMissionStatement;
 };
 
 export type IndexPageStaticData = {

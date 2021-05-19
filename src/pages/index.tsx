@@ -9,7 +9,7 @@ import styles from '../containers/pages/index/Index.module.scss';
 import Layout from '../containers/layout';
 import Container from '../components/base/container';
 import IndexMainHeader from '../containers/pages/index/header';
-import SectionOne from '../containers/pages/index/section/one';
+import AboutSection from '../containers/pages/index/section/about';
 import MissionStatement from '../containers/pages/index/section/mission-statement';
 
 
@@ -30,8 +30,8 @@ function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.El
       } 
     >
       <Container main styles={styles}>
-        <SectionOne data={data.page.sectionOne}/>
-        <MissionStatement data={data.page.missionStatement}/> 
+        <AboutSection data={data.page.about}/>
+        <MissionStatement data={data.page.mission}/> 
       </Container>
     </Layout>
   );
