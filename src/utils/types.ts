@@ -102,13 +102,13 @@ export type Icon = Image & Direction & PageLink;
 export type Image = {
   src: string;
   alt: string;
-  width: string | number;
-  height: string | number;
+  width?: string | number;
+  height?: string | number;
   sizes?: string;
   quality?: number;
   priority?: boolean;
   loading?: 'lazy' | 'eager';
-  layout?: 'fixed' | 'intrinsic' | 'responsive' | undefined;
+  layout?: 'fill' | 'fixed' | 'intrinsic' | 'responsive' | undefined;
   objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
   loader?: ImageLoader;
 };
@@ -191,11 +191,31 @@ export type Text = {
 };
 
 
-
 //** ----------------------  INDEX PAGE  ---------------------- **/
+export type IndexPageSectionOne = {
+  images: Image[];
+  heading: {
+    lineOne: string;
+    lineTwo: string;
+    lineThree: string;
+    lineFour: string;
+  };
+  body: string;
+};
+
+export type IndexPageMissionStatement = {
+  heading: string;
+  text: {
+    blockOne: string;
+    blockTwo: string;
+  }
+};
+
 export type IndexPageData = {
   title: string;
   mainHeader: Header[];
+  sectionOne: IndexPageSectionOne;
+  missionStatement: IndexPageMissionStatement;
 };
 
 export type IndexPageStaticData = {

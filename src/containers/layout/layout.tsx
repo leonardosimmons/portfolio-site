@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import React from 'react';
-import { page } from '../../utils/keys';
 
 import DesktopNavbar from '../navbar/desktop';
 import MobileNavbar from '../navbar/mobile';
@@ -39,12 +38,12 @@ const Layout: React.FunctionComponent<Props> = (
         <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
       </Head>
-      <div id="backdrop-root" />
-      <div id="modal-root" />
-      <div id="app" className={`${ styles.page || '' } ${ classes }`}>
+      <div id="backdrop-root"/>
+      <div id="modal-root"/>
+      <div id="app" className={`${ styles.page || '' } ${ classes || '' }`}>
         <nav className={`${ styles.nav || '' }`}>
-          { desktopNav || <DesktopNavbar config={ desktop }/> }
-          { mobileNav || <MobileNavbar config={ mobile }/> }
+          { desktopNav || <DesktopNavbar data={ desktop }/> }
+          { mobileNav || <MobileNavbar data={ mobile }/> }
         </nav>
         { header && <header className={`${ styles.header || '' }`}>{ header }</header> }
         { children && <main className={`${ styles.main || '' }`}>{ children }</main> }

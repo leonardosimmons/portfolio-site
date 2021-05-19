@@ -17,22 +17,22 @@ import MenuLink from '../../../components/link/NamedLink';
 
 
 type Props = {
-  config: MobileNavbarConfiguration;
+  data: MobileNavbarConfiguration;
 };
 
 
-const mobileNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element => {
+const mobileNavbar: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
   return (
     <div className={`${styles.wrapper} noselect`}>
       <Grid even grid={styles.grid}>
         <Box styles={styles} />
         <Box styles={styles}>
           <Logo 
-            link={config.logo.link}
-            src={config.logo.src}
-            alt={config.logo.alt}
-            width={config.logo.width as string}
-            height={config.logo.height as string}
+            link={data.logo.link}
+            src={data.logo.src}
+            alt={data.logo.alt}
+            width={data.logo.width as string}
+            height={data.logo.height as string}
           />
         </Box>
         <Box styles={styles}>
@@ -51,7 +51,7 @@ const mobileNavbar: React.FunctionComponent<Props> = ({ config }): JSX.Element =
                   toggleFor={cpnt.MOBILE_NAVBAR}/>
                 <div className={menuStyles.tabs}>
                 {
-                  config.tabs.map((tab: NamedLink, index: number) => (
+                  data.tabs.map((tab: NamedLink, index: number) => (
                     <MenuLink
                       key={index}
                       name={tab.name} 
