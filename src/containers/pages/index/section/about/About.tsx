@@ -5,9 +5,9 @@ import { IndexPageAboutSection } from '../../../../../utils/types';
 
 import styles from './About.module.scss';
 
-import Container from '../../../../../components/base/container/Container';
-import BaseGrid from '../../../../../components/base/grid/Grid';
-import BaseHeading from '../../../../../components/heading/Heading';
+import Container from '../../../../../components/base/container';
+import BaseGrid from '../../../../../components/base/grid';
+import BaseHeading from '../../../../../components/heading';
 
 
 type Props = {
