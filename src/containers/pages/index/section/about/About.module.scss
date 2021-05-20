@@ -13,6 +13,7 @@
   width: 100%;
   max-width: 150rem;
 
+  transition: all .5s;
   margin: 0 auto;
 
   &One {
@@ -32,6 +33,10 @@
 
 .image {
   transform: scale(.975);
+
+  &:hover {
+    transform: translateY(-.5rem);
+  }
   &Box {
     height: 100%;
     width: 100%;
@@ -50,6 +55,8 @@
   & > span:nth-child(1) {
     font-size: 2rem;
     font-weight: 400;
+
+    color: var(--primary-base);
   }
 
   & > span:nth-child(2),
