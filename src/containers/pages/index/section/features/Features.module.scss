@@ -1,0 +1,299 @@
+
+.wrapper {
+  height: 1000px;
+  width: 100%;
+
+  background-color: var(--grey-100);
+}
+
+.grid {
+  height: 100%;
+  width: 95%;
+
+  display: flex;
+  flex-direction: column-reverse;
+
+  margin: 0 auto;
+
+  & > div:nth-child(1) {
+    flex: 0 1 50%;
+  }
+  & > div:nth-child(2) {
+    flex: 0 1 45%;
+    display: flex;
+  }
+}
+
+.box {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1.2;
+
+  & > *:nth-child(1) {
+    font-size: 2rem;  
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  & > *:nth-child(3) {
+    width: 100%;
+  }
+
+  & > *:nth-child(2),
+  & > *:nth-child(3) {
+    font-size: 4.5rem;
+    font-weight: 600;
+  }
+
+  &Box {
+    height: 75%;
+    width: 95%;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    & > p {
+      width: 95%;
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.card {
+  height: 100%;
+  width: 85%;
+
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--white);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 79%, 74% 79%, 81% 100%, 47% 90%, 0 90%);
+  
+  & > p:nth-child(1) {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+  
+  & > p:nth-child(2) {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  & > p:nth-child(3) {
+    font-size: 1.1rem;
+    font-weight: 200;
+    margin-bottom: 1.75rem;
+  }
+  
+  &:hover {
+    transform: translateY(-.5rem);
+  }
+
+  &Box {
+    height: 60%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.btn {
+  width: 20rem;
+
+  margin-bottom: 4rem;
+  padding: 1rem 1.5rem;
+
+  border-radius: .5rem;
+  font-size: 1.6rem;
+
+  background-color: var(--secondary-base);
+}
+
+//* 528px
+@media only screen and (min-width: 33em) {
+  .grid {
+    & > div:nth-child(2) {
+      margin-top: 2rem;
+    }
+  }
+
+  .heading {
+    width: 80%;
+
+    margin-top: 2rem;
+    &Box {
+      & > p {
+        width: 70%;
+      }
+    }
+  }
+
+  .card {
+    width: 70%;
+  }
+}
+
+//* 768px
+@media only screen and (min-width: 48em) {
+  .heading {
+    width: 50%;
+
+    margin-top: 4rem;
+    &Box {
+      & > p {
+        width: 60%;
+      }
+    }
+  }
+
+  .card {
+    width: 60%;
+  }
+}
+
+
+//* 1024px
+@media only screen and (min-width: 64em) {
+  .wrapper {
+    height: 775px;
+  }
+  
+  .grid {
+    flex-direction: row;
+
+
+    & > div:nth-child(1) {
+      flex: 0 1 57.5%;
+    }
+
+    & > div:nth-child(2) {
+      flex: 1;
+      height: 100%;
+    }
+  }
+  
+  .box {
+    height: 100%;
+  }
+  
+  .heading {
+    width: 100%;
+    text-align: left;
+    line-height: 1.4;
+
+    margin-top: 0;
+
+    & > *:nth-child(3) {
+      width: 85%;
+    }
+
+    & > *:nth-child(2),
+    & > *:nth-child(3) {
+      font-size: 5rem;
+    }
+
+    &Box {
+    height: 55%;
+    width: 80%;
+
+    align-items: flex-start;
+
+    padding: 1rem 2rem;
+      
+      & > p {
+        width: 75%;
+        text-align: left;
+        margin-top: 0;
+      }
+    }
+  }
+  
+  .card {
+    height: 100%;
+    width: 62.5%;
+    
+    & > p:nth-child(1) {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+    
+    & > p:nth-child(2) {
+      font-size: 1.2rem;
+    }
+    
+    & > p:nth-child(3) {
+      font-size: 1.1rem;
+    }
+  
+    &Box {
+      height: 20%;
+      justify-content: flex-end;
+      margin-right: 5rem;
+    }
+  }
+
+  .btn {
+    margin-bottom: 0;
+  }
+}
+
+//* 1280px
+@media only screen and (min-width: 80em) {
+  .heading {
+    width: 80%;
+  }
+
+  .card {
+    width: 60%;
+
+    & > p:nth-child(1) {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+    
+    & > p:nth-child(2) {
+      font-size: 1.4rem;
+    }
+    
+    & > p:nth-child(3) {
+      font-size: 1.2rem;
+    }
+  
+  }
+}
+
+//* 1536px
+@media only screen and (min-width: 96em) {
+  .heading {
+    width: 70%;
+
+    & > *:nth-child(2),
+    & > *:nth-child(3) {
+      font-size: 6rem;
+    }
+
+    &Box {
+      & > p {
+        width: 68.5%;
+      }
+    }
+  }
+
+  .card { 
+    width: 50%;
+  }
+}
