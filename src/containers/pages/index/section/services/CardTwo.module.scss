@@ -1,0 +1,29 @@
+
+.picture {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(#0d1812, 0.9),
+    rgba(#145233, 0.8)), 
+    url('/images/svg/undraw_two_factor_authentication_namy.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+};
+
+
+.heading {
+  color: var(--white);
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(#0d1812, 0.85),
+    rgba(#244233, 0.85)
+  );
+}
+
+.back {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(#0d1812, 0.85),
+    rgba(#244233, 0.85)
+  );
+}

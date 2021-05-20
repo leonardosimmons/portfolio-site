@@ -1,0 +1,77 @@
+
+.flipCard {
+  position: relative;
+  perspective: 100rem;
+  -moz-perspective: 100rem;
+
+  &:hover > *:nth-child(1) {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover > *:nth-child(2) {
+    transform: rotateY(0deg);
+  }
+}
+
+.side {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border-radius: 1.5rem;
+  box-shadow: 0 1.5rem 4rem rgba(var(--black), .15);
+  transition: all .8s;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.front {
+  background-color: var(--white);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.picture {
+  height: 23rem;
+
+  border-top-right-radius: .3rem;
+  border-top-left-radius: .3rem;
+  background-size: cover;
+  background-blend-mode: color;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.details {
+  padding: 1.5rem;
+
+  & ul {
+    list-style: none;
+    width: 80%;
+    margin: auto;
+  }
+
+  & li {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+
+    font-family: Montserrat, sans-serif;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--grey-300);
+    }
+  }
+}
+
+.content {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+}

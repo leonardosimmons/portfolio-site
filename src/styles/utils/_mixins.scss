@@ -1,0 +1,13 @@
+
+@mixin backgroundImageWithGradient($filename, $color_one, $color_two, $size, $position: center,$repeat: no-repeat) {
+  background: {
+    image: linear-gradient(
+      to right bottom,
+      rgba($color_one, 0.9),
+      rgba($color_two, 0.8)), 
+      url(#{$filename});
+    position: $position;
+    size: $size;
+    repeat: $repeat;
+  };
+};
