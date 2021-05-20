@@ -9,6 +9,7 @@ import Button from '../base/button';
 
 type Props = Heading & {
   classes?: string;
+  btnStyles?: string;
   styles?: any;
   main?: boolean;
   sub?: boolean;
@@ -25,6 +26,7 @@ const BaseHeading: React.FunctionComponent<Props> = (
     textBelow, 
     styles,
     classes,
+    btnStyles,
     children 
   }
 ): JSX.Element => {
@@ -72,7 +74,7 @@ const BaseHeading: React.FunctionComponent<Props> = (
           styles={ styles }
           text={ btn.text }
           link={ btn.link }
-          classes={`relative ${ btn.classes ? btn.classes : 'btn-hoverConfig btn-activeFocus'}`}
+          classes={`relative ${ btn.classes ? btn.classes : 'btn-hoverConfig btn-activeFocus'} ${btnStyles || ''}`}
         />
       }
     </Box>

@@ -9,7 +9,7 @@
 }
 
 .contentGrid {
-  height: 48%;
+  height: 52%;
   width: 100%;
   max-width: 150rem;
 
@@ -71,6 +71,7 @@
   margin: 0 auto;
 
   &Box {
+    margin-bottom: 2rem;
     width: 100%;
     text-align: center;
   }
@@ -83,6 +84,7 @@
 //* 368px {
 @media only screen and (min-width: 23em) {
   .contentGrid {
+    height: 50%;
     &One {
       margin-bottom: 2rem;
     }

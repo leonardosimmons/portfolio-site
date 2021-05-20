@@ -4,12 +4,15 @@
   width: 100%;
 
   margin-top: 2rem;
-  background-color: var(--grey-100);
+  border-top: 2px solid var(--primary-base);
+  border-bottom: 2px solid var(--primary-base);
+  background-color: var(--grey-300);
 }
 
 .box {
   height: 100%;
   width: 100%;
+  padding: 1rem;
 }
 
 .grid {
@@ -50,13 +53,30 @@
   }
 }
 
+
+//* 528px
+@media only screen and (min-width: 33em) {
+  .textBox {
+    & > p {
+      width: 90%;
+    }
+  }
+}
+
+//* 768px
+@media only screen and (min-width: 48em) {
+  .textBox {
+    & > p {
+      width: 75%;
+    }
+  }
+}
+
+
 //* 1024
 @media only screen and (min-width: 64em) {
   .wrapper {
     height: 300px;
-
-    border-top: 2px solid var(--primary-base);
-    border-bottom: 2px solid var(--primary-base);
   }
 
   .grid {

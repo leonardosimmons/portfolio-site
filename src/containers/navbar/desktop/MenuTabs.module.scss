@@ -21,6 +21,8 @@
   padding: .25rem 0;  
   font-size: 1.85rem;
 
+  cursor: pointer;
+
   &:hover + div .icon {
     opacity: 100;
   }

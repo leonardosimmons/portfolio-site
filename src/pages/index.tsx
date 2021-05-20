@@ -11,6 +11,7 @@ import Container from '../components/base/container';
 import IndexMainHeader from '../containers/pages/index/header';
 import AboutSection from '../containers/pages/index/section/about';
 import MissionStatement from '../containers/pages/index/section/mission-statement';
+import Features from '../containers/pages/index/section/features/Features';
 
 
 function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
@@ -31,7 +32,8 @@ function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.El
     >
       <Container main styles={styles}>
         <AboutSection data={data.page.about}/>
-        <MissionStatement data={data.page.mission}/> 
+        <MissionStatement data={data.page.mission}/>
+        <Features />
       </Container>
     </Layout>
   );
