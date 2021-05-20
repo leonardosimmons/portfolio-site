@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { IndexPageFeaturesSection } from '../../../../../utils/types';
 
 import styles from './Features.module.scss';
 
@@ -11,11 +12,12 @@ import BaseHeading from '../../../../../components/heading';
 
 
 type Props = {
-
+  data: IndexPageFeaturesSection
 };
 
 
-const Features: React.FunctionComponent<Props> = (): JSX.Element => {
+const Features: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
+  console.log(data)
   return (
     <Container wrapper styles={styles} classes={'relative noselect'}>
       <Grid even grid={styles.grid}>
@@ -23,29 +25,29 @@ const Features: React.FunctionComponent<Props> = (): JSX.Element => {
           <BaseHeading 
             classes={styles.headingBox}
             btn={{ 
-              text: 'Inspect Our Features', 
-              link: '/' 
+              text: data.heading.btn.text, 
+              link: data.heading.btn.link 
             }}
             btnStyles={styles.btn}>
             <h2 className={styles.heading}>
-              <span>{'I\'m here for you'}</span>
-              <span>{'I Help Build'}</span>
-              <span>{'Professional Buisness Plans'}</span>
+              <span>{data.heading.spanOne}</span>
+              <span>{data.heading.spanTwo}</span>
+              <span>{data.heading.spanThree}</span>
             </h2>
-            <p>{'Our experts know how to get maximum profit out of every investment project. Entrust us with your assets and enjoy your daily life!'}</p>
+            <p>{data.heading.body}</p>
           </BaseHeading>
           <Container classes={styles.cardBox}>
             <div className={styles.card}>
-              <p>{'We work to ensure that your business prospers and brings you sufficient profit with a long perspective. We appreciate your trust greatly!'}</p>
-              <p>{'Leonardo Simmons'}</p>
-              <p>{'Easy Company Founder'}</p>
+              <p>{data.card.lineOne}</p>
+              <p>{data.card.lineTwo}</p>
+              <p>{data.card.lineThree}</p>
             </div>
           </Container>
         </Box>
         <Box styles={styles} classes={'relative'}>
           <Image
-            src={'/images/svg/undraw_real-time_sync_o57k.svg'} 
-            alt={'photo'}
+            src={data.image.src} 
+            alt={data.image.alt}
             layout={'fill'}
           />
         </Box>

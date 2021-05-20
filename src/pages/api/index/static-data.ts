@@ -60,6 +60,24 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
           blockOne: 'Meet goals through not only concise and scalable code but productive communication to ensure the end product is exactly as envisioned.',
           blockTwo: 'Contribute to open source and other community projects to not only the benefit of the community, but to also gain new knowledge and experience to only enhance my ability as a developer in the ever changing industry.'
         }
+      },
+      features: {
+        heading: {
+          spanOne: 'I\'m here for you',
+          spanTwo: 'I Help Build',
+          spanThree: 'Professional Buisness Plans',
+          body: 'Our experts know how to get maximum profit out of every investment project. Entrust us with your assets and enjoy your daily life!',
+          btn: {
+            text: 'Inspect Our Features',
+            link: '/'
+          }
+        },
+        card: {
+          lineOne: 'We work to ensure that your business prospers and brings you sufficient profit with a long perspective. We appreciate your trust greatly!',
+          lineTwo: 'Leonardo Simmons',
+          lineThree: 'Easy Company Founder'
+        },
+        image: { src: '/images/svg/undraw_real-time_sync_o57k.svg', alt: 'photo' }
       }
     }
   );

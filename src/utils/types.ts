@@ -162,44 +162,42 @@ export type Text = {
   headingTwo?: string | JSX.Element | HTMLElement;
   subHeadOne?:string | JSX.Element | HTMLElement;
   subHeadTwo?: string | JSX.Element | HTMLElement;
-  textOne?: string | JSX.Element | HTMLElement;
-  textTwo?: string | JSX.Element | HTMLElement;
-  textThree?: string | JSX.Element | HTMLElement;
-  textFour?: string | JSX.Element | HTMLElement;
-  textFive?: string | JSX.Element | HTMLElement;
+  lineOne?: string | JSX.Element | HTMLElement;
+  lineTwo?: string | JSX.Element | HTMLElement;
+  lineThree?: string | JSX.Element | HTMLElement;
+  lineFour?: string | JSX.Element | HTMLElement;
+  lineFive?: string | JSX.Element | HTMLElement;
   spanOne?: string | JSX.Element | HTMLElement;
   spanTwo?: string | JSX.Element | HTMLElement;
   spanThree?: string | JSX.Element | HTMLElement;
   spanFour?: string | JSX.Element | HTMLElement;
   spanFive?: string | JSX.Element | HTMLElement;
+  body?: string | JSX.Element | HTMLElement;
   mainHeadingClasses?: string;
+  headingClasses?: string;
   headingOneClasses?: string;
   headingTwoClasses?: string;
   subHeadOneClasses?: string;
   subHeadTwoClasses?: string;
   textClasses?: string;
-  textOneClasses?: string;
-  textTwoClasses?: string;
-  textThreeClasses?: string;
-  textFourClasses?: string;
-  textFiveClasses?: string;
+  lineOneClasses?: string;
+  lineTwoClasses?: string;
+  lineThreeClasses?: string;
+  lineFourClasses?: string;
+  lineFiveClasses?: string;
   spanOneClasses?: string;
   spanTwoClasses?: string;
   spanThreeClasses?: string;
   spanFourClasses?: string;
   spanFiveClasses?: string;
+  bodyClasses?: string;
 };
 
 
 //** ----------------------  INDEX PAGE  ---------------------- **/
 export type IndexPageAboutSection = {
   images: Image[];
-  heading: {
-    lineOne: string;
-    lineTwo: string;
-    lineThree: string;
-    lineFour: string;
-  };
+  heading: Text;
   body: string;
 };
 
@@ -211,11 +209,20 @@ export type IndexPageMissionStatement = {
   }
 };
 
+export type IndexPageFeaturesSection = {
+  heading: Text & {
+    btn: Button;
+  };
+  card: Text;
+  image: Image;
+};
+
 export type IndexPageData = {
   title: string;
   mainHeader: Header[];
   about: IndexPageAboutSection;
   mission: IndexPageMissionStatement;
+  features: IndexPageFeaturesSection;
 };
 
 export type IndexPageStaticData = {
