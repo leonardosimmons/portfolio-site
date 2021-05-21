@@ -1,0 +1,147 @@
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--white);
+  background-color: var(--primary-base);
+}
+
+.grid {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 2rem 0;
+
+  & > * {
+    margin: 1.75rem;
+  }
+}
+
+.links {
+  position: relative;
+  height: 25%;
+  flex: 0 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20;
+    height: 1px;
+    width: 80%;
+    background-color: var(--white);
+  }
+
+  & > * {
+    margin-top: 1rem;
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+
+.logo {
+  &Box {
+    flex: 0 1 20%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.copyright {
+  flex: 0 1 40%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > p {
+    text-align: center;
+    width: 90%;
+  }
+}
+
+//* 768px
+@media only screen and (min-width: 48em) {
+  .copyright {
+    & > p {
+      width: 60%;
+    }
+  }
+}
+
+
+//* 1024px
+@media only screen and (min-width: 64em) {
+  .wrapper {
+    height: 175px;
+  }
+
+  .grid {
+    width: 80%;
+    flex-direction: row;
+
+    margin: 0;
+
+    & > * {
+      margin: 0;
+    }
+  }
+
+  .links {
+    &::before {
+      width: 60%;
+    }
+  
+    & > * {
+      margin-top: 0;
+    }
+  }
+
+  .copyright {
+    & > p {
+      width: 90%;
+      text-align: left;
+    }
+  }
+}
+
+//* 1280px
+@media only screen and (min-width: 80em) {
+  .copyright {
+    & > p {
+      width: 80%;
+    }
+  }
+}
+
+//* 1536px
+@media only screen and (min-width: 96em) {
+  .links {
+    &::before {
+      width: 40%;
+    }
+  }
+
+  .copyright {
+    & > p {
+      width: 70%;
+    }
+  }
+}
