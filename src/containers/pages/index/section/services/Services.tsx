@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { FlipCard, IndexPageServicesSection } from '../../../../../utils/types';
 
 import styles from './Services.module.scss';
 import serviceCard from './ServiceCard.module.scss'
@@ -9,11 +10,11 @@ import cardThree from './CardThree.module.scss';
 
 import Container from '../../../../../components/base/container';
 import Heading from '../../../../../components/heading';
-import FlipCard from '../../../../../components/flip-card';
+import ServiceCard from '../../../../../components/flip-card';
 import Button from '../../../../../components/base/button';
 
 type Props = {
-
+  data: IndexPageServicesSection;
 };
 
 const cards = [
@@ -22,20 +23,21 @@ const cards = [
   cardThree
 ];
 
-const Serivces: React.FunctionComponent<Props> = (): JSX.Element => {
+const Serivces: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
   return (
     <Container wrapper styles={styles} classes={'relative noselect'}>
       <Heading classes={styles.headingBox}>
         <h2 className={styles.heading}>
-          <span>{'Always here for you'}</span>
-          <span>{'Available Services'}</span>
+          <span>{data.heading.spanOne}</span>
+          <span>{data.heading.spanTwo}</span>
         </h2>
       </Heading>
       <Container classes={styles.flipCardContainer}>
       {
-        cards.map((card, index) => (
-          <FlipCard 
+        data.cards.map((card: FlipCard, index: number) => (
+          <ServiceCard 
             key={index}
+            config={data.cards[index]}
             card={serviceCard} 
             styles={cards[index]}
           />
@@ -44,8 +46,8 @@ const Serivces: React.FunctionComponent<Props> = (): JSX.Element => {
       </Container>
       <div className={`${styles.btnBox}`}>
         <Button 
-          text={'A Closer Look'}
-          link={'/'}
+          text={data.btn.text}
+          link={data.btn.link}
           styles={styles}
           classes={'btn-hoverConfig btn-activeFocus relative'}
         />

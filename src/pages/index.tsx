@@ -35,7 +35,7 @@ function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.El
         <AboutSection data={data.page.about}/>
         <MissionStatement data={data.page.mission}/>
         <Features data={data.page.features}/>
-        <Serivces />
+        <Serivces data={data.page.services}/>
       </Container>
     </Layout>
   );

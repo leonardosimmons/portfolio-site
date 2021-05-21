@@ -60,6 +60,8 @@ export type Button = {
   clicked?: () => void;
 };
 
+export type Combinable = string | number;
+
 export type Direction = {
   up?: boolean;
   down?: boolean;
@@ -71,6 +73,15 @@ export type Dot = {
   active: boolean;
   index: number;
   parent?: string;
+};
+
+export type FlipCard = {
+  heading: string;
+  details: Text[];
+  price: {
+    text: string;
+    value: string;
+  };
 };
 
 export type Grid = {
@@ -217,12 +228,19 @@ export type IndexPageFeaturesSection = {
   image: Image;
 };
 
+export type IndexPageServicesSection = {
+  heading: Text;
+  cards: FlipCard[];
+  btn: Button;
+};
+
 export type IndexPageData = {
   title: string;
   mainHeader: Header[];
   about: IndexPageAboutSection;
   mission: IndexPageMissionStatement;
   features: IndexPageFeaturesSection;
+  services: IndexPageServicesSection;
 };
 
 export type IndexPageStaticData = {

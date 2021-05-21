@@ -78,6 +78,64 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
           lineThree: 'Easy Company Founder'
         },
         image: { src: '/images/svg/undraw_real-time_sync_o57k.svg', alt: 'photo' }
+      },
+      services: {
+        heading: {
+          spanOne: 'Always here for you',
+          spanTwo: 'Available Services'
+        },
+        cards: 
+        [
+          {
+            heading: 'Header One',
+            details: 
+            [
+              { text: 'Test Details One'},
+              { text: 'Test Details Two'},
+              { text: 'Test Details Three'},
+              { text: 'Test Details Four'},
+              { text: 'Test Details Five'},
+            ],
+            price: {
+              text: 'ONLY',
+              value: '$1.5mil'
+            }
+          },
+          {
+            heading: 'Header Two',
+            details: 
+            [
+              { text: 'Test Details One'},
+              { text: 'Test Details Two'},
+              { text: 'Test Details Three'},
+              { text: 'Test Details Four'},
+              { text: 'Test Details Five'},
+            ],
+            price: {
+              text: 'ONLY',
+              value: '$1.5mil'
+            }
+          },
+          {
+            heading: 'Header Three',
+            details: 
+            [
+              { text: 'Test Details One'},
+              { text: 'Test Details Two'},
+              { text: 'Test Details Three'},
+              { text: 'Test Details Four'},
+              { text: 'Test Details Five'},
+            ],
+            price: {
+              text: 'ONLY',
+              value: '$1.5mil'
+            }
+          },
+        ],
+        btn: {
+          text: 'A Closer Look',
+          link: '/'
+        }
       }
     }
   );
