@@ -24,7 +24,7 @@ const BaseFlipCard: React.FunctionComponent<Props> = ({ config, card, styles }):
           <ul>
             {
               config.details.map((detail: Text, index: number) => (
-                <li>{detail.text}</li>
+                <li key={index}>{detail.text}</li>
               ))
             }
           </ul>
