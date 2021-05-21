@@ -35,6 +35,8 @@
   justify-content: center;
   align-items: center;
 
+  transition: all .5s;
+
   &::before {
     content: "";
     position: absolute;
@@ -47,6 +49,12 @@
 
   & > * {
     margin-top: 1rem;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--secondary-base);
+      transform: translateY(-.2rem);
+    }
   }
 
   & > *:not(:last-child) {

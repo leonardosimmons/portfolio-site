@@ -17,7 +17,7 @@ const tabs = ['Services', 'Portfolio', 'Contact'];
 
 const Footer: React.FunctionComponent<Props> = (): JSX.Element => {
   return (
-    <Container wrapper styles={styles}>
+    <Container wrapper styles={styles} classes={'noselect'}>
       <Grid even grid={styles.grid}>
         <div className={styles.links}>
           {

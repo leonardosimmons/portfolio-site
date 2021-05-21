@@ -142,6 +142,7 @@
     font-weight: 500;
     transform: translateY(-0.2rem);
     box-shadow: 0 1.5rem 2rem rgba(black, .2);
+    cursor: pointer;
 
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
