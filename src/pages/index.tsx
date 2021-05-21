@@ -26,14 +26,12 @@ function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.El
       mobile={data.nav.mobile}
       header={
         <IndexMainHeader 
-          autoplayLength={5}
-          classes={'relative'}
+          autoplayLength={5} 
+          classes={'relative'} 
           headers={data.page.mainHeader}
         />
       }
-      footer={
-        <Footer />
-      } 
+      footer={<Footer data={data.footer}/>} 
     >
       <Container main styles={styles}>
         <AboutSection data={data.page.about}/>
@@ -53,16 +51,18 @@ export const getStaticProps: GetStaticProps = async() => {
     axios.get(process.env.NAVBAR_DESKTOP_API as string, { headers: {'Content-Type': 'application/json'} }),
     axios.get(process.env.NAVBAR_MOBILE_API as string, { headers: {'Content-Type': 'application/json'} }),
     axios.get(process.env.INDEX_PAGE_API as string, { headers: {'Content-Type': 'application/json'} }),
+    axios.get(process.env.FOOTER_API as string, { headers: {'Content-Type': 'application/json'}})
   ])
-  .then(axios.spread((desktop, mobile, page) => {
-    if (desktop.status === 200 && mobile.status === 200 && page.status === 200) 
+  .then(axios.spread((desktop, mobile, page, footer) => {
+    if (desktop.status === 200 && mobile.status === 200 && page.status === 200 && footer.status === 200) 
     {
       const dataToken: IndexPageStaticData = {
         nav: {
           desktop: desktop.data,
           mobile: mobile.data
         },
-        page: page.data
+        page: page.data,
+        footer: footer.data
       };
 
       return dataToken;

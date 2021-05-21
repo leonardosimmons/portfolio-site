@@ -1,45 +1,50 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { Footer, NamedLink } from '../../utils/types';
 
 import styles from './Footer.module.scss';
 
 import Container from '../../components/base/container';
 import Grid from '../../components/base/grid';
+import TabLink from '../../components/link/NamedLink';
 
 
 type Props = {
-
+  data: Footer
 };
 
 
-const tabs = ['Services', 'Portfolio', 'Contact'];
-
-const Footer: React.FunctionComponent<Props> = (): JSX.Element => {
+const FooterSection: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
   return (
     <Container wrapper styles={styles} classes={'noselect'}>
       <Grid even grid={styles.grid}>
         <div className={styles.links}>
           {
-            tabs.map((tab, index) => (
-              <p key={index}>{tab}</p>
+            data.links.map((tab: NamedLink, index: number) => (
+              <TabLink
+                key={index} 
+                name={tab.name}
+                link={tab.link}
+              />
             ))
           }
         </div>
         <div className={styles.logoBox}>
           <Image 
-            src={'/images/png/logo.png'}
-            alt={'logo'}
-            width={100}
-            height={100} 
+            src={data.logo.src}
+            alt={data.logo.alt}
+            width={data.logo.width as number}
+            height={data.logo.height as number} 
           />
         </div>
         <div className={styles.copyright}>
-          <p>{'Built by LEONARDO SIMMONS for this test page for ADVANCED CSS & HTML. Here includes a bunch of other text. So et voila, this is not for legal or resale purposes. DEMONSTRATION ONLY!!'}</p>
+          <p>{data.copyright}</p>
+          <p>&copy; 2021</p>
         </div>
       </Grid>
     </Container>
   );
 };
 
-export default Footer;
+export default FooterSection;

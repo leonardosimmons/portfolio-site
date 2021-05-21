@@ -76,24 +76,15 @@
   flex: 0 1 40%;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   & > p {
     text-align: center;
-    width: 90%;
+    width: 100%;
   }
 }
-
-//* 768px
-@media only screen and (min-width: 48em) {
-  .copyright {
-    & > p {
-      width: 60%;
-    }
-  }
-}
-
 
 //* 1024px
 @media only screen and (min-width: 64em) {
@@ -125,7 +116,6 @@
   .copyright {
     & > p {
       width: 90%;
-      text-align: left;
     }
   }
 }

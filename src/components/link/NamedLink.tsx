@@ -1,13 +1,13 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { NamedLink, Styles } from '../../../utils/types';
+import { NamedLink, Styles } from '../../utils/types';
 
 
 type Props = NamedLink & Styles;
 
 
-const namedLink: React.FunctionComponent<Props> = ({ name, link, styles, classes }): JSX.Element => {
+const BaseNamedLink: React.FunctionComponent<Props> = ({ name, link, styles, classes }): JSX.Element => {
   return (
     <Link href={link}>
       <p className={`${ styles && styles.namedLink || ''} ${ classes ? classes : '' }`}>
@@ -17,4 +17,4 @@ const namedLink: React.FunctionComponent<Props> = ({ name, link, styles, classes
   )
 };
 
-export default namedLink;
+export default BaseNamedLink;

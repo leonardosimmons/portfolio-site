@@ -84,6 +84,12 @@ export type FlipCard = {
   };
 };
 
+export type Footer = {
+  links: NamedLink[];
+  logo: Image;
+  copyright: string;
+};
+
 export type Grid = {
   grid: any;
   even?: boolean;
@@ -246,6 +252,7 @@ export type IndexPageData = {
 export type IndexPageStaticData = {
   nav: NavbarConfiguration;
   page: IndexPageData;
+  footer: Footer;
 };
 
 
