@@ -17,7 +17,6 @@ type Props = {
 
 
 const Features: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
-  console.log(data)
   return (
     <Container wrapper styles={styles} classes={'relative noselect'}>
       <Grid even grid={styles.grid}>

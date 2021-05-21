@@ -13,6 +13,7 @@ import AboutSection from '../containers/pages/index/section/about';
 import MissionStatement from '../containers/pages/index/section/mission-statement';
 import Features from '../containers/pages/index/section/features';
 import Serivces from '../containers/pages/index/section/services';
+import Footer from '../containers/footer';
 
 
 function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
@@ -29,6 +30,9 @@ function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.El
           classes={'relative'}
           headers={data.page.mainHeader}
         />
+      }
+      footer={
+        <Footer />
       } 
     >
       <Container main styles={styles}>

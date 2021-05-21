@@ -37,7 +37,7 @@ const Serivces: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
         data.cards.map((card: FlipCard, index: number) => (
           <ServiceCard 
             key={index}
-            config={data.cards[index]}
+            config={card}
             card={serviceCard} 
             styles={cards[index]}
           />
