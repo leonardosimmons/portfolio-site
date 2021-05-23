@@ -2,8 +2,15 @@
 import { ImageLoader } from 'next/image';
 
 //** ---------------------  CONTACT PAGE  ---------------------- **//
+export type ContactPageData = {
+  title: string;
+  heading: Text;
+  placeholders: Text[];
+};
+
 export type ContactPageStaticData = {
   nav: NavbarConfiguration;
+  page: ContactPageData;
   footer: Footer;
 };
 

@@ -9,17 +9,16 @@ import styles from '../containers/pages/contact/Contact.module.scss';
 import Layout from '../containers/layout';
 import Footer from '../containers/footer';
 import Container from '../components/base/container';
-import Box from '../components/base/box/BaseBox';
+import Box from '../components/base/box';
 import Heading from '../components/heading';
 import Form from '../containers/pages/contact/components/Form';
-
 
 
 function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element 
 {
   return (
     <Layout
-      title={'Leonardo Simmons | Contact Me'}
+      title={data.page.title}
       classes={'relative'}
       styles={styles}
       desktop={data.nav.desktop}
@@ -30,12 +29,12 @@ function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): 
         <Box styles={styles}>
           <Heading classes={styles.headingBox}>
             <h1 className={styles.heading}>
-              <span>{'Write a Message'}</span>
-              <span>{'Contact Me'}</span>
+              <span>{data.page.heading.spanOne}</span>
+              <span>{data.page.heading.spanTwo}</span>
             </h1>
-            <p>{'We love challenges and work with any type of projects: financial debt, rebranding, company\'s audit - we can handle all your requests'}</p>
+            <p>{data.page.heading.body}</p>
           </Heading>
-          <Form />
+          <Form placeholders={data.page.placeholders}/>
         </Box>
       </Container>
     </Layout>
@@ -49,15 +48,17 @@ export const getStaticProps: GetStaticProps = async () => {
   const data: ContactPageStaticData | undefined = await axios.all([
     axios.get(process.env.NAVBAR_DESKTOP_API as string, { headers: {'Content-Type': 'application/json'} }),
     axios.get(process.env.NAVBAR_MOBILE_API as string, { headers: {'Content-Type': 'application/json'} }),
+    axios.get(process.env.CONTACT_PAGE_API as string, { headers: {'Content-Type': 'application/json'} }),
     axios.get(process.env.FOOTER_API as string, { headers: {'Content-Type': 'application/json'}})
   ])
-  .then(axios.spread((desktop, mobile, footer) => {
-    if (desktop.status === 200 && mobile.status === 200 && footer.status === 200) {
+  .then(axios.spread((desktop, mobile, page, footer) => {
+    if (desktop.status === 200 && mobile.status === 200 && page.status === 200 && footer.status === 200) {
       const dataToken: ContactPageStaticData = {
         nav: {
           desktop: desktop.data,
           mobile: mobile.data
         },
+        page: page.data,
         footer: footer.data
       };
 
