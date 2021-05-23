@@ -22,6 +22,15 @@ export enum direction {
 
 
 export enum page {
+  ABOUT = 'about',
+  CONTACT = 'contact',
   HOME = 'home',
+  PORTFOLIO = 'portfolio'
 };
 
+export enum link {
+  ABOUT = '/about',
+  CONTACT = '/contact',
+  HOME = '/home',
+  PORTFOLIO = '/portfolio'
+};

@@ -1,6 +1,12 @@
 
 import { ImageLoader } from 'next/image';
 
+//** ---------------------  CONTACT PAGE  ---------------------- **//
+export type ContactPageStaticData = {
+  nav: NavbarConfiguration;
+  footer: Footer;
+};
+
 //** -----------------------  CAROUSEL  ------------------------ **//
 export type CarouselContext = {
   width: number;
@@ -21,7 +27,7 @@ export type CarouselContentContext = {
 };
 
 
-//** ------------------------  GENERAL  ------------------------ **/
+//** ------------------------  GENERAL  ------------------------ **//
 export type Arrow = {
   container: {
     right: string;
@@ -211,7 +217,7 @@ export type Text = {
 };
 
 
-//** ----------------------  INDEX PAGE  ---------------------- **/
+//** ----------------------  INDEX PAGE  ---------------------- **//
 export type IndexPageAboutSection = {
   images: Image[];
   heading: Text;
