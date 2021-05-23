@@ -1,4 +1,5 @@
 
+import { css, page } from '../../../utils/keys';
 import { DesktopNavbarConfiguration, NavbarMenuTab } from '../../../utils/types';
 
 import styles from './Navbar.module.scss';
@@ -12,13 +13,14 @@ import Logo from '../../../components/logo';
 
 
 type Props = {
+  parent: string;
   data: DesktopNavbarConfiguration;
 };
 
 
-const DesktopNavbar: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
+const DesktopNavbar: React.FunctionComponent<Props> = ({ parent, data }): JSX.Element => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} relative noselect`}>
       <Container main styles={styles}>
         <Grid even grid={styles.grid}>
           <div id={'desktop-logo'} className={styles.box}>
@@ -34,23 +36,46 @@ const DesktopNavbar: React.FunctionComponent<Props> = ({ data }): JSX.Element =>
           <Box styles={styles}>
             <Container styles={styles}>
             {
-              data.tabs.map((tab: NavbarMenuTab, index: number) => (
-                <div className={tabStyles.menuTab} key={index}>
-                  <Icon
-                    right
-                    column
-                    styles={tabStyles}
-                    link={tab.link}
-                    src={tab.src}
-                    alt={tab.alt}
-                    width={tab.width}
-                    height={tab.height}>
-                    <a className={ tabStyles.text }>
-                      { tab.name }
-                    </a>
-                  </Icon>
-                </div>
-              ))
+              data.tabs.map((tab: NavbarMenuTab, index: number) => {
+                if(index === 0) {
+                  return (
+                    <div className={tabStyles.menuTab} key={index}>
+                      <Icon
+                        right
+                        column
+                        styles={tabStyles}
+                        link={parent === page.HOME ? css.ABOUT_SECTION : tab.link}
+                        src={tab.src}
+                        alt={tab.alt}
+                        width={tab.width}
+                        height={tab.height}>
+                        <a className={ tabStyles.text }>
+                          {parent === page.HOME ? 'About' : tab.name }
+                        </a>
+                      </Icon>
+                    </div>
+                  )
+                }
+                else {
+                  return (
+                    <div className={tabStyles.menuTab} key={index}>
+                      <Icon
+                        right
+                        column
+                        styles={tabStyles}
+                        link={tab.link}
+                        src={tab.src}
+                        alt={tab.alt}
+                        width={tab.width}
+                        height={tab.height}>
+                        <a className={ tabStyles.text }>
+                          {tab.name }
+                        </a>
+                      </Icon>
+                    </div>
+                  )
+                }
+              })
             }
             </Container>
           </Box>

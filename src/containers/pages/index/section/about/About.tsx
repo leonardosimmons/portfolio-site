@@ -17,7 +17,7 @@ type Props = {
 
 const SectionOne: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
   return (
-    <Container wrapper styles={styles} classes={'relative noselect'}>
+    <Container wrapper id={'about'} styles={styles} classes={'relative noselect'}>
       <BaseGrid even grid={`${styles.contentGrid} ${ styles.contentGridOne}`} >
         <div className={styles.imageBox}>
           <Image 

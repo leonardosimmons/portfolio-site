@@ -19,6 +19,7 @@ import Footer from '../containers/footer';
 function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   return (
     <Layout
+      parent={'home'}
       title={data.page.title}
       classes={'relative'}
       styles={styles}
@@ -31,7 +32,12 @@ function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.El
           headers={data.page.mainHeader}
         />
       }
-      footer={<Footer data={data.footer}/>} 
+      footer={
+        <Footer 
+          parent={'home'}
+          data={data.footer}
+        />
+      } 
     >
       <Container main styles={styles}>
         <AboutSection data={data.page.about}/>

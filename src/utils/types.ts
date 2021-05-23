@@ -138,7 +138,7 @@ export type Image = {
   quality?: number;
   priority?: boolean;
   loading?: 'lazy' | 'eager';
-  layout?: 'fill' | 'fixed' | 'intrinsic' | 'responsive' | undefined;
+  layout?: 'fixed' | 'intrinsic' | 'responsive' | undefined;
   objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down';
   loader?: ImageLoader;
 };

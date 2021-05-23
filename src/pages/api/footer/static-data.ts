@@ -10,7 +10,7 @@ export default function footerData(_: NextApiRequest, res: NextApiResponse<Foote
     {
       links:
       [
-        { name: 'About', link: '/about'},
+        { name: 'Home', link: '/'},
         { name: 'Portfolio', link: '/portfolio'},
         { name: 'Contact', link: '/contact'},
       ],

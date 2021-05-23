@@ -3,11 +3,13 @@ import { BaseOptions } from '../../../utils/types';
 import Video from '../video';
 
 type Props = BaseOptions & {
+  id?: string;
   wrapper?: boolean;
 };
 
 const BaseContainer: React.FunctionComponent<Props> = (
   { 
+    id,
     parent, 
     styles, 
     classes,
@@ -19,7 +21,7 @@ const BaseContainer: React.FunctionComponent<Props> = (
   }
 ) => {
   return (
-    <div className={`${ main ? styles && styles.mainContainer : wrapper ? styles.wrapper : styles && styles.container || '' } ${ classes || '' }`} 
+    <div id={id ? id : ''} className={`${ main ? styles && styles.mainContainer : wrapper ? styles.wrapper : styles && styles.container || '' } ${ classes || '' }`} 
     style={{ backgroundImage: `${ bgImage ? 'url(' + bgImage + ')' : '' }`}}
     >
       { video && <Video src={ video as string } /> }

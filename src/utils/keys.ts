@@ -4,6 +4,7 @@ export enum cpnt {
 };
 
 export enum css {
+  ABOUT_SECTION = '#about',
   DESKTOP_NAVIGATION = '.desktop-navigation',
   DESKTOP_NAVBAR = '#desktop-navbar',
   DESKTOP_CONTAINER = '#desktop-container',
