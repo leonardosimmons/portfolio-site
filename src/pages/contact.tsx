@@ -1,6 +1,7 @@
 
 import React from 'react';
 import axios from 'axios';
+import { page } from '../utils/keys';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { ContactPageStaticData } from '../utils/types';
 
@@ -23,7 +24,12 @@ function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): 
       styles={styles}
       desktop={data.nav.desktop}
       mobile={data.nav.mobile}
-      footer={<Footer data={data.footer}/>}
+      footer={
+        <Footer 
+          parent={page.CONTACT} 
+          data={data.footer}
+        />
+      }
     >
       <Container main styles={styles} classes={'relative noselect'}>
         <Box styles={styles}>

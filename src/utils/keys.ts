@@ -35,3 +35,7 @@ export enum link {
   HOME = '/home',
   PORTFOLIO = '/portfolio'
 };
+
+export enum ref {
+  ABOUT_PAGE = 'about'
+};

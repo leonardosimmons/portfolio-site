@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { css, page } from '../../utils/keys';
+import { css, page, ref } from '../../utils/keys';
 import { Footer, NamedLink } from '../../utils/types';
 
 import styles from './Footer.module.scss';
@@ -22,28 +22,28 @@ const FooterSection: React.FunctionComponent<Props> = ({ parent, data }): JSX.El
     <Container wrapper styles={styles} classes={'noselect'}>
       <Grid even grid={styles.grid}>
         <div className={styles.links}>
-          {
-            data.links.map((tab: NamedLink, index: number) => {
-              if(index === 0) {
-                return (
-                  <TabLink
-                    key={index} 
-                    name={parent === page.HOME ? 'About' : tab.name}
-                    link={parent === page.HOME ? css.ABOUT_SECTION : tab.link}
-                  />
-                )
-              }
-              else {
-                return (
-                  <TabLink
-                    key={index} 
-                    name={tab.name}
-                    link={tab.link}
-                  />
-                )
-              }
-            })
-          }
+        {
+          data.links.map((tab: NamedLink, index: number) => {
+            if(index === 0) {
+              return (
+                <TabLink
+                  key={index} 
+                  name={parent === page.HOME ? ref.ABOUT_PAGE : tab.name}
+                  link={parent === page.HOME ? css.ABOUT_SECTION : tab.link}
+                />
+              )
+            }
+            else {
+              return (
+                <TabLink
+                  key={index} 
+                  name={tab.name}
+                  link={tab.link}
+                />
+              )
+            }
+          })
+        }
         </div>
         <div className={styles.logoBox}>
           <Image 
