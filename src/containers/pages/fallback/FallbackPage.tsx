@@ -1,18 +1,22 @@
 
 import React from 'react';
+import { Footer, NavbarConfiguration } from '../../../utils/types';
 
 import styles from './Fallback.module.scss';
 
-import LoadSpinner from '../../../components/custom/loader/spinner';
+import Layout from '../../layout';
+import FooterSection from '../../footer';
+import Container from '../../../components/base/container';
+import LoadSpinner from '../../../components/loader/spinner';
 
-const fallbackPage: React.FunctionComponent = (): JSX.Element => {
+const FallbackPage: React.FunctionComponent = (): JSX.Element => {
   return (
-    <div className={styles.wrapper}>
+    <Container wrapper styles={styles}>
       <LoadSpinner />
-      <p>One moment...</p>
-    </div>
+      <p>{'One moment...'}</p>
+    </Container>
   );
 };
 
 
-export default fallbackPage;
+export default FallbackPage;

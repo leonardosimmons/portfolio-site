@@ -286,3 +286,10 @@ export type NavbarConfiguration = {
   desktop: DesktopNavbarConfiguration;
   mobile: MobileNavbarConfiguration;
 };
+
+
+//** --------------------  PORTFOLIO PAGE  -------------------- **//
+export type PortfolioPageStaticData = {
+  nav: NavbarConfiguration;
+  footer: Footer;
+}
