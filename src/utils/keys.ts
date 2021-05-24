@@ -10,6 +10,7 @@ export enum css {
   DESKTOP_CONTAINER = '#desktop-container',
   DESKTOP_LOGO = '#desktop-logo',
   DESKTOP_TAB = '#desktop-tab',
+  FEATURES = '#features',
   MOBILE_NAVBAR = '#mobile-navbar',
   TOP_PAGE_PIXEL_ANCHOR = '#top-of-site-pixel-anchor',
 };
@@ -37,5 +38,6 @@ export enum link {
 };
 
 export enum ref {
-  ABOUT_PAGE = 'about'
+  ABOUT_PAGE = 'about',
+  FEATUES_SECTION = 'features'
 };

@@ -15,7 +15,7 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
           textBelow: 'We all have goals and aspirations, I want to make sure you achieve yours.',
           btn: {
             text: 'About Me',
-            link: '/about'
+            link: '#about'
           },
           bgImage: '/images/svg/undraw_To_the_stars_qhyy.svg'
         },
@@ -25,7 +25,7 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
           textBelow: 'Let us work together to get your message out and let everyone know exactly who you are and what you stand for,',
           btn: {
             text: 'Learn More',
-            link: '/services'
+            link: '#features'
           },
           bgImage: '/images/svg/undraw_quite_town_mg2q.svg'
         },
@@ -68,8 +68,8 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
           spanThree: 'Professional Buisness Plans',
           body: 'Our experts know how to get maximum profit out of every investment project. Entrust us with your assets and enjoy your daily life!',
           btn: {
-            text: 'Inspect Our Features',
-            link: '/'
+            text: 'My Portfolio',
+            link: '/portfolio'
           }
         },
         card: {
@@ -133,8 +133,8 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
           },
         ],
         btn: {
-          text: 'A Closer Look',
-          link: '/'
+          text: 'More Information',
+          link: '/contact'
         }
       }
     }

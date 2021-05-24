@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { css, page, ref } from '../../utils/keys';
+import { css, page } from '../../utils/keys';
 import { Footer, NamedLink } from '../../utils/types';
 
 import styles from './Footer.module.scss';
@@ -13,7 +13,7 @@ import TabLink from '../../components/link/NamedLink';
 
 type Props = {
   parent: string;
-  data: Footer
+  data: Footer;
 };
 
 
@@ -28,7 +28,7 @@ const FooterSection: React.FunctionComponent<Props> = ({ parent, data }): JSX.El
               return (
                 <TabLink
                   key={index} 
-                  name={parent === page.HOME ? ref.ABOUT_PAGE : tab.name}
+                  name={parent === page.HOME ? 'About' : tab.name}
                   link={parent === page.HOME ? css.ABOUT_SECTION : tab.link}
                 />
               )

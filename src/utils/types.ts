@@ -292,4 +292,4 @@ export type NavbarConfiguration = {
 export type PortfolioPageStaticData = {
   nav: NavbarConfiguration;
   footer: Footer;
-}
+};

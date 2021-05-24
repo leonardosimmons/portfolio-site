@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { ref } from '../../../../../utils/keys';
 import { IndexPageFeaturesSection } from '../../../../../utils/types';
 
 import styles from './Features.module.scss';
@@ -18,7 +19,7 @@ type Props = {
 
 const Features: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
   return (
-    <Container wrapper styles={styles} classes={'relative noselect'}>
+    <Container id={ref.FEATUES_SECTION} wrapper styles={styles} classes={'relative noselect'}>
       <Grid even grid={styles.grid}>
         <Box styles={styles}>
           <BaseHeading 

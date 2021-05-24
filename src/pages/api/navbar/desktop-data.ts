@@ -15,7 +15,7 @@ export default function desktopData(_: NextApiRequest, res: NextApiResponse<Desk
       },
       tabs: [
         { name: 'Home', link: '/', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 },
-        { name: 'Portfolio', link: '/under-construction', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 },
+        { name: 'Portfolio', link: '/portfolio', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 },
         { name: 'Contact Me', link: '/contact', src: '/icons/svg/small/triangle.svg', alt: 'icon', width: 10, height: 10 }
       ]
     }
