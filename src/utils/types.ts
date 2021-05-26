@@ -223,6 +223,12 @@ export type Text = {
   bodyClasses?: string;
 };
 
+export type Video = {
+  src: string;
+  loop?: boolean;
+  autoPlay?: boolean;
+  muted?: boolean;
+};
 
 //** ----------------------  INDEX PAGE  ---------------------- **//
 export type IndexPageAboutSection = {

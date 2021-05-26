@@ -1,14 +1,20 @@
+import { Video } from "../../../utils/types";
 
-type Props = {
-  src: string; 
-};
+type Props = Video;
 
-const BaseVideo: React.FunctionComponent<Props> = ({ src }): JSX.Element => {
+const BaseVideo: React.FunctionComponent<Props> = (
+  { 
+    src, 
+    autoPlay = true, 
+    loop = true, 
+    muted = true 
+  }
+): JSX.Element => {
   return (
     <video
-      autoPlay
-      muted
-      loop
+      muted={muted}
+      loop={loop}
+      autoPlay={autoPlay}
       style={{
         height: '100%',
         width: '100%',
