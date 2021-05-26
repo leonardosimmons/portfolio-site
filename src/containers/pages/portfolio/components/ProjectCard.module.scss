@@ -1,0 +1,50 @@
+
+.wrapper {
+  height: 700px;
+  width: 100%;
+
+  border: 2px solid var(--primary-base);
+}
+
+.grid {
+  height: 95%;
+  width: 95%;
+}
+
+.image {
+  &Box {
+    height: 100%;
+    width: 50%;
+    
+    & > div {
+      height: 100%;
+      width: 50%;
+    }
+  }
+}
+
+.content {
+  &Box {
+    background-color: green;
+  }
+}
+
+.heading {
+  &Box {
+
+  }
+}
+
+
+.text {
+  &Box {
+    
+  }
+}
+
+//* 1024px
+@media only screen and (min-width: 64em) {
+  .wrapper {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,51 @@
+
+.page {
+  position: relative;
+  margin: 0 auto;
+
+  transition: all .5s;
+}
+
+.nav {
+  height: 70px;
+  width: 100%;
+}
+
+.main {
+  height: 800px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContainer {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  height: 90%;
+  width: 90%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//* 1024px
+@media only screen and (min-width: 64em) {
+  .nav {
+    height: 100%;
+    max-width: 216rem;
+  }
+
+  .main {
+    height: 92vh;
+  }
+}
