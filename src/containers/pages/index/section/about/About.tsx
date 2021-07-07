@@ -20,8 +20,7 @@ const SectionOne: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
     <Container wrapper id={'about'} styles={styles} classes={'relative noselect'}>
       <BaseGrid even grid={`${styles.contentGrid} ${ styles.contentGridOne}`} >
         <div className={styles.imageBox}>
-          <Image 
-            priority
+          <Image
             quality={100}
             className={styles.image}
             src={data.images[0].src}
@@ -42,7 +41,6 @@ const SectionOne: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
       <BaseGrid even grid={`${styles.contentGrid} ${styles.contentGridTwo}`}>
         <div className={styles.imageBox}>
           <Image
-            priority
             quality={100} 
             className={styles.image}
             src={data.images[1].src}
