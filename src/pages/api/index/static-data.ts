@@ -66,7 +66,7 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
           spanOne: 'Take control',
           spanTwo: 'I Build',
           spanThree: 'Professional Websites and Applications',
-          body: 'In today\'s world one thing is forsure, No Website Means Losing Business. By having you\'re own website or application you not only increase your branding, credibility and sale capabilites but also greatly increase the flexibiliy and control you have over your own business.',
+          body: 'In today\'s world one thing is forsure, No Website Means Losing Business. By having your own website or application you not only increase your branding, credibility and sale capabilites but also greatly increase the flexibiliy and control you have over your business.',
           btn: {
             text: 'My Work',
             link: '/portfolio'
@@ -87,48 +87,48 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
         cards: 
         [
           {
-            heading: 'Header One',
+            heading: 'Responsive Websites',
             details: 
             [
-              { text: 'Test Details One'},
-              { text: 'Test Details Two'},
-              { text: 'Test Details Three'},
-              { text: 'Test Details Four'},
-              { text: 'Test Details Five'},
+              { text: 'Completely custom website'},
+              { text: 'Tailored to your business needs'},
+              { text: 'Responsive desktop and mobile friendly'},
+              { text: 'Ecommerce, B2B, or personal sites'},
+              { text: 'Optional database to store and track data'},
             ],
             price: {
-              text: 'ONLY',
-              value: '$1.5mil'
+              text: 'Responsive Websites',
+              value: 'A business\'s online presence, regardless of industry, can have a massive impact on it\'s success. Many businesses still do not realize that a majority of their customers will visit their website before making a purchase. This is why having an up to date, response and mobile friendly site is so important. Having a website to call your own allows you the ability to establish credibility, create a brand, and provide a user experince for you customers that will having them coming back'
             }
           },
           {
-            heading: 'Header Two',
+            heading: 'Business Applications',
             details: 
             [
-              { text: 'Test Details One'},
-              { text: 'Test Details Two'},
-              { text: 'Test Details Three'},
-              { text: 'Test Details Four'},
-              { text: 'Test Details Five'},
+              { text: 'B2B, B2C, Internal Applications, or API\'s'},
+              { text: 'Built to scale with your business'},
+              { text: 'Custom design and unique features'},
+              { text: 'Increase customer loyalty & sales'},
+              { text: 'Optional maintainance and support plans'},
             ],
             price: {
-              text: 'ONLY',
-              value: '$1.5mil'
+              text: 'Business Apps',
+              value: 'Business applications provide a software solution in solving a business problem that you may have. Business apps can optimize the business process to imporve effeciency, and empower workers to allow them to stay connected with each other and the office for real-time insights. They also increase customer engagement, boosting loyalty and sales. '
             }
           },
           {
-            heading: 'Header Three',
+            heading: 'SEO and Digital Marketing',
             details: 
             [
-              { text: 'Test Details One'},
-              { text: 'Test Details Two'},
-              { text: 'Test Details Three'},
-              { text: 'Test Details Four'},
-              { text: 'Test Details Five'},
+              { text: 'Top the google search results'},
+              { text: 'Reach thousands of customers daily'},
+              { text: 'Create and establish an online brand'},
+              { text: 'Build social credibility'},
+              { text: 'Increase sales!'},
             ],
             price: {
-              text: 'ONLY',
-              value: '$1.5mil'
+              text: 'SEO and Digital Marketing',
+              value: 'Customer engagement and driving organic traffic to your business is the name of the game. Establish an online brand and presence for your business and build social credibility amognst new and old customers. The power of SEO and Digital Marking allow you to reach thousands of new and old customers daily. Rank your page with google and begin to appear on the front page of google search results massively increasing new customer traffic to your site.'
             }
           },
         ],

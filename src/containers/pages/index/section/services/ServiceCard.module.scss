@@ -1,6 +1,6 @@
 
 .flipCard {
-  height: 48rem;
+  height: 800px;
   width: 85%;
 }
 
@@ -29,17 +29,18 @@
 
 .price {
   &Box{
-    margin-bottom: 8rem;
     color: var(--white);
   }
 
   &Text {
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 2.5rem;
+
+    margin-bottom: 2rem;
   }
 
   &Value {
-    font-size: 6rem;
+    font-size: 1.8rem;
     font-weight: 100; 
   }
 }
@@ -55,7 +56,7 @@
 //* 1024px
 @media only screen and (min-width: 64em) {
   .flipCard {
-    height: 52rem;
+    height: 50rem;
     width: 27.5%;
   }
 }
@@ -63,7 +64,6 @@
 //* 1280px
 @media only screen and (min-width: 80em) {
   .flipCard {
-    height: 52rem;
     width: 22.5%;
   }
 }
