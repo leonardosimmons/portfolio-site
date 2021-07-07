@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { IndexPageAboutSection } from '../../../../../utils/types';
 
 import styles from './About.module.scss';
@@ -50,6 +51,9 @@ const SectionOne: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
         </div>
         <div className={styles.textBox}>
           <p className={styles.text}>{data.body}</p>
+          <Link href={'#services'}>
+            <a>{'Services'}</a>
+          </Link>
         </div>
       </BaseGrid>
     </Container>

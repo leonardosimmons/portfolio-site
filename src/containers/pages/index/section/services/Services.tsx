@@ -25,7 +25,7 @@ const cards = [
 
 const Serivces: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
   return (
-    <Container wrapper styles={styles} classes={'relative noselect'}>
+    <Container wrapper id={'services'} styles={styles} classes={'relative noselect'}>
       <Heading classes={styles.headingBox}>
         <h2 className={styles.heading}>
           <span>{data.heading.spanOne}</span>
