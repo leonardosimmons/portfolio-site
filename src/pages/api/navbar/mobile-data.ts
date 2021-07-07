@@ -16,6 +16,7 @@ export default function data(_: NextApiRequest, res: NextApiResponse<MobileNavba
         height: 60
       },
       tabs: [
+        { name: 'Home', link: '/'},
         { name: 'Portfolio', link: '/portfolio' },
         { name: 'Contact Me', link: '/contact' }
       ]
