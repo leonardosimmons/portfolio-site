@@ -22,7 +22,7 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
         {
           textAbove: 'Wouldn\'t It Be Nice...',
           heading: 'Become the Talk of the Town',
-          textBelow: 'Let us work together to get your message out and let everyone know exactly who you are and what you stand for,',
+          textBelow: 'Let us work together to get your message out and let everyone know exactly who you are and what you stand for.',
           btn: {
             text: 'Learn More',
             link: '#features'
@@ -32,7 +32,7 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
         {
           textAbove: 'Establish A System',
           heading: 'Desktop and Mobile Working Together',
-          textBelow: 'I build systems that connect all the dots together and works synchronously with as one to drive in the results you desire.',
+          textBelow: 'I build systems that connect all the dots together and work synchronously as one to drive in the results you desire.',
           btn: {
             text: 'A Closer Look',
             link: '/portfolio'
@@ -63,19 +63,19 @@ export default function data(_: NextApiRequest, res: NextApiResponse<IndexPageDa
       },
       features: {
         heading: {
-          spanOne: 'I\'m here for you',
-          spanTwo: 'I Help Build',
-          spanThree: 'Professional Buisness Plans',
-          body: 'Our experts know how to get maximum profit out of every investment project. Entrust us with your assets and enjoy your daily life!',
+          spanOne: 'Take control',
+          spanTwo: 'I Build',
+          spanThree: 'Professional Websites and Applications',
+          body: 'In today\'s world one thing is forsure, No Website Means Losing Business. By having you\'re own website or application you not only increase your branding, credibility and sale capabilites but also greatly increase the flexibiliy and control you have over your own business.',
           btn: {
-            text: 'My Portfolio',
+            text: 'My Work',
             link: '/portfolio'
           }
         },
         card: {
-          lineOne: 'We work to ensure that your business prospers and brings you sufficient profit with a long perspective. We appreciate your trust greatly!',
+          lineOne: '"Your business is your livelyhood and for that I always commit to delivering a product that is up to specifications and within the allotted deadline."',
           lineTwo: 'Leonardo Simmons',
-          lineThree: 'Easy Company Founder'
+          lineThree: 'Easy Company'
         },
         image: { src: '/images/svg/undraw_real-time_sync_o57k.svg', alt: 'photo' }
       },

@@ -14,7 +14,7 @@ export default function footerData(_: NextApiRequest, res: NextApiResponse<Foote
         { name: 'Portfolio', link: '/portfolio'},
         { name: 'Contact', link: '/contact'},
       ],
-      logo: { src: '/images/png/logo.png', alt: 'logo', width: 100, height: 100},
+      logo: { src: '/images/png/logo.png', alt: 'logo', width: 60, height: 60},
       copyright: 'Built by Leonardo Simmons.'
     }
   )
