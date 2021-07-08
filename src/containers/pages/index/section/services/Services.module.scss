@@ -33,6 +33,7 @@
     text-align: center;
 
     margin: 0 auto;
+    margin-top: 8rem;
     margin-bottom: 2rem;
   }
 }
@@ -106,6 +107,7 @@
 
     &Box {
       align-items: flex-start;
+      margin-top: 0;
       margin-bottom: 0;
     }
   }

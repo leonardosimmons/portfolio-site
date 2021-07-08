@@ -1,34 +1,47 @@
 
 .wrapper {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .grid {
-  height: 95%;
-  width: 95%;
+  height: 98.5%;
+  width: 97.5%;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .image {
   &Box {
-    flex: 0 1 100%;
+    flex: 1;
     height: 100%;
   }
 }
 
 .content {
   &Box {
-    flex: 0 1 100%;
+    flex: 0 1 45%;
     height: 100%;
   }
 }
 
 
-//* 1024px
-@media only screen and (min-width: 64em) {
-  .wrapper {
+//* 768px
+@media only screen and (min-width: 48em) {
+  .grid {
+    height: 92.5%;
     flex-direction: row;
   }
+
+  .content {
+    &Box {
+      flex: 0 1 70%;
+    }
+  }
+}
+
+//* 1024px
+@media only screen and (min-width: 64em) {
 }

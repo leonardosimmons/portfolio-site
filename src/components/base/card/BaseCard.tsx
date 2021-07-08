@@ -37,10 +37,10 @@ const BaseCard: React.FunctionComponent<Props> = (
 ): JSX.Element => {
   return (
     <Container wrapper classes={`${styles && styles.wrapper || ''}`} styles={baseStyles}>
-      <Grid even grid={`${baseStyles.grid} ${styles ? styles.grid : ''}`}>
+      <Grid even grid={`${baseStyles.grid || ''} ${styles ? styles.grid : ''}`}>
         {
           left &&
-          <div className={`${baseStyles.imageBox} ${styles && styles.imageBox || ''}`}>
+          <div className={`relative ${baseStyles.imageBox} ${styles && styles.imageBox || ''}`}>
           { 
             video && 
             <BaseVideo 
@@ -62,12 +62,12 @@ const BaseCard: React.FunctionComponent<Props> = (
           }
           </div>
         }
-        <div className={`${baseStyles.contentBox} ${styles && styles.contentBox || ''}`}>
+        <div className={`relative ${baseStyles.contentBox} ${styles && styles.contentBox || ''}`}>
           {children}
         </div>
         {
           right &&
-          <div className={`${baseStyles.imageBox} ${styles && styles.imageBox || ''}`}>
+          <div className={`relative ${baseStyles.imageBox} ${styles && styles.imageBox || ''}`}>
           { 
             video && 
             <BaseVideo 

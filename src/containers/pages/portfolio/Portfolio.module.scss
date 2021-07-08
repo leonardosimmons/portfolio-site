@@ -12,30 +12,41 @@
 }
 
 .main {
-  height: 800px;
+  height: 100%;
+  min-height: 95vh;
   width: 100%;
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .mainContainer {
   height: 100%;
   width: 100%;
 
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .box {
-  height: 90%;
+  height: 80%;
   width: 90%;
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+}
+
+//* 768px
+@media only screen and (min-width: 48em) {
+  .mainContainer {
+    margin-top: 10rem;
+  }
 }
 
 //* 1024px
@@ -46,6 +57,11 @@
   }
 
   .main {
-    height: 92vh;
+    height: 100%;
+  }
+
+  .mainContainer {
+    margin-top: 20rem;
+    margin-bottom: 10rem;
   }
 }
