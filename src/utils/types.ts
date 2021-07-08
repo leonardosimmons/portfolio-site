@@ -300,6 +300,7 @@ export type ProjectToken = {
   title: string;
   type: string;
   text: Text;
+  mobileText: string;
   link: {
     demo: string;
     client?: string;

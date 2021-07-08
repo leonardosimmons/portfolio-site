@@ -34,7 +34,7 @@ const ProjectCard: React.FunctionComponent<Props> = ({ project }): JSX.Element =
             <span>{project.text.lineTwo}</span>
             <span>{project.text.lineThree}</span>
           </p>
-          <p className={styles.textMobile}></p>
+          <p className={styles.textMobile}>{project.mobileText}</p>
         </div>
         <div className={styles.links}>
           <a href={project.link.demo}>{'Demo'}</a>

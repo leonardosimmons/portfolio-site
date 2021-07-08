@@ -2,6 +2,7 @@
 .wrapper {
   height: 700px;
   width: 100%;
+  margin-bottom: 5rem;
 
   border: 2px solid var(--primary-base);
 }
@@ -39,7 +40,7 @@
 
 .text {
   &Box {
-    padding: 2rem;
+    padding: 1rem 2rem;
 
     & > h2 {
       display: flex;
@@ -52,18 +53,22 @@
       }
     }
   }
+
+  &Desktop {
+    display: none;
+  }
 }
 
 //* 768px
 @media only screen and (min-width: 48em) {
   .wrapper {
-    height: 400px;
-    width: 800px;
+    height: 250px;
+    width: 100%;
   }
 
   .text {
     &Box {
-          
+      padding: 0 2rem;
       & > h2 {
         align-items: flex-start;
         & > span:nth-child(1) {
@@ -81,8 +86,31 @@
 //* 1024px
 @media only screen and (min-width: 64em) {
   .wrapper {
-    height: 350px;
-    width: 1300px;
+    height: 280px;
+  }
+
+  .text {
+    &Desktop {
+      display: block;
+      width: 95%;
+    }
+
+    &Mobile {
+      display: none;
+    }
+  }
+}
+
+//* 1280
+@media only screen and (min-width: 80rem) {
+  .wrapper {
+    height: 325px;
+  }
+  
+  .text {
+    &Box {
+      padding: 2rem 2rem;
+    }
   }
 }
 
@@ -90,7 +118,10 @@
 //* 1536px
 @media only screen and (min-width: 96em) {
   .wrapper {
-    height: 500px;
-    width: 1500px;
+    height: 400px;
+    width: 95%;
+
+    max-height: 400px;
+    max-width: 1800px;
   }
 }
