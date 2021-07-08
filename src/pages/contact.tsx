@@ -32,6 +32,7 @@ function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): 
       }
     >
       <Container main styles={styles} classes={'relative noselect'}>
+        <div className={styles.spacer} />
         <Box styles={styles}>
           <Heading classes={styles.headingBox}>
             <h1 className={styles.heading}>

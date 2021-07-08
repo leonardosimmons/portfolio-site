@@ -2,7 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { PortfolioPageStaticData } from '../utils/types';
+import { PortfolioPageStaticData, ProjectToken } from '../utils/types';
 import { page } from '../utils/keys';
 
 import styles from '../containers/pages/portfolio/Portfolio.module.scss';
@@ -12,6 +12,7 @@ import FooterSection from '../containers/footer';
 import Container from '../components/base/container';
 import Box from '../components/base/box';
 import ProjectCard from '../containers/pages/portfolio/components/ProjectCard';
+import BaseHeading from '../components/heading/Heading';
 
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -64,8 +65,15 @@ function PortfolioPage({ data }: InferGetStaticPropsType<typeof getStaticProps>)
       }
     >
     <Container main styles={styles}>
+      <BaseHeading 
+        main
+        heading={'PORTFOLIO'}
+        classes={styles.heading}
+      />
       <Box styles={styles}>
-        <ProjectCard project={data.projects[0]}/>
+      {data.projects.map((project: ProjectToken, index: number) => (
+        <ProjectCard key={index} project={project} />
+      ))}
       </Box>
     </Container>
     </Layout>
