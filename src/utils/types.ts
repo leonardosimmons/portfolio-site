@@ -295,7 +295,20 @@ export type NavbarConfiguration = {
 
 
 //** --------------------  PORTFOLIO PAGE  -------------------- **//
+export type ProjectToken = {
+  src: string;
+  title: string;
+  type: string;
+  text: Text;
+  link: {
+    demo: string;
+    client?: string;
+    server?: string;
+  };
+};
+
 export type PortfolioPageStaticData = {
   nav: NavbarConfiguration;
+  projects: Array<ProjectToken>;
   footer: Footer;
 };

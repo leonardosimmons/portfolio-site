@@ -18,19 +18,21 @@ export const getStaticProps: GetStaticProps = async () => {
   const data: PortfolioPageStaticData | undefined = await axios.all([
     axios.get(process.env.NAVBAR_DESKTOP_API as string, { headers: {'Content-Type': 'application/json'} }),
     axios.get(process.env.NAVBAR_MOBILE_API as string, { headers: {'Content-Type': 'application/json'} }),
-    axios.get(process.env.FOOTER_API as string, { headers: {'Content-Type': 'application/json'}})
+    axios.get(process.env.FOOTER_API as string, { headers: {'Content-Type': 'application/json'}}),
+    axios.get(process.env.PORTFOLIO_PAGE_API as string, { headers: {'Content-Type': 'application/json'}}),
   ])
-  .then(axios.spread((desktop, mobile, footer) => {
-    if (desktop.status === 200 && mobile.status === 200 && footer.status === 200) {
+  .then(axios.spread((desktop, mobile, footer, projects) => {
+    if (desktop.status === 200 && mobile.status === 200 && footer.status === 200, projects.status === 200) {
       const dataToken: PortfolioPageStaticData = {
         nav: {
           desktop: desktop.data,
           mobile: mobile.data
         },
+        projects: projects.data,
         footer: footer.data
       };
 
-      return dataToken
+      return dataToken;
     }
   }))
   .catch(err => {
@@ -63,7 +65,7 @@ function PortfolioPage({ data }: InferGetStaticPropsType<typeof getStaticProps>)
     >
     <Container main styles={styles}>
       <Box styles={styles}>
-        <ProjectCard />
+        <ProjectCard project={data.projects[0]}/>
       </Box>
     </Container>
     </Layout>
