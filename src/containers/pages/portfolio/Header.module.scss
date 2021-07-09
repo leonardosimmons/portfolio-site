@@ -1,0 +1,116 @@
+
+.wrapper {
+  height: 325px;
+  width: 100%;
+  
+  background-size: 70%;
+  background-position: 50% 20%;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  &Text {
+    & > h1 {
+      font-size: 5rem;
+    }
+  }
+}
+
+
+//* 368px
+@media only screen and (min-width: 23em) {
+  .wrapper {
+    background-size: 50%;
+
+    &Text {
+      & > h1 {
+        font-size: 6.5rem;
+      }
+    }
+  }
+}
+
+//* 528px
+@media only screen and (min-width: 33em) {
+  .wrapper {
+    height: 375px;
+    background-size: 40%;
+
+    &Text {
+      & > h1 {
+        font-size: 6.5rem;
+      }
+    }
+  }
+}
+
+//* 768px
+@media only screen and (min-width: 48em) {
+  .wrapper {
+    height: 350px;
+    width: 90%;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+
+    background-size: 40%;
+    background-position: 100% 40%;
+
+    &Text {
+      h1 {
+        font-size: 7.5rem;
+      }
+    }
+  }
+}
+
+//* 1024px
+@media only screen and (min-width: 64em) {
+  .wrapper {
+    background-size: 35%;
+
+    &Text {
+      h1 {
+        font-size: 9rem;
+      }
+    }
+  }
+
+  .spacer {
+    height: 70px;
+    width: 100%;
+  }
+}
+
+//* 1280px
+@media only screen and (min-width: 80em) {
+  .wrapper {
+    background-size: 30%;
+
+    &Text {
+      h1 {
+        font-size: 10.5rem;
+      }
+    }
+  }
+}
+
+//* 1536px
+@media only screen and (min-width: 96em) {
+  .wrapper {
+    height: 700px;
+    justify-content: center;
+    align-items: flex-end;
+
+    background-size: 40rem;
+    background-position: 50% 15%;
+
+    &Text {
+      h1 {
+        font-size: 12rem;
+      }
+    }
+  }
+}
