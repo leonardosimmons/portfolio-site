@@ -205,8 +205,10 @@
 //* 1280px
 @media only screen and (min-width: 80em) {
   .main {
-    min-height: 75vh;
-    align-items: center;
+    min-height: 70vh;
+
+    align-items: flex-start;
+    margin-top: 10rem;
   }
 
   .mainContainer {
