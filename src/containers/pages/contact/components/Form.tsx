@@ -9,12 +9,16 @@ import { Text } from '../../../../utils/types';
 
 type Props = {
   placeholders: Text[];
+  handlers: Array<(e: React.ChangeEvent<HTMLInputElement>) => void>;
+  msgHandler: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  submit: (e: React.FormEvent) => void;
+  reset: () => void;
 };
 
 
-const ContactMeForm: React.FunctionComponent<Props> = ({ placeholders }): JSX.Element => {
+const ContactMeForm: React.FunctionComponent<Props> = ({ placeholders, handlers, msgHandler, submit, reset }): JSX.Element => {
   return (
-    <form className={styles.contactForm}>
+    <form className={styles.contactForm} onSubmit={submit}>
       <div className={styles.inputBox}>
         {
           placeholders.map((placeholder: Text, index: number) => (
@@ -23,14 +27,15 @@ const ContactMeForm: React.FunctionComponent<Props> = ({ placeholders }): JSX.El
               id={placeholder.text} 
               styles={styles} 
               autoComplete={false}
-              placeholder={placeholder.text} 
+              placeholder={placeholder.text}
+              changed={handlers[index]} 
             />
           ))
         }
-        <textarea className={styles.textarea} placeholder={'Please enter message here...'}/>
+        <textarea className={styles.textarea} placeholder={'Please enter message here...'} onChange={msgHandler}/>
       </div>
       <div className={styles.btnBox}>
-        <Input id={'reset'} type={'reset'} value={'RESET'} classes={'relative btn-hoverConfig btn-activeFocus'}/>
+        <Input id={'reset'} type={'reset'} value={'RESET'} classes={'relative btn-hoverConfig btn-activeFocus'} clicked={reset}/>
         <Input id={'submit'} type={'submit'} value={'SUBMIT'} classes={'relative btn-hoverConfig btn-activeFocus'}/>
       </div>
     </form>
