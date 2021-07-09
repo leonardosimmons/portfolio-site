@@ -1,4 +1,5 @@
 
+import { AxiosResponse } from 'axios';
 import { ImageLoader } from 'next/image';
 
 //** ---------------------  CONTACT PAGE  ---------------------- **//
@@ -138,6 +139,28 @@ export type Header = Heading & {
   bgImage?: string;
   priority?: string;
 };
+
+export type HttpHeader = {
+  'Content-Type'?: string;
+  'auth-token'?: string; 
+};
+
+export type HttpRequest = {
+  url: string;
+  type: 'GET' | 'POST' | 'DELETE' | 'PUT';
+  post?: any;
+  query?: string;
+};
+
+export type HttpResponse = {
+  msesage: string;
+  data?: any;
+  payload?: any;
+  value?: any;
+  type?: string;
+};
+
+export type HttpServerResponse = AxiosResponse | false;
 
 export type Icon = Image & Direction & PageLink;
 
