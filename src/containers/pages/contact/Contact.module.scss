@@ -13,13 +13,12 @@
 }
 
 .spacer {
-  height: 70px;
+  height: 20px;
   width: 100%;
 }
 
 .main {
   height: 100%;
-  min-height: 93vh;
   width: 100%;
 
   display: flex;
@@ -63,7 +62,8 @@
   line-height: 1.2;
 
   & > span:nth-child(1) {
-    font-size: 2.25rem;
+    font-size: 2.75rem;
+    margin-bottom: 2rem;
   }
   
   & > span:nth-child(2) {
@@ -86,11 +86,19 @@
   }
 }
 
+
 //* 368px
 @media only screen and (min-width: 23em) {
-  .main {
-    height: 725px;
+  .header {
+    background-size: 50%;
+
+    &Text {
+      & > h1 {
+        font-size: 6.5rem;
+      }
+    }
   }
+
   .mainContainer {
     height: 625px;
     width: 90%;
@@ -105,14 +113,35 @@
   }
 }
 
-//* 768px
-@media only screen and (min-width: 48em) {
-  .page {
-    height: 100vh;
+
+//* 528px
+@media only screen and (min-width: 33em) {
+  .main {
+    height: 100%;
   }
 
+  .box {
+    height: 555px;
+    width: 450px;
+  }
+
+  .header {
+    height: 375px;
+    background-size: 40%;
+
+    &Text {
+      & > h1 {
+        font-size: 6.5rem;
+      }
+    }
+  }
+}
+
+//* 768px
+@media only screen and (min-width: 48em) {
   .main {
-    height: 91vh;
+    height: 100%;
+    padding: 0 1rem;
     align-items: flex-start;
   }
 
@@ -124,6 +153,10 @@
     width: 85%;
   }
 
+  .box {
+    width: 90%;
+  }
+
   .heading {
     & > span:nth-child(2) {
       font-size: 5.5rem;
@@ -131,7 +164,7 @@
 
     &Box {
       & > p {
-        width: 80%;
+        width: 90%;
       }
     }
   }
@@ -144,14 +177,16 @@
     max-width: 216rem;
   }
 
+
+
   .mainContainer {
     height: 75%;
     width: 80%;
   }
   
   .box {
-    height: 555px;
-    width: 500px;
+    height: 755px;
+    width: 700px;
   }
 
   .heading {
@@ -163,11 +198,30 @@
 
     &Box {
       & > p {
-        width: 100%;
+        width: 80%;
 
         margin-top: 1rem;
         margin-bottom: 0rem;
       }
     } 
+  }
+}
+
+//* 1280px
+@media only screen and (min-width: 80em) {
+  .page {
+    height: 100vh
+  }
+
+  .main {
+    height: 90%;
+
+    align-items: center;
+  }
+
+  .heading {
+    & > span:nth-child(1) {
+      font-size: 6rem;
+    }
   }
 }

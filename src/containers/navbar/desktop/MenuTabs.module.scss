@@ -1,7 +1,6 @@
 
 .menuTab {
   flex: 0 1 22.5%;
-
 }
 
 .box {
@@ -34,7 +33,15 @@
   }
 }
 
-@media only screen and (min-width: 96em) { // 1536px
+//* 1280px
+@media only screen and (min-width: 80em) {
+  .menuTab {
+    flex: 0 1 17.5%;
+  }
+}
+
+//* 1536px
+@media only screen and (min-width: 96em) {
   .text {
     font-size: 2.25rem;
   }
