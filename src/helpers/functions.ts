@@ -24,7 +24,17 @@ export const preventDefault = (fn: (e: React.FormEvent) => void) => (e: React.Fo
  * @param fn 
  * @returns 
  */
-export const handleInput = (fn: (i: string | number) => void) => (e: React.ChangeEvent<HTMLInputElement>): void => {
+export const handleInput = (fn: (i: string | number) => void) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+  fn(e.target.value);
+};
+
+
+/**
+ * Consummes input change event and passes to provdided function
+ * @param fn 
+ * @returns 
+ */
+export const handleTextArea = (fn: (txt: string) => void) => (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
   fn(e.target.value);
 };
 
@@ -34,6 +44,15 @@ export const handleInput = (fn: (i: string | number) => void) => (e: React.Chang
  * @param ref 
  * @returns 
  */
-export const handleInputRef = (ref: React.MutableRefObject<string | number | undefined>) => (e: React.ChangeEvent<HTMLInputElement>): void => {
+export const handleInputRef = (ref: React.MutableRefObject<string | number | undefined>) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+  ref.current = e.target.value;
+};
+
+/**
+ * Places a ref on the given input element
+ * @param ref 
+ * @returns 
+ */
+export const handleTextAreaRef = (ref: React.MutableRefObject<string | undefined>) => (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
   ref.current = e.target.value;
 };
