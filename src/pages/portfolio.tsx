@@ -6,6 +6,7 @@ import { PortfolioPageStaticData, ProjectToken } from '../utils/types';
 import { page } from '../utils/keys';
 
 import styles from '../containers/pages/portfolio/Portfolio.module.scss';
+import headerStyles from '../containers/pages/portfolio/Header.module.scss';
 
 import Layout from '../containers/layout';
 import FooterSection from '../containers/footer';
@@ -57,6 +58,19 @@ function PortfolioPage({ data }: InferGetStaticPropsType<typeof getStaticProps>)
       styles={styles}
       desktop={data.nav.desktop}
       mobile={data.nav.mobile}
+      header={
+        <>
+          <div className={headerStyles.spacer} />
+          <div
+            className={`${headerStyles.wrapper} noselect`} 
+            style={{ backgroundImage: `${'url(\'/images/svg/undraw_collecting_fjjl.svg\')'}`}}>
+            <BaseHeading classes={headerStyles.wrapperText}>
+              <h1>Portfolio</h1>
+            </BaseHeading>
+            <div className={headerStyles.wrapperSpacer} />
+          </div>
+        </>
+      }
       footer={
         <FooterSection 
           parent={page.PORTFOLIO} 
@@ -65,11 +79,6 @@ function PortfolioPage({ data }: InferGetStaticPropsType<typeof getStaticProps>)
       }
     >
     <Container main styles={styles}>
-      <BaseHeading 
-        main
-        heading={'PORTFOLIO'}
-        classes={styles.heading}
-      />
       <Box styles={styles}>
       {data.projects.map((project: ProjectToken, index: number) => (
         <ProjectCard key={index} project={project} />

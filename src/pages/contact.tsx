@@ -6,6 +6,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { ContactPageStaticData } from '../utils/types';
 
 import styles from '../containers/pages/contact/Contact.module.scss';
+import headerStyles from '../containers/pages/contact/Header.module.scss';
 
 import Layout from '../containers/layout';
 import Footer from '../containers/footer';
@@ -13,6 +14,7 @@ import Container from '../components/base/container';
 import Box from '../components/base/box';
 import Heading from '../components/heading';
 import Form from '../containers/pages/contact/components/Form';
+import BaseHeading from '../components/heading';
 
 
 function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element 
@@ -24,6 +26,15 @@ function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): 
       styles={styles}
       desktop={data.nav.desktop}
       mobile={data.nav.mobile}
+      header={
+        <div
+          className={`${headerStyles.wrapper} noselect`} 
+          style={{ backgroundImage: `${'url(\'/images/svg/undraw_Collaboration_re_vyau.svg\')'}`}}>
+          <BaseHeading classes={headerStyles.wrapperText}>
+            <h1>Contact Me</h1>
+          </BaseHeading>
+        </div>
+      }
       footer={
         <Footer 
           parent={page.CONTACT} 
@@ -37,7 +48,6 @@ function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): 
           <Heading classes={styles.headingBox}>
             <h1 className={styles.heading}>
               <span>{data.page.heading.spanOne}</span>
-              <span>{data.page.heading.spanTwo}</span>
             </h1>
             <p>{data.page.heading.body}</p>
           </Heading>
