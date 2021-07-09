@@ -4,6 +4,10 @@ import { ImageLoader } from 'next/image';
 //** ---------------------  CONTACT PAGE  ---------------------- **//
 export type ContactPageData = {
   title: string;
+  header: {
+    src: string;
+    text: string;
+  };
   heading: Text;
   placeholders: Text[];
 };
@@ -308,8 +312,16 @@ export type ProjectToken = {
   };
 };
 
+export type PortfolioPageData = {
+  header: {
+    src: string;
+    text: string;
+  };
+  projects: Array<ProjectToken>;
+};
+
 export type PortfolioPageStaticData = {
   nav: NavbarConfiguration;
-  projects: Array<ProjectToken>;
+  page: PortfolioPageData
   footer: Footer;
 };

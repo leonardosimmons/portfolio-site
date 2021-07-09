@@ -29,9 +29,9 @@ function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): 
       header={
         <div
           className={`${headerStyles.wrapper} noselect`} 
-          style={{ backgroundImage: `${'url(\'/images/svg/undraw_Collaboration_re_vyau.svg\')'}`}}>
+          style={{ backgroundImage: `${'url(' + data.page.header.src + ')'}`}}>
           <BaseHeading classes={headerStyles.wrapperText}>
-            <h1>Contact Me</h1>
+            <h1>{data.page.header.text}</h1>
           </BaseHeading>
         </div>
       }

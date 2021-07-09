@@ -14,6 +14,10 @@ export default function contactPageData(_: NextApiRequest, res: NextApiResponse<
         spanTwo: 'Contact Me',
         body: 'I love challenges and work with any type of project: Websites, Business Applications, SEO and Digital Marketing - I can handle all your requests.'
       },
+      header: {
+        src: '/images/svg/undraw_Collaboration_re_vyau.svg',
+        text: 'Contact Me'
+      },
       placeholders:
       [
         {text: 'First Name'},

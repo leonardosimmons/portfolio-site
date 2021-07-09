@@ -20,17 +20,17 @@ export const getStaticProps: GetStaticProps = async () => {
   const data: PortfolioPageStaticData | undefined = await axios.all([
     axios.get(process.env.NAVBAR_DESKTOP_API as string, { headers: {'Content-Type': 'application/json'} }),
     axios.get(process.env.NAVBAR_MOBILE_API as string, { headers: {'Content-Type': 'application/json'} }),
-    axios.get(process.env.FOOTER_API as string, { headers: {'Content-Type': 'application/json'}}),
     axios.get(process.env.PORTFOLIO_PAGE_API as string, { headers: {'Content-Type': 'application/json'}}),
+    axios.get(process.env.FOOTER_API as string, { headers: {'Content-Type': 'application/json'}}),
   ])
-  .then(axios.spread((desktop, mobile, footer, projects) => {
-    if (desktop.status === 200 && mobile.status === 200 && footer.status === 200, projects.status === 200) {
+  .then(axios.spread((desktop, mobile, page, footer) => {
+    if (desktop.status === 200 && mobile.status === 200 && page.status === 200, footer.status === 200) {
       const dataToken: PortfolioPageStaticData = {
         nav: {
           desktop: desktop.data,
           mobile: mobile.data
         },
-        projects: projects.data,
+        page: page.data,
         footer: footer.data
       };
 
@@ -63,9 +63,9 @@ function PortfolioPage({ data }: InferGetStaticPropsType<typeof getStaticProps>)
           <div className={headerStyles.spacer} />
           <div
             className={`${headerStyles.wrapper} noselect`} 
-            style={{ backgroundImage: `${'url(\'/images/svg/undraw_collecting_fjjl.svg\')'}`}}>
+            style={{ backgroundImage: `${'url(' + data.page.header.src + ')'}`}}>
             <BaseHeading classes={headerStyles.wrapperText}>
-              <h1>Portfolio</h1>
+              <h1>{data.page.header.text}</h1>
             </BaseHeading>
             <div className={headerStyles.wrapperSpacer} />
           </div>
@@ -78,13 +78,13 @@ function PortfolioPage({ data }: InferGetStaticPropsType<typeof getStaticProps>)
         />
       }
     >
-    <Container main styles={styles}>
-      <Box styles={styles}>
-      {data.projects.map((project: ProjectToken, index: number) => (
-        <ProjectCard key={index} project={project} />
-      ))}
-      </Box>
-    </Container>
+      <Container main styles={styles}>
+        <Box styles={styles}>
+        {data.page.projects.map((project: ProjectToken, index: number) => (
+          <ProjectCard key={index} project={project} />
+        ))}
+        </Box>
+      </Container>
     </Layout>
   )
 };
