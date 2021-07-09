@@ -10,9 +10,9 @@ export default function contactPageData(_: NextApiRequest, res: NextApiResponse<
     {
       title: 'Leonardo Simmons | Contact Me',
       heading: {
-        spanOne: 'Write a Message',
+        spanOne: 'Leave a Message',
         spanTwo: 'Contact Me',
-        body: 'We love challenges and work with any type of projects: financial debt, rebranding, company\'s audit - we can handle all your requests'
+        body: 'I love challenges and work with any type of project: Websites, Business Applications, SEO and Digital Marketing - I can handle all your requests.'
       },
       placeholders:
       [
