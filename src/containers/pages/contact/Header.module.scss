@@ -53,7 +53,7 @@
     width: 90%;
     justify-content: flex-start;
     align-items: center;
-    margin: auto;
+    margin: 0 auto;
 
     background-size: 40%;
     background-position: 100% 40%;
@@ -82,7 +82,13 @@
 //* 1280px
 @media only screen and (min-width: 80em) {
   .wrapper {
-    background-size: 30%;
+    height: 500px;
+    justify-content: center;
+    align-items: start;
+
+    background-size: 36rem;
+    background-position: 50% 95%;
+
 
     &Text {
       h1 {
@@ -95,17 +101,15 @@
 //* 1536px
 @media only screen and (min-width: 96em) {
   .wrapper {
-    height: 500px;
-    justify-content: center;
-    align-items: start;
-
-    background-size: 32rem;
-    background-position: 50% 85%;
+    background-size: 35rem;
+    background-position: 50% 100%;
 
     &Text {
       h1 {
         font-size: 12rem;
       }
     }
+
+
   }
 }

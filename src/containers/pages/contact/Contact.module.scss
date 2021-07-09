@@ -1,7 +1,7 @@
 
 .page {
   position: relative;
-  height: 100%;
+  width: 100%;
   margin: 0 auto;
 
   transition: all .5s;
@@ -25,11 +25,11 @@
   justify-content: center;
   align-items: center;
 
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 .mainContainer {
-  height: 725px;
+  height: 100%;
   width: 90%;
 
   display: flex;
@@ -89,16 +89,6 @@
 
 //* 368px
 @media only screen and (min-width: 23em) {
-  .header {
-    background-size: 50%;
-
-    &Text {
-      & > h1 {
-        font-size: 6.5rem;
-      }
-    }
-  }
-
   .mainContainer {
     height: 625px;
     width: 90%;
@@ -126,7 +116,7 @@
   }
 
   .header {
-    height: 375px;
+    //height: 375px;
     background-size: 40%;
 
     &Text {
@@ -150,6 +140,7 @@
   }
 
   .mainContainer {
+    //margin-top: 10rem;
     width: 85%;
   }
 
@@ -177,11 +168,10 @@
     max-width: 216rem;
   }
 
-
-
   .mainContainer {
-    height: 75%;
+    height: 100%;
     width: 80%;
+    margin-bottom: 10rem;
   }
   
   .box {
@@ -191,6 +181,11 @@
 
   .heading {
     line-height: 1.4;
+    
+    & > span:nth-child(1) {
+      font-size: 3.75rem;
+      margin-bottom: 2rem;
+    }
 
     & > span:nth-child(2) {
       margin-bottom: 0rem;
@@ -209,14 +204,13 @@
 
 //* 1280px
 @media only screen and (min-width: 80em) {
-  .page {
-    height: 100vh
+  .main {
+    min-height: 75vh;
+    align-items: center;
   }
 
-  .main {
-    height: 90%;
-
-    align-items: center;
+  .mainContainer {
+    height: 100%;
   }
 
   .heading {
