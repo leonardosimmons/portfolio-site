@@ -16,6 +16,7 @@ type Props = {
 
 const BaseInput: React.FunctionComponent<Props> = (
   { 
+    id,
     parent,
     col,
     toggle,
@@ -58,7 +59,7 @@ const BaseInput: React.FunctionComponent<Props> = (
         { col ? <br></br> : '' }
         <input 
           className={`${ styles && styles.input || '' } ${ classes ? classes : '' }`} 
-          id={`${ parent ? parent + '__input' : ''}`} 
+          id={`${ parent ? parent + '__input' : id ? id : ''}`} 
           type={ type ? type : "text" } 
           autoComplete={ autoComplete ? "on" : "off" }
           placeholder={ placeholder ? placeholder : '' }

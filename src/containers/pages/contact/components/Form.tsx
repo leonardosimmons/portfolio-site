@@ -19,7 +19,8 @@ const ContactMeForm: React.FunctionComponent<Props> = ({ placeholders }): JSX.El
         {
           placeholders.map((placeholder: Text, index: number) => (
             <Input 
-              key={index} 
+              key={index}
+              id={placeholder.text} 
               styles={styles} 
               autoComplete={false}
               placeholder={placeholder.text} 
@@ -29,8 +30,8 @@ const ContactMeForm: React.FunctionComponent<Props> = ({ placeholders }): JSX.El
         <textarea className={styles.textarea} placeholder={'Please enter message here...'}/>
       </div>
       <div className={styles.btnBox}>
-        <Input type={'reset'} value={'RESET'} classes={'relative btn-hoverConfig btn-activeFocus'}/>
-        <Input type={'submit'} value={'SUBMIT'} classes={'relative btn-hoverConfig btn-activeFocus'}/>
+        <Input id={'reset'} type={'reset'} value={'RESET'} classes={'relative btn-hoverConfig btn-activeFocus'}/>
+        <Input id={'submit'} type={'submit'} value={'SUBMIT'} classes={'relative btn-hoverConfig btn-activeFocus'}/>
       </div>
     </form>
   );
