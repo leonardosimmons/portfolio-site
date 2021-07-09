@@ -1,18 +1,11 @@
+
 import { combineReducers } from 'redux';
-import { AppActions } from './action-types';
+import { contactMeFormReducer } from '../containers/pages/contact/reducer';
 
-const indexPageDefaultState = {
-  firstLoad: false,
-  introModal: true
-};
-
-
-const indexPageReducer = (state = indexPageDefaultState, action: AppActions) => {
-  return state
-};
 
 export const rootReducer = combineReducers({
-  tempReducer: indexPageReducer
+  contact_me_form: contactMeFormReducer
 });
+
 
 export type AppState = ReturnType<typeof rootReducer>;

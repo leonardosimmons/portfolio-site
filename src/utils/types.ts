@@ -18,6 +18,14 @@ export type ContactPageStaticData = {
   footer: Footer;
 };
 
+export type ContactMeForm = {
+  firstname: string;
+  lastname: string;
+  subject: string;
+  email: string;
+  message: string;
+};
+
 //** -----------------------  CAROUSEL  ------------------------ **//
 export type CarouselContext = {
   width: number;
