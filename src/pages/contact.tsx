@@ -8,6 +8,8 @@ import { ContactPageStaticData } from '../utils/types';
 import styles from '../containers/pages/contact/Contact.module.scss';
 import headerStyles from '../containers/pages/contact/Header.module.scss';
 
+import { useContactMeForm } from '../helpers/hooks/useContactMeForm';
+
 import Layout from '../containers/layout';
 import Footer from '../containers/footer';
 import Container from '../components/base/container';
@@ -15,46 +17,11 @@ import Box from '../components/base/box';
 import Heading from '../components/heading';
 import Form from '../containers/pages/contact/components/Form';
 import BaseHeading from '../components/heading';
-import { handleInputRef, handleTextArea, handleTextAreaRef } from '../helpers/functions';
-import { useAppDispatch } from '../helpers/hooks/redux';
-import { resetContactMeForm, setEmail, setFirstName, setLastname, setMessage, setSubject } from '../containers/pages/contact/actions';
 
 
 function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element 
 {
-  const dispatch = useAppDispatch();  
-
-  const fnRef = React.useRef<string>('');
-  const lnRef = React.useRef<string>('');
-  const subRef = React.useRef<string>('');
-  const eRef = React.useRef<string>('');
-  const mRef = React.useRef<string>('');
-
-  const handleFn = React.useCallback(handleInputRef(fnRef), []);
-  const handleLn = React.useCallback(handleInputRef(lnRef), []);
-  const handleSub = React.useCallback(handleInputRef(subRef), []);
-  const handleEmail = React.useCallback(handleInputRef(eRef), []);
-  const handleMsg = React.useCallback(handleTextAreaRef(mRef), []);
-
-  const handlersRef = React.useRef<Array<(e: React.ChangeEvent<HTMLInputElement>) => void>>([
-    handleFn,
-    handleLn,
-    handleSub,
-    handleEmail
-  ]);
-  
-  const handleSubmit = React.useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    dispatch(setFirstName(fnRef.current));
-    dispatch(setLastname(lnRef.current));
-    dispatch(setSubject(subRef.current));
-    dispatch(setEmail(eRef.current));
-    dispatch(setMessage(mRef.current));
-  }, []);
-
-  const resetForm = React.useCallback(() => {
-    dispatch(resetContactMeForm());
-  }, []);
+  const form = useContactMeForm();
 
   return (
     <Layout
@@ -90,10 +57,10 @@ function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): 
           </Heading>
           <Form 
             placeholders={data.page.placeholders}
-            handlers={handlersRef.current}
-            msgHandler={handleMsg}
-            submit={handleSubmit}
-            reset={resetForm}
+            handlers={form.inputs.current}
+            msgHandler={form.handleMsg}
+            submit={form.submit}
+            reset={form.reset}
           />
         </Box>
       </Container>
