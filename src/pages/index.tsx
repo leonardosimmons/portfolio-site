@@ -1,7 +1,7 @@
 
 import React from 'react';
 import axios from 'axios';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next';
 import { IndexPageStaticData } from '../utils/types';
 
 import styles from '../containers/pages/index/Index.module.scss';
@@ -16,7 +16,7 @@ import Serivces from '../containers/pages/index/section/services';
 import Footer from '../containers/footer';
 
 
-function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+function Index({ data }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
   return (
     <Layout
       parent={'home'}
@@ -52,7 +52,7 @@ function Index({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.El
 export default Index;
 
 
-export const getStaticProps: GetStaticProps = async() => {
+export const getServerSideProps: GetServerSideProps = async() => {
   const data: IndexPageStaticData | undefined = await axios.all([
     axios.get(process.env.NAVBAR_DESKTOP_API as string, { headers: {'Content-Type': 'application/json'} }),
     axios.get(process.env.NAVBAR_MOBILE_API as string, { headers: {'Content-Type': 'application/json'} }),

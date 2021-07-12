@@ -2,7 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import { page } from '../utils/keys';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { ContactPageStaticData } from '../utils/types';
 
 import styles from '../containers/pages/contact/Contact.module.scss';
@@ -19,7 +19,7 @@ import Form from '../containers/pages/contact/components/Form';
 import BaseHeading from '../components/heading';
 
 
-function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element 
+function ContactPage({ data }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element 
 {
   const form = useContactMeForm();
 
@@ -71,7 +71,7 @@ function ContactPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): 
 export default ContactPage;
 
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const data: ContactPageStaticData | undefined = await axios.all([
     axios.get(process.env.NAVBAR_DESKTOP_API as string, { headers: {'Content-Type': 'application/json'} }),
     axios.get(process.env.NAVBAR_MOBILE_API as string, { headers: {'Content-Type': 'application/json'} }),

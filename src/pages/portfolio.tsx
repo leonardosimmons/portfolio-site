@@ -1,7 +1,7 @@
 
 import React from 'react';
 import axios from 'axios';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { GetServerSideProps, GetStaticProps, InferGetServerSidePropsType, InferGetStaticPropsType } from 'next';
 import { PortfolioPageStaticData, ProjectToken } from '../utils/types';
 import { page } from '../utils/keys';
 
@@ -16,7 +16,7 @@ import ProjectCard from '../containers/pages/portfolio/components/ProjectCard';
 import BaseHeading from '../components/heading/Heading';
 
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const data: PortfolioPageStaticData | undefined = await axios.all([
     axios.get(process.env.NAVBAR_DESKTOP_API as string, { headers: {'Content-Type': 'application/json'} }),
     axios.get(process.env.NAVBAR_MOBILE_API as string, { headers: {'Content-Type': 'application/json'} }),
@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 
-function PortfolioPage({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element
+function PortfolioPage({ data }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element
 {
   return (
     <Layout
