@@ -1,9 +1,8 @@
 
+import React from 'react';
 import Link from 'next/link';
 import LogoImage from 'next/image';
-
-import { BaseOptions, Logo } from '../../../utils/types';
-import React from 'react';
+import { BaseOptions, Logo } from '../../utils/types';
 
 
 type Props = Logo & BaseOptions;
