@@ -33,7 +33,6 @@ yarn-error.log*
 
 
 # User
-/public
 /src/buffer
 /src/*.txt
 *.png
