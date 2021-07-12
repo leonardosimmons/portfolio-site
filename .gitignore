@@ -35,11 +35,5 @@ yarn-error.log*
 # User
 /src/buffer
 /src/*.txt
-*.png
-*.jpg
-*.JPG
-*.jpeg
-*.svg
-*.mp4
 favicon.ico
 temp.tsx
