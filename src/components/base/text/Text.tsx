@@ -14,11 +14,11 @@ const BaseText: React.FunctionComponent<Props> = (
     headingTwo,
     subHeadOne,
     subHeadTwo, 
-    textOne, 
-    textTwo, 
-    textThree, 
-    textFour, 
-    textFive,
+    lineOne, 
+    lineTwo, 
+    lineThree, 
+    lineFour, 
+    lineFive,
     spanOne, 
     spanTwo, 
     spanThree, 
@@ -30,11 +30,11 @@ const BaseText: React.FunctionComponent<Props> = (
     headingTwoClasses,
     subHeadOneClasses,
     subHeadTwoClasses,
-    textOneClasses,
-    textTwoClasses,
-    textThreeClasses,
-    textFourClasses,
-    textFiveClasses,
+    lineOneClasses,
+    lineTwoClasses,
+    lineThreeClasses,
+    lineFourClasses,
+    lineFiveClasses,
     spanOneClasses,
     spanTwoClasses,
     spanThreeClasses,
@@ -49,11 +49,11 @@ const BaseText: React.FunctionComponent<Props> = (
       { headingTwo && <h2 className={`${ styles && styles.headingTwo } ${ headingTwoClasses || '' }`}>{ headingTwo }</h2> }
       { subHeadOne && <h3 className={`${ styles && styles.subHeadingOne } ${ subHeadOneClasses || '' }`}>{ subHeadOne }</h3> }
       { subHeadTwo && <h3 className={`${ styles && styles.subHeadingTwo } ${ subHeadTwoClasses || '' }`}>{ subHeadTwo }</h3> }
-      { textOne && <p className={`${ styles && styles.textOne } ${ textOneClasses || '' }`}>{ textOne }</p> }
-      { textTwo && <p className={`${ styles && styles.textTwo } ${ textTwoClasses || '' }`}>{ textTwo }</p> }
-      { textThree && <p className={`${ styles && styles.textThree } ${ textThreeClasses || '' }`}>{ textThree }</p> }
-      { textFour && <p className={`${ styles && styles.textFour } ${ textFourClasses || '' }`}>{ textFour }</p> }
-      { textFive && <p className={`${ styles && styles.textFive } ${ textFiveClasses || '' }`}>{ textFive }</p> }
+      { lineOne && <p className={`${ styles && styles.lineOne } ${ lineOneClasses || '' }`}>{ lineOne }</p> }
+      { lineTwo && <p className={`${ styles && styles.lineTwo } ${ lineTwoClasses || '' }`}>{ lineTwo }</p> }
+      { lineThree && <p className={`${ styles && styles.lineThree } ${ lineThreeClasses || '' }`}>{ lineThree }</p> }
+      { lineFour && <p className={`${ styles && styles.lineFour } ${ lineFourClasses || '' }`}>{ lineFour }</p> }
+      { lineFive && <p className={`${ styles && styles.lineFive } ${ lineFiveClasses || '' }`}>{ lineFive }</p> }
       { spanOne && <span className={`${ styles && styles.spanOne } ${ spanOneClasses || '' }`}>{ spanOne }</span> }
       { spanTwo && <span className={`${ styles && styles.spanTwo } ${ spanTwoClasses || '' }`}>{ spanTwo }</span> }
       { spanThree && <span className={`${ styles && styles.spanThree } ${ spanThreeClasses || '' }`}>{ spanThree }</span> }
