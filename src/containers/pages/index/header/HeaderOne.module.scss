@@ -11,8 +11,8 @@
   width: 100%;
   max-width: 100%;
 
-  background-size: contain;
-  background-position:center;
+  background-position: 50% 85%;
+  background-size: 92.5%;
   background-repeat: no-repeat;
 }
 
@@ -74,13 +74,16 @@
 //* 368px
 @media only screen and (min-width: 23em) {
   .wrapper {
-    height: 85vh;
+    height: 700px;
+
+    background-position: 50% 80%;
   }
 }
 
 //* 528px
 @media only screen and (min-width: 33em) {
   .wrapper {
+    height: 650px;
     background-position: 50% 100%;
   }
 
@@ -131,16 +134,15 @@
   }
 }
 
-//* 1024px
-@media only screen and (min-width: 64em) {
+//* 800px
+@media only screen and (min-width: 50em) {
   .wrapper {
-    height: 800px;
+    height: 750px;
     width: 100%;
-    
+
     justify-content: flex-start;
 
-    background-position: 145% 50%;
-
+    background-position: 350% 50%;
   }
 
   .headingBox {
@@ -185,10 +187,22 @@
   }
 }
 
+//* 1024px
+@media only screen and (min-width: 64em) {
+  .wrapper {
+    height: 750px;
+    width: 100%;
+
+    background-position: 145% 50%;
+    background-size: 80%;
+  }
+}
+
 //* 1280px
 @media only screen and (min-width: 80em) {
   .wrapper {
     background-position: right center;
+    background-size: 70%;
   }
 
   .headingBox {
@@ -214,6 +228,10 @@
 
 //* 1760px
 @media only screen and (min-width: 110em) {
+  .wrapper {
+    background-position: 85% 50%;
+    background-size: 35%;
+  }
   .headingBox {
     margin-left: 20rem;
   }

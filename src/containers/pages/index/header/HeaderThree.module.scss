@@ -1,9 +1,6 @@
 
 //* 280px
 .wrapper {
-  background-position: 50% 85%;
-  background-size: 92.5%;
-
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -12,8 +9,8 @@
   width: 100%;
   max-width: 100%;
 
-  background-size: contain;
-  background-position:center;
+  background-position: 50% 85%;
+  background-size: 92.5%;
   background-repeat: no-repeat;
 }
 
@@ -73,13 +70,17 @@
 //* 368px
 @media only screen and (min-width: 23em) {
   .wrapper {
-    height: 85vh;
+    height: 700px;
+
+    
+    background-position: 50% 80%;
   }
 }
 
 //* 528px
 @media only screen and (min-width: 33em) {
   .wrapper {
+    height: 650px;
     background-position: 50% 100%;
   }
   
@@ -130,15 +131,15 @@
   }
 }
 
-//* 1024px
-@media only screen and (min-width: 64em) {
+//* 800px
+@media only screen and (min-width: 50em) {
   .wrapper {
     height: 800px;
     width: 100%;
     
     justify-content: flex-start;
 
-    background-position: 85% 50%;
+    background-position: 85% 60%;
     background-size: 35%;
   }
 
@@ -181,6 +182,17 @@
 
   .spacerBox {
     flex: 1 1;
+  }
+}
+
+
+//* 1024px
+@media only screen and (min-width: 64em) {
+  .wrapper {
+    height: 750px;
+    width: 100%;
+
+    background-position: 90% 50%;
   }
 }
 
