@@ -7,10 +7,28 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  height: 725px;
+  width: 100%;
+  max-width: 100%;
+
+  background-size: contain;
+  background-position:center;
+  background-repeat: no-repeat;
 }
 
 .headingBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
   & > button {
+    border: none;
+    outline: none;
+    position: relative;
+
     margin-top: 1rem;
     margin-bottom: 2rem;
     padding: .75rem 1.25rem;
@@ -51,6 +69,14 @@
   font-size: 1.6rem;
 }
 
+
+//* 368px
+@media only screen and (min-width: 23em) {
+  .wrapper {
+    height: 85vh;
+  }
+}
+
 //* 528px
 @media only screen and (min-width: 33em) {
   .wrapper {
@@ -77,6 +103,10 @@
 
 //* 768px
 @media only screen and (min-width: 48em) {
+  .wrapper {
+    height: 90vh;
+  }
+
   .headingBox {
     & > button {
       font-size: 2rem;
@@ -103,6 +133,7 @@
 //* 1024px
 @media only screen and (min-width: 64em) {
   .wrapper {
+    height: 800px;
     width: 100%;
     
     justify-content: flex-start;
