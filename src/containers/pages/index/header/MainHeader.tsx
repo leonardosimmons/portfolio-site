@@ -49,7 +49,6 @@ const IndexMainHeader: React.FunctionComponent<Props> = (
           className={`${styles[index].wrapper || ''}`} 
           style={{ backgroundImage: `${'url(' + header.bgImage + ')'}`}}>
           <BaseHeading
-            styles={baseStyles}
             classes={styles[index].headingBox}
             btn={header.btn}>
             <h1 className={styles[index].heading}>
