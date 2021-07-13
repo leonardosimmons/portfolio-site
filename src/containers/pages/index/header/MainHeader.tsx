@@ -46,7 +46,7 @@ const IndexMainHeader: React.FunctionComponent<Props> = (
     {
       headers.map((header: Header, index: number) => (
         <div key={index}
-          className={`${baseStyles.wrapper} ${styles[index].wrapper || ''}`} 
+          className={`${styles[index].wrapper || ''}`} 
           style={{ backgroundImage: `${'url(' + header.bgImage + ')'}`}}>
           <BaseHeading
             styles={baseStyles}
