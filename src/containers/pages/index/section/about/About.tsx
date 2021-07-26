@@ -52,7 +52,7 @@ const SectionOne: React.FunctionComponent<Props> = ({ data }): JSX.Element => {
         <div className={styles.textBox}>
           <p className={styles.text}>{data.body}</p>
           <Link href={'#services'}>
-            <a>{'Services'}</a>
+            <a className={`relative btn-activeFocus btn-hoverConfig`}>{'Services'}</a>
           </Link>
         </div>
       </BaseGrid>

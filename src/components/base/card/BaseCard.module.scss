@@ -22,7 +22,7 @@
 
 .content {
   &Box {
-    flex: 0 1 45%;
+    flex: 0 1 52.5%;
     height: 100%;
   }
 }
@@ -37,7 +37,7 @@
 
   .content {
     &Box {
-      flex: 0 1 70%;
+      flex: 0 1 65%;
     }
   }
 }
@@ -46,7 +46,7 @@
 @media only screen and (min-width: 64em) {
   .content {
     &Box {
-      flex: 0 1 75%;
+      flex: 0 1 70%;
     }
   }
 }
