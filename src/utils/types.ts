@@ -337,9 +337,10 @@ export type ProjectToken = {
   text: Text;
   mobileText: string;
   link: {
-    demo: string;
+    demo?: string;
     client?: string;
     server?: string;
+    github?: string;
   };
 };
 

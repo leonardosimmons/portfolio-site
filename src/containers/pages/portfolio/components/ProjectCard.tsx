@@ -33,11 +33,12 @@ const ProjectCard: React.FunctionComponent<Props> = ({ project }): JSX.Element =
             <span>{project.text.lineOne}</span>
             <span>{project.text.lineTwo}</span>
             <span>{project.text.lineThree}</span>
+            <span>{project.text.lineFour}</span>
           </p>
           <p className={styles.textMobile}>{project.mobileText}</p>
         </div>
         <div className={styles.links}>
-          <a href={project.link.demo}>{'Demo'}</a>
+          <a href={project.link.github ? project.link.github : project.link.demo}>{project.link.github ? 'Github' : 'Demo'}</a>
           {project.link.client && 
             <a href={project.link.client}>{'Client GitHub'}</a>
           }
