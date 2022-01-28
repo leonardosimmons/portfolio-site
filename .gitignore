@@ -33,6 +33,7 @@ yarn-error.log*
 
 
 # User
+.idea/
 /src/buffer
 /src/*.txt
 favicon.ico

@@ -14,6 +14,20 @@ export default function data(_: NextApiRequest, res: NextApiResponse<PortfolioPa
       },
       projects: [
         {
+          src: '/images/test-header.svg',
+          title: 'Limited Edition Toys',
+          type: 'Fully Custom Serverless Ecommerce Store',
+          text: {
+            lineOne: 'Full fledged serverless ecommerce site built as a headless CMS integrated with Wordpress, WooCommerce, Vend Point of Sales system and the Square payment system. ',
+            lineTwo: 'Also includes fully custom user authorization and authentication. ',
+            lineThree: 'Written in Typescript using React (Next.js), styled using Emotion (JSX). '
+          },
+          mobileText: 'Built as a headless CMS integrated with Wordpress, WooCommerce, Vend Point of Sales system and the Square payment system, written in Typescript using React (Next.JS)',
+          link: {
+            demo: 'https://store.limitededitionpdx.com/',
+          }
+        },
+        {
           src: '/images/astoria-preview.png',
           title: 'Project Astoria',
           type: 'Custom built full-stack Ecommerce store',
@@ -44,19 +58,15 @@ export default function data(_: NextApiRequest, res: NextApiResponse<PortfolioPa
           }
         },
         {
-          src: '/images/stripe.png',
-          title: 'Stripe Integration for Next.js',
-          type: 'eCommerce Payment system',
+          src: '/images/rustacean.png',
+          title: 'Rustache',
+          type: 'A TTL cache library ',
           text: {
-            lineOne: 'This is a custom built Stripe payment integration with Next.js. ',
-            lineTwo: 'Manage payments, reoccuring charges, and customer profiles. ',
-            lineThree: 'Written in typescript using Next.js for the frontend and connected to a custom Node.js/Express server in the backend.',
+            lineOne: 'A TTL cache library written in rust. ',
           },
-          mobileText: 'This is a custom built Stripe payment integration with Next.js',
+          mobileText: 'A TTL cache library written in rust.',
           link: {
-            demo: '',
-            client: 'https://github.com/leonardosimmons/stripe-next',
-            server: 'https://github.com/leonardosimmons/stripe-node'
+            github: 'https://github.com/leonardosimmons/rustache'
           }
         },
       ]
