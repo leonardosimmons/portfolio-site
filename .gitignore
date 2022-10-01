@@ -1,0 +1,36 @@
+# ignore all files
+**/**
+
+# except extensions...
+!**/*.js
+!**/*.jsx
+!**/*.scss
+!**/*.ts
+!**/*.tsx
+
+# ignore valid files in...
+/.git/**
+/.next/**
+/.pnp/**
+/build/**
+/coverage/**
+/dist/**
+/node_modules/**
+
+# ignore individual valid files
+.pnp.js
+
+# allow individual folders
+!public/
+!src/
+!src/pages/
+!src/styles/
+!src/styles/config/
+!src/styles/utils/
+
+
+# allow individual files
+!.gitignore
+!next-env.d.ts
+!package.json
+!tsconfig.json
