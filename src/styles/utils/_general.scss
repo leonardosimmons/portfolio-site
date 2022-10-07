@@ -4,15 +4,28 @@
     display: none;
 }
 
+.hoverable {
+    &:hover {
+        transform: translateY(-1px) scale(1.05);
+        transition-duration: 0.25s;
+    }
+}
+
 .overflow-hidden {
     overflow: hidden;
+}
+
+.pressable {
+    &:active {
+        transform: translateY(1px) scale(0.95);
+        transition-duration: 0.25s;
+    }
 }
 
 // disables users ability to select/highlight a particular element
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
