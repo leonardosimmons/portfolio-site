@@ -1,7 +1,25 @@
-import React from "react";
+import React from 'react';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-function HomePage() {
-    return <h1>Welcome to Leonardo Simmons' website!</h1>;
+import Layout from '../../lib/components/layout/Layout';
+
+export default function Index({
+  pageTitle,
+  title,
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+  return (
+    <Layout title={pageTitle}>
+      <div>{title}</div>
+    </Layout>
+  );
 }
 
-export default HomePage;
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      pageTitle:
+        'Full Stack Web Developer & Software Engineer Portland, Oregon',
+      title: 'Welcome to Leonardo Simmons portfolio site!',
+    },
+  };
+};
