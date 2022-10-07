@@ -18,8 +18,8 @@ const DesktopNavbar: React.FunctionComponent<Props> = ({
             className={'pressable'}
             src={'/images/logo.png'}
             alt={'logo'}
-            width={75}
-            height={75}
+            width={55}
+            height={55}
           />
         </Link>
       </div>

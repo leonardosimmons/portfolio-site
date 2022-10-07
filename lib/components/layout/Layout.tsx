@@ -24,10 +24,10 @@ const Layout: React.FunctionComponent<Props> = ({
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
         />
       </Head>
-      <header className={styles.header}>
+      <header className={`noselect ${styles.header}`}>
         <DesktopNavbar styles={desktopNavbarStyles} />
       </header>
-      <main className={styles.wrapper}>
+      <main className={`noselect ${styles.wrapper}`}>
         <div className={styles.container}>{children}</div>
         <div className={'top-of-site-pixel-anchor'} />
       </main>
