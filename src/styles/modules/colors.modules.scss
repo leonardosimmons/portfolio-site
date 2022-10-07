@@ -1,0 +1,30 @@
+//* Grey
+$grey-lightest: #eaeaea;
+$grey-lighter: #999999;
+$grey-light: #888888;
+$grey: #666666;
+$grey-dark: #444444;
+$grey-darker: #333333;
+$grey-darkest: #141414;
+
+//* Black
+$pure-black: #000000;
+$black: #111111;
+
+//* White
+$pure-white: #ffffff;
+$white: #fcfcfc;
+
+:export {
+  greyLightest: $grey-lightest;
+  greyLighter: $grey-lighter;
+  greyLight: $grey-light;
+  grey: $grey;
+  greyDark: $grey-dark;
+  greyDarker: $grey-darker;
+  greyDarkest: $grey-darkest;
+  black: $black;
+  pureBlack: $pure-black;
+  white: $white;
+  pureWhite: $pure-white;
+}
