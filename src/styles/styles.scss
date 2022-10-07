@@ -1,9 +1,10 @@
-//* Configuration
+// Configuration
 @import "config/base";
 @import "config/colors";
 @import "config/typography";
 @import "config/variables";
 
-//* Utilities
+// Utilities
 @import "utils/colors";
+@import "utils/elements";
 @import "utils/general";
