@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { BaseProps } from '../../../src/app/types';
+import { BaseProps } from '../../types';
 
 import base from './layout.module.scss';
 

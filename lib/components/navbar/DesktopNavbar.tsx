@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/future/image';
-import { BaseProps } from '../../../src/app/types';
+import { BaseProps } from '../../types';
 
 import base from './desktop.module.scss';
 
