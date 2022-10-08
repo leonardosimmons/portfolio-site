@@ -1,17 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
+import { BaseProps } from '../../../src/app/types';
 
 import base from './layout.module.scss';
 
 import DesktopNavbar from '../navbar/DesktopNavbar';
 
-type Props = {
+export type LayoutProps = BaseProps & {
   title: string;
-  styles?: any;
-  children?: React.ReactNode;
 };
 
-const Layout: React.FunctionComponent<Props> = ({
+const Layout: React.FunctionComponent<LayoutProps> = ({
   title,
   styles,
   children,

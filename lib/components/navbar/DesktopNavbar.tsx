@@ -1,16 +1,15 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/future/image';
+import { BaseProps } from '../../../src/app/types';
 
 import base from './desktop.module.scss';
 
-import Link from 'next/link';
-import Image from 'next/future/image';
-
-type Props = {
+export type DesktopNavbarProps = BaseProps & {
   logo?: string;
-  styles?: any;
 };
 
-const DesktopNavbar: React.FunctionComponent<Props> = ({
+const DesktopNavbar: React.FunctionComponent<DesktopNavbarProps> = ({
   logo,
   styles,
 }): JSX.Element => {
