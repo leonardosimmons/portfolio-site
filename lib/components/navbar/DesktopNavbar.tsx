@@ -1,36 +1,40 @@
 import React from 'react';
 
+import base from './desktop.module.scss';
+
 import Link from 'next/link';
 import Image from 'next/future/image';
 
 type Props = {
-  styles: any;
+  logo?: string;
+  styles?: any;
 };
 
 const DesktopNavbar: React.FunctionComponent<Props> = ({
+  logo,
   styles,
 }): JSX.Element => {
   return (
-    <nav className={styles.wrapper}>
-      <div className={styles.logo}>
+    <nav className={`noselect ${base.wrapper} ${styles && styles.wrapper}`}>
+      <div className={`${base.logo} ${styles && styles.logo}`}>
         <Link href={'/'}>
           <Image
             className={'pressable'}
-            src={'/images/logo.png'}
+            src={logo || '/images/logo.png'}
             alt={'logo'}
             width={55}
             height={55}
           />
         </Link>
       </div>
-      <div className={styles.menu}>
+      <div className={`${base.menu} ${styles && styles.menu}`}>
         <ul>
           <li className={'hoverable pressable'}>01. About</li>
           <li className={'hoverable pressable'}>02. Portfolio</li>
           <li className={'hoverable pressable'}>03. Experience</li>
         </ul>
       </div>
-      <div className={styles.user}>
+      <div className={`${base.user} ${styles && styles.user}`}>
         <p className={'pressable'}>Contact</p>
         <button className={'btn pressable'}>Free Consultation</button>
       </div>
