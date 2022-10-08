@@ -1,11 +1,15 @@
 .wrapper {
+  position: fixed;
+
+  width: 100%;
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-rows: 65px;
 
   font-family: Arial, sans-serif;
 
-  background-color: var(--black);
+  background-color: rgba(17, 17, 17, .8);
 
   & > * {
     height: 100%;
@@ -46,8 +50,6 @@
       font-size: 2rem;
       font-weight: bold;
 
-      color: var(--white);
-
       &:hover, &:active {
         text-shadow: var(--text-shadow);
       }
@@ -68,7 +70,5 @@
     cursor: pointer;
     font-size: 1.6rem;
     font-weight: bold;
-
-    color: var(--white);
   }
 }
