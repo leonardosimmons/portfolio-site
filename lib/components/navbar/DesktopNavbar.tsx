@@ -17,13 +17,15 @@ const DesktopNavbar: React.FunctionComponent<DesktopNavbarProps> = ({
     <nav className={`noselect ${base.wrapper} ${styles && styles.wrapper}`}>
       <div className={`${base.logo} ${styles && styles.logo}`}>
         <Link href={'/'}>
-          <Image
-            className={'pressable'}
-            src={logo || '/images/logo.png'}
-            alt={'logo'}
-            width={55}
-            height={55}
-          />
+          <React.Fragment>
+           <Image
+             className={'pressable'}
+             src={logo || '/images/logo.png'}
+             alt={'logo'}
+             width={55}
+             height={55}
+            />
+          </React.Fragment>
         </Link>
       </div>
       <div className={`${base.menu} ${styles && styles.menu}`}>
