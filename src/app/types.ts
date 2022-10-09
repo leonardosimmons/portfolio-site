@@ -21,4 +21,9 @@ export type Dimensions = {
   height: number | string;
 };
 
-export type Viewport = 'desktop' | 'tablet' | 'mobile' | null;
+export enum Viewport {
+  Desktop = 'desktop',
+  Tablet = 'tablet',
+  Mobile = 'mobile',
+  Undefined = 'undefined',
+}
