@@ -15,10 +15,10 @@ export const store = () =>
     devTools: process && process.env.NODE_ENV === 'development',
   });
 
-export type AppStore = ReturnType<typeof store>;
-export type RootState = ReturnType<AppStore['getState']>;
-export type AppDispatch = AppStore['dispatch'];
+type Store = ReturnType<typeof store>;
 
-export const AppState = createWrapper<AppStore>(store, {
+export type AppDispatch = Store['dispatch'];
+export type AppState = ReturnType<Store['getState']>;
+export const AppStore = createWrapper<Store>(store, {
   debug: true,
 });

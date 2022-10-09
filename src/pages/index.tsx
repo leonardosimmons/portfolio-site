@@ -1,7 +1,7 @@
 import React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-import { AppState } from '../app/store';
+import { AppStore } from '../app/store';
 import {
   getHomePageData,
   getRunningOperationPromises,
@@ -25,7 +25,7 @@ export default function Index({}: InferGetStaticPropsType<
   );
 }
 
-export const getStaticProps: GetStaticProps = AppState.getStaticProps(
+export const getStaticProps: GetStaticProps = AppStore.getStaticProps(
   (store) => async (_) => {
     store.dispatch(getHomePageData.initiate());
 
