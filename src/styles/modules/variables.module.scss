@@ -1,0 +1,22 @@
+// Media Queries
+$breakpoint-mobileSm: 0;
+$breakpoint-mobileMd: 368;
+$breakpoint-mobileLg: 500;
+$breakpoint-tabletSm: 760;
+$breakpoint-tabletMd: 900;
+$breakpoint-tabletLg: 1020;
+$breakpoint-desktopSm: 1200;
+$breakpoint-desktopMd: 1536;
+$breakpoint-desktopLg: 2160;
+
+:export {
+  breakpointMobileSm: $breakpoint-mobileSm;
+  breakpointMobileMd: $breakpoint-mobileMd;
+  breakpointMobileLg: $breakpoint-mobileLg;
+  breakpointTabletSm: $breakpoint-tabletSm;
+  breakpointTabletMd: $breakpoint-tabletMd;
+  breakpointTabletLg: $breakpoint-tabletLg;
+  breakpointDesktopSm: $breakpoint-desktopSm;
+  breakpointDesktopMd: $breakpoint-desktopMd;
+  breakpointDesktopLg: $breakpoint-desktopLg;
+}
