@@ -1,7 +1,8 @@
-import { createAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { AnyAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 import { Dimensions, Viewport } from '../../app/types';
-import { RootState } from '../../app/store';
+
+import cssVariables from '../../styles/modules/variables.module.scss';
 
 interface UiState {
   viewport: Viewport;
@@ -9,14 +10,12 @@ interface UiState {
 }
 
 const initialState: UiState = {
-  viewport: null,
+  viewport: Viewport.Undefined,
   window: {
     width: 0,
     height: 0,
   },
 };
-
-const hydrate = createAction<RootState>(HYDRATE);
 
 const uiSlice = createSlice({
   name: 'ui',
@@ -25,16 +24,32 @@ const uiSlice = createSlice({
     updateCurrentWindowSize(state, action: PayloadAction<Dimensions>) {
       state.window = action.payload;
     },
+    updateViewport(state, _: PayloadAction) {
+      const width = state.window.width as number;
+      const desktop = parseInt(cssVariables.breakpointDesktopSm);
+      const mobile = parseInt(cssVariables.breakpointMobileLg);
+
+      if (width >= desktop) {
+        state.viewport = Viewport.Desktop;
+      } else if (width <= mobile) {
+        state.viewport = Viewport.Mobile;
+      } else {
+        state.viewport = Viewport.Tablet;
+      }
+    },
   },
-  extraReducers: (builder) => {
-    builder.addCase(hydrate, (state, action) => {
-      return {
+  extraReducers: {
+    [HYDRATE]: (state, action: AnyAction) => {
+      const nextState = {
         ...state,
-        ...action.payload,
+        ...action.payload.ui,
       };
-    });
+      if (state.viewport) nextState.viewport = state.viewport;
+      if (state.window) nextState.window = state.window;
+      return nextState;
+    },
   },
 });
 
-export const { updateCurrentWindowSize } = uiSlice.actions;
+export const { updateCurrentWindowSize, updateViewport } = uiSlice.actions;
 export default uiSlice.reducer;
