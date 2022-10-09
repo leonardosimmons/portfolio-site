@@ -1,31 +1,38 @@
 import React from 'react';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { HomePageData } from '../../lib/types';
-import { Http } from '../../lib/http';
+
+import { AppState } from '../app/store';
+import {
+  getHomePageData,
+  getRunningOperationPromises,
+  useGetHomePageDataQuery,
+} from '../app/data';
+import { useViewport } from '../app/hooks';
 
 import Layout from '../../lib/components/layout/Layout';
 import Heading from '../../lib/components/heading/Heading';
 
-export default function Index({
-  data,
-}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
-  const [page] = React.useState<HomePageData>(data);
+export default function Index({}: InferGetStaticPropsType<
+  typeof getStaticProps
+>): JSX.Element {
+  useViewport();
+  const { data: page } = useGetHomePageDataQuery();
 
   return (
-    <Layout title={data.metaTitle}>
-      <Heading {...page.heading.main} />
+    <Layout title={page!.metaTitle}>
+      <Heading {...page!.heading.main} />
     </Layout>
   );
 }
 
-const { HOME_PAGE_DATA } = process.env;
+export const getStaticProps: GetStaticProps = AppState.getStaticProps(
+  (store) => async (_) => {
+    store.dispatch(getHomePageData.initiate());
 
-export const getStaticProps: GetStaticProps = async (_) => {
-  const data = await Http.get<HomePageData>(HOME_PAGE_DATA as string);
+    await Promise.all(getRunningOperationPromises());
 
-  return {
-    props: {
-      data,
-    },
-  };
-};
+    return {
+      props: {},
+    };
+  },
+);

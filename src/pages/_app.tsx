@@ -1,12 +1,13 @@
-import "../styles/styles.scss";
-import { AppProps } from "next/app";
-import { Provider } from "react-redux";
-import { store } from "../app/store";
+import '../styles/styles.scss';
+import { AppProps } from 'next/app';
+import { AppState } from '../app/store';
+import { Provider } from 'react-redux';
 
-export default function App({ Component, pageProps }: AppProps) {
-    return (
-        <Provider store={store}>
-            <Component {...pageProps} />
-        </Provider>
-    );
+export default function App({ Component, ...pageProps }: AppProps) {
+  const { store, props } = AppState.useWrappedStore(pageProps);
+  return (
+    <Provider store={store}>
+      <Component {...props.pageProps} />;
+    </Provider>
+  );
 }
