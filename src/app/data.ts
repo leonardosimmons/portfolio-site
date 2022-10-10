@@ -5,7 +5,10 @@ import { HYDRATE } from 'next-redux-wrapper';
 export const dataApi = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.NEXT_PUBLIC_BASE_API as string,
+    baseUrl:
+      process.env.NODE_ENV === 'development'
+        ? `${process.env.NEXT_PUBLIC_API_URL as string}/api`
+        : `https://${process.env.NEXT_PUBLIC_API_URL as string}/api`,
   }),
   extractRehydrationInfo: (action, { reducerPath }) => {
     if (action.type === HYDRATE) {
