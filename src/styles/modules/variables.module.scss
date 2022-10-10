@@ -1,13 +1,13 @@
 // Media Queries
-$breakpoint-mobileSm: 0;
-$breakpoint-mobileMd: 368;
-$breakpoint-mobileLg: 500;
-$breakpoint-tabletSm: 760;
-$breakpoint-tabletMd: 900;
-$breakpoint-tabletLg: 1020;
-$breakpoint-desktopSm: 1200;
-$breakpoint-desktopMd: 1536;
-$breakpoint-desktopLg: 2160;
+$breakpoint-mobileSm: 0px;
+$breakpoint-mobileMd: 368px;
+$breakpoint-mobileLg: 500px;
+$breakpoint-tabletSm: 760px;
+$breakpoint-tabletMd: 900px;
+$breakpoint-tabletLg: 1020px;
+$breakpoint-desktopSm: 1200px;
+$breakpoint-desktopMd: 1536px;
+$breakpoint-desktopLg: 2160px;
 
 :export {
   breakpointMobileSm: $breakpoint-mobileSm;
