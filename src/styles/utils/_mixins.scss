@@ -1,0 +1,54 @@
+$breakpoints: (
+        mobileSm: 0px,
+        mobileMd: 368px,
+        mobileLg: 500px,
+        tabletSm: 760px,
+        tabletMd: 900px,
+        tabletLg: 1020px,
+        desktopSm: 1200px,
+        desktopMd: 1536px,
+        desktopLg: 2160px,
+);
+
+@mixin responsive($breakpoint, $direction: down) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @if $direction == up {
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    } @else if $direction == down {
+      @media (max-width: $breakpoint-value) {
+        @content;
+      }
+    }
+  }
+  @else {
+    @if $direction == up {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    } @else if $direction == down {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin responsive-between($lower, $upper) {
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint)) {
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: $lower) and (max-width: ($upper)) {
+      @content;
+    }
+  }
+}
