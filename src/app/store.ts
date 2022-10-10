@@ -1,5 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { createWrapper } from 'next-redux-wrapper';
+import { configureStore, createAction } from '@reduxjs/toolkit';
+import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 
 import { dataApi } from './data';
 import uiReducer from '../features/ui/ui-slice';
@@ -22,3 +22,13 @@ export type AppState = ReturnType<Store['getState']>;
 export const AppStore = createWrapper<Store>(store, {
   debug: true,
 });
+
+/** Creates a new action callback for store reducer */
+export function action<S>(action: string) {
+  return createAction<S>(action);
+}
+
+/** Creates new Action callback for SSG and SSR store hydration on refresh and page navigation */
+export function hydrate<S>() {
+  return createAction<S>(HYDRATE);
+}

@@ -1,7 +1,7 @@
 import { AnyAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { HYDRATE } from 'next-redux-wrapper';
 import { Dimensions, Viewport } from '../../app/types';
 
+import { hydrate } from '../../app/store';
 import cssVariables from '../../styles/modules/variables.module.scss';
 
 interface UiState {
@@ -38,8 +38,8 @@ const uiSlice = createSlice({
       }
     },
   },
-  extraReducers: {
-    [HYDRATE]: (state, action: AnyAction) => {
+  extraReducers: (builder) => {
+    builder.addCase(hydrate<UiState>(), (state, action: AnyAction) => {
       const nextState = {
         ...state,
         ...action.payload.ui,
@@ -47,7 +47,7 @@ const uiSlice = createSlice({
       if (state.viewport) nextState.viewport = state.viewport;
       if (state.window) nextState.window = state.window;
       return nextState;
-    },
+    });
   },
 });
 
