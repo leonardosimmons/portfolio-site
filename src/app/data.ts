@@ -8,7 +8,7 @@ export const dataApi = createApi({
     baseUrl:
       process.env.NODE_ENV === 'development'
         ? `${process.env.NEXT_PUBLIC_API_URL as string}/api`
-        : `https://${process.env.NEXT_PUBLIC_API_URL as string}/api`,
+        : `https://${process.env.NEXT_PUBLIC_VERCEL_URL as string}/api`,
   }),
   extractRehydrationInfo: (action, { reducerPath }) => {
     if (action.type === HYDRATE) {
