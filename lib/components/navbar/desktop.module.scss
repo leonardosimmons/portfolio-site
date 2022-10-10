@@ -1,15 +1,20 @@
+@import '../../../src/styles/utils/mixins';
+
 .wrapper {
   position: fixed;
-
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: .75fr auto .75fr;
   grid-template-rows: 65px;
 
   font-family: Arial, sans-serif;
 
   background-color: rgba(17, 17, 17, .8);
+
+  @include responsive(desktopSm, down) {
+    display: none;
+  }
 
   & > * {
     height: 100%;
@@ -24,9 +29,13 @@
   justify-content: flex-start;
   align-items: center;
 
-  padding-left: 50px;
+  padding-left: 20px;
 
-  & img {
+  @include responsive(desktopMd, up) {
+    padding-left: 50px;
+  }
+
+  & > img {
     cursor: pointer;
   }
 }
@@ -36,19 +45,23 @@
   justify-content: center;
   align-items: center;
 
-  & ul {
+  & > ul {
     display: flex;
     justify-content: center;
     align-items: center;
 
     list-style: none;
 
-    & li {
-      margin: 0 50px;
+    & > li {
+      margin: 0 30px;
 
       cursor: pointer;
       font-size: 2rem;
       font-weight: bold;
+
+      @include responsive(desktopMd, up) {
+        margin: 0 50px;
+      }
 
       &:hover, &:active {
         text-shadow: var(--text-shadow);
@@ -62,13 +75,21 @@
   justify-content: flex-end;
   align-items: center;
 
-  padding-right: 50px;
+  padding-right: 20px;
 
-  & p {
-    margin: 50px;
+  @include responsive(desktopMd, up) {
+    padding-right: 50px;
+  }
+
+  & > p {
+    margin: 20px;
 
     cursor: pointer;
     font-size: 1.6rem;
     font-weight: bold;
+
+    @include responsive(desktopMd, up) {
+      margin: 50px
+    }
   }
 }
